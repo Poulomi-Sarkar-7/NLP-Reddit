@@ -1,1 +1,4 @@
 Link to the Documentation and Report : https://docs.google.com/document/d/1OdrQ5jERX1l0DG96Ap3LcN2VHaXj9Pz3598T7gYBZMw/edit?usp=sharing
+
+This report documents the end-to-end design, implementation, and findings of the Natural Language Processing (NLP) project. The project targets r/cscareerquestions ,one of Reddit's largest and most active communities focused on software engineering careers, job hunting, compensation, and professional development.
+The pipeline encompasses five major components: (1) large-scale data collection from the Arctic Shift Reddit archive API, (2) storage in a normalized SQLite relational database, (3) NLP-based topic modelling using Latent Dirichlet Allocation (LDA), (4) per-comment stance classification (Support / Neutral / Oppose), and (5) a fully interactive React.js/Vite frontend dashboard.

@@ -278,3 +278,20 @@ path.recharts-sector {
     padding-left: 0;
   }
 }
+
+.conversation-input {
+  width: 100%;
+  background: var(--bg-color);
+  border: 1px solid var(--card-border);
+  color: var(--text-main);
+  border-radius: var(--radius-sm);
+  padding: 0.7rem 0.85rem;
+  font-family: var(--font-family);
+  font-size: 0.95rem;
+}
+
+.conversation-input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(133, 57, 83, 0.15);
+}

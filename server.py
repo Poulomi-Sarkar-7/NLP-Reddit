@@ -1,8 +1,9 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
 import re
 from collections import Counter
+from rag_service import build_or_refresh_index, retrieve_context, generate_answer, available_providers
 
 app = Flask(__name__)
 CORS(app)
@@ -340,6 +341,59 @@ def timeline_consolidated():
         'timeline': res,
         'topics': [{'id': t['topic_id'], 'label': t['label'], 'status': t['status']} for t in topics_payload]
     })
+
+
+@app.route('/api/conversation/providers')
+def conversation_providers():
+    return jsonify({'providers': available_providers()})
+
+
+@app.route('/api/conversation/rebuild', methods=['POST'])
+def conversation_rebuild():
+    try:
+        build_or_refresh_index(force=True)
+        return jsonify({'ok': True, 'message': 'RAG index rebuilt successfully.'})
+    except Exception as e:
+        return jsonify({'ok': False, 'error': str(e)}), 500
+
+
+@app.route('/api/conversation/ask', methods=['POST'])
+def conversation_ask():
+    payload = request.get_json(silent=True) or {}
+    query = (payload.get('query') or '').strip()
+    provider = (payload.get('provider') or 'groq').strip().lower()
+    model = (payload.get('model') or '').strip() or None
+    top_k = int(payload.get('top_k') or 8)
+
+    if not query:
+        return jsonify({'ok': False, 'error': 'Query cannot be empty.'}), 400
+
+    try:
+        contexts = retrieve_context(query, top_k=top_k)
+        if not contexts:
+            return jsonify({
+                'ok': True,
+                'answer': 'I could not find relevant context in the Reddit repository for this question.',
+                'contexts': [],
+                'provider': provider,
+                'model': model
+            })
+
+        answer = generate_answer(query, contexts, provider=provider, model=model)
+        return jsonify({
+            'ok': True,
+            'answer': answer,
+            'contexts': contexts,
+            'provider': provider,
+            'model': model
+        })
+    except Exception as e:
+        return jsonify({
+            'ok': False,
+            'error': str(e),
+            'contexts': []
+        }), 500
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)

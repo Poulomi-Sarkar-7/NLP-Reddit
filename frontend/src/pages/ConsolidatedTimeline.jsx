@@ -14,6 +14,7 @@ const TOPIC_COLORS = [
 
 export default function ConsolidatedTimeline() {
   const [data, setData] = useState({ timeline: [], topics: [] });
+  const [activeTopicKey, setActiveTopicKey] = useState(null);
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/timeline_consolidated')
@@ -46,7 +47,10 @@ export default function ConsolidatedTimeline() {
               <XAxis dataKey="year" stroke="var(--text-dim)"/>
               <YAxis stroke="var(--text-dim)"/>
               <Tooltip contentStyle={{ backgroundColor: 'var(--card-bg)', border: '1px solid var(--accent)', color: 'var(--text-main)' }}/>
-              <Legend />
+              <Legend
+                onMouseEnter={(e) => setActiveTopicKey(e && e.dataKey ? e.dataKey : null)}
+                onMouseLeave={() => setActiveTopicKey(null)}
+              />
               {data.topics.map((t, idx) => (
                 <Area 
                   key={t.id} 
@@ -55,7 +59,15 @@ export default function ConsolidatedTimeline() {
                   name={`T${t.id}: ${t.label}`}
                   stackId="1" 
                   stroke={TOPIC_COLORS[idx % TOPIC_COLORS.length]} 
-                  fill={TOPIC_COLORS[idx % TOPIC_COLORS.length]} 
+                  fill={TOPIC_COLORS[idx % TOPIC_COLORS.length]}
+                  fillOpacity={
+                    !activeTopicKey ? 0.7 : activeTopicKey === `Topic ${t.id}` ? 0.9 : 0.18
+                  }
+                  strokeOpacity={
+                    !activeTopicKey ? 1 : activeTopicKey === `Topic ${t.id}` ? 1 : 0.25
+                  }
+                  onMouseEnter={() => setActiveTopicKey(`Topic ${t.id}`)}
+                  onMouseLeave={() => setActiveTopicKey(null)}
                 />
               ))}
             </AreaChart>
@@ -71,7 +83,10 @@ export default function ConsolidatedTimeline() {
               <XAxis dataKey="year" stroke="var(--text-dim)"/>
               <YAxis stroke="var(--text-dim)"/>
               <Tooltip contentStyle={{ backgroundColor: 'var(--bg-color)', border: '1px solid var(--accent)', color: 'var(--text-main)' }}/>
-              <Legend />
+              <Legend
+                onMouseEnter={(e) => setActiveTopicKey(e && e.dataKey ? e.dataKey : null)}
+                onMouseLeave={() => setActiveTopicKey(null)}
+              />
               {data.topics.map((t, idx) => (
                 <Line 
                   key={t.id} 
@@ -80,8 +95,11 @@ export default function ConsolidatedTimeline() {
                   name={`T${t.id}: ${t.label}`}
                   stroke={TOPIC_COLORS[idx % TOPIC_COLORS.length]} 
                   strokeWidth={2}
-                  dot={{ r: 2 }}
+                  opacity={!activeTopicKey ? 1 : activeTopicKey === `Topic ${t.id}` ? 1 : 0.2}
+                  dot={{ r: activeTopicKey === `Topic ${t.id}` ? 3 : 2 }}
                   activeDot={{ r: 6 }}
+                  onMouseEnter={() => setActiveTopicKey(`Topic ${t.id}`)}
+                  onMouseLeave={() => setActiveTopicKey(null)}
                 />
               ))}
             </LineChart>

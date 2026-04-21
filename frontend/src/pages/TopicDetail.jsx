@@ -8,16 +8,26 @@ export default function TopicDetail() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [data, setData] = useState(null);
+  const [error, setError] = useState('');
 
   useEffect(() => {
+    setError('');
     axios.get(`http://localhost:5000/api/topic/${id}`)
       .then(res => setData(res.data))
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.error(err);
+        setError('Could not load topic insights. Please try again.');
+      });
   }, [id]);
 
+  if (error) return <div style={{ textAlign: 'center', marginTop: '10%' }}>{error}</div>;
   if (!data) return <div style={{ textAlign: 'center', marginTop: '10%' }}>Loading insights...</div>;
 
   const { info, timeline, stance_counts, top_comments } = data;
+  const cleanedKeywords = (info.keywords || '')
+    .split(', ')
+    .map(k => k.trim())
+    .filter(Boolean);
   
   // Format for Recharts Pie
   const stanceData = [
@@ -56,7 +66,7 @@ export default function TopicDetail() {
         <div>
           <h4 style={{ marginBottom: '0.5rem', color: 'var(--text-dim)' }}>Top Keywords</h4>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-            {info.keywords.split(', ').map(kw => (
+            {cleanedKeywords.map(kw => (
               <span key={kw} style={{ background: 'rgba(34, 112, 106, 0.3)', padding: '0.3rem 0.8rem', borderRadius: '4px', fontSize: '0.9rem' }}>
                 {kw}
               </span>
@@ -71,10 +81,10 @@ export default function TopicDetail() {
           <div style={{ height: 300 }}>
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={timeline}>
-                <XAxis dataKey="year" stroke="var(--text-dim)" />
+                <XAxis dataKey="period" stroke="var(--text-dim)" />
                 <YAxis stroke="var(--text-dim)" />
                 <Tooltip contentStyle={{ backgroundColor: 'var(--card-bg)', border: '1px solid var(--accent)' }} />
-                <Line type="monotone" dataKey="count" stroke="var(--accent)" strokeWidth={4} dot={{ r: 4 }} activeDot={{ r: 8 }} />
+                <Line type="linear" dataKey="count" stroke="var(--accent)" strokeWidth={4} dot={{ r: 3 }} activeDot={{ r: 7 }} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -106,28 +116,30 @@ export default function TopicDetail() {
         </div>
       </div>
 
-      <div className="grid-cols-2">
-        <div className="glass-card">
-          <h3 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#4ade80' }}>
-            <MessageSquareQuote /> Supporting Arguments
-          </h3>
-          <p style={{ color: 'var(--text-dim)', marginBottom: '1rem', fontStyle: 'italic', fontSize: '0.95rem' }}>
-            <strong>AI Snapshot:</strong> {info.support_summary}
-          </p>
-          <div style={{ marginTop: '2rem' }}>
-            {top_comments.support.map((c, i) => <div key={i} className="comment-card comment-support">"{c}"</div>)}
+      <div className="glass-card">
+        <div className="comment-split-grid">
+          <div>
+            <h3 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#4ade80' }}>
+              <MessageSquareQuote /> Supporting Arguments
+            </h3>
+            <p style={{ color: 'var(--text-dim)', marginBottom: '1rem', fontStyle: 'italic', fontSize: '0.95rem' }}>
+              <strong>AI Snapshot:</strong> {info.support_summary}
+            </p>
+            <ol className="comment-list">
+              {top_comments.support.map((c, i) => <li key={i} className="comment-card comment-support">"{c}"</li>)}
+            </ol>
           </div>
-        </div>
 
-        <div className="glass-card">
-          <h3 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#f87171' }}>
-            <MessageSquareQuote /> Opposing Arguments
-          </h3>
-          <p style={{ color: 'var(--text-dim)', marginBottom: '1rem', fontStyle: 'italic', fontSize: '0.95rem' }}>
-            <strong>AI Snapshot:</strong> {info.oppose_summary}
-          </p>
-          <div style={{ marginTop: '2rem' }}>
-            {top_comments.oppose.map((c, i) => <div key={i} className="comment-card comment-oppose">"{c}"</div>)}
+          <div>
+            <h3 style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: '#f87171' }}>
+              <MessageSquareQuote /> Opposing Arguments
+            </h3>
+            <p style={{ color: 'var(--text-dim)', marginBottom: '1rem', fontStyle: 'italic', fontSize: '0.95rem' }}>
+              <strong>AI Snapshot:</strong> {info.oppose_summary}
+            </p>
+            <ol className="comment-list">
+              {top_comments.oppose.map((c, i) => <li key={i} className="comment-card comment-oppose">"{c}"</li>)}
+            </ol>
           </div>
         </div>
       </div>

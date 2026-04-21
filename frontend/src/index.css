@@ -205,6 +205,8 @@ a {
   line-height: 1.6;
   position: relative;
   box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .comment-support { border-left: 4px solid #4ade80; }
@@ -224,4 +226,55 @@ a {
 path.recharts-sector {
   stroke: var(--bg-color);
   stroke-width: 2px;
+}
+
+.comment-split-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.comment-split-grid > div:first-child {
+  padding-right: 1rem;
+  border-right: 1px solid var(--card-border);
+}
+
+.comment-split-grid > div:last-child {
+  padding-left: 1rem;
+}
+
+.comment-list {
+  margin: 1.5rem 0 0;
+  padding-left: 1.25rem;
+}
+
+.comment-list .comment-card {
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 1000px) {
+  .grid-cols-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .comment-split-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .comment-split-grid > div:first-child {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid var(--card-border);
+    padding-bottom: 1.25rem;
+  }
+
+  .comment-split-grid > div:last-child {
+    padding-left: 0;
+  }
 }

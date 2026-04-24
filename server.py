@@ -21,6 +21,29 @@ KEYWORD_STOPWORDS = {
     'got', 'getting'
 }
 AI_TERMS = {'ai', 'machine', 'learning', 'ml', 'llm', 'llms', 'gpt', 'chatgpt', 'automation'}
+ANALYSIS_STOPWORDS = KEYWORD_STOPWORDS.union({
+    'this', 'that', 'with', 'from', 'have', 'has', 'had', 'were', 'been', 'being', 'also',
+    'about', 'into', 'through', 'where', 'when', 'while', 'your', 'their', 'would', 'could',
+    'should', 'very', 'much', 'many', 'more', 'most', 'than', 'then', 'there', 'here'
+})
+GENERIC_NOISE_WORDS = {
+    'for', 'you', 'it', 'its', 'they', 'them', 'theirs', 'ours', 'mine', 'myself', 'yourself',
+    'him', 'her', 'hers', 'his', 'who', 'whom', 'whose', 'which', 'what', 'why', 'how',
+    'any', 'some', 'every', 'each', 'either', 'neither', 'both', 'few', 'lot', 'lots',
+    'able', 'cannot', 'cant', 'dont', 'doesnt', 'didnt', 'isnt', 'arent', 'wasnt', 'werent',
+    'am', 'is', 'are', 'was', 'were', 'be', 'being', 'been', 'do', 'does', 'did', 'doing',
+    'have', 'has', 'had', 'having', 'go', 'goes', 'went', 'gone', 'get', 'gets', 'got',
+    'make', 'makes', 'made', 'take', 'takes', 'took', 'taken', 'put', 'puts', 'say', 'says',
+    'said', 'tell', 'tells', 'told', 'see', 'seen', 'seeing', 'look', 'looks', 'looking',
+    'know', 'knows', 'knew', 'known', 'think', 'thinks', 'thought', 'feel', 'feels', 'felt',
+    'want', 'wants', 'wanted', 'need', 'needs', 'needed', 'work', 'works', 'working',
+    'really', 'actually', 'basically', 'literally', 'probably', 'maybe', 'perhaps',
+    'just', 'also', 'still', 'even', 'ever', 'never', 'always', 'sometimes', 'often',
+    'today', 'tomorrow', 'yesterday', 'now', 'then', 'there', 'here', 'anyone', 'someone',
+    'everyone', 'nobody', 'something', 'anything', 'everything', 'nothing',
+    'reddit', 'thread', 'post', 'posts', 'comment', 'comments', 'title', 'selftext',
+    'https', 'http', 'www', 'com', 'org', 'net'
+}
 
 
 def clean_keywords(keywords_str):
@@ -196,6 +219,27 @@ def get_db_connection():
     conn = sqlite3.connect('career_processed3.db')
     conn.row_factory = sqlite3.Row
     return conn
+
+
+def get_raw_db_connection():
+    conn = sqlite3.connect('career.db')
+    conn.row_factory = sqlite3.Row
+    return conn
+
+
+def tokenize_text(text):
+    tokens = [t.lower() for t in re.findall(r'\b[a-zA-Z][a-zA-Z0-9+\-]{2,}\b', text or '')]
+    return [
+        t for t in tokens
+        if t not in ANALYSIS_STOPWORDS
+        and t not in GENERIC_NOISE_WORDS
+        and not t.isdigit()
+    ]
+
+
+def keyword_pattern(keyword):
+    return re.compile(rf'\b{re.escape(keyword.lower())}\b', flags=re.IGNORECASE)
+
 
 @app.route('/api/dashboard')
 def dashboard():
@@ -426,6 +470,285 @@ def conversation_expand_node():
         return jsonify({'ok': True, 'graph': graph})
     except Exception as e:
         return jsonify({'ok': False, 'error': str(e), 'graph': {'nodes': [], 'edges': []}}), 500
+
+
+@app.route('/api/users/top')
+def users_top():
+    limit = int(request.args.get('limit', 20))
+    limit = max(5, min(50, limit))
+
+    conn = get_raw_db_connection()
+    rows = conn.execute(
+        '''
+        SELECT
+            author,
+            SUM(posts_count) AS posts_count,
+            SUM(comments_count) AS comments_count,
+            SUM(posts_count + comments_count) AS total_activity
+        FROM (
+            SELECT author, COUNT(*) AS posts_count, 0 AS comments_count
+            FROM posts
+            WHERE author IS NOT NULL AND author NOT IN ('[deleted]', 'AutoModerator')
+            GROUP BY author
+            UNION ALL
+            SELECT author, 0 AS posts_count, COUNT(*) AS comments_count
+            FROM comments
+            WHERE author IS NOT NULL AND author NOT IN ('[deleted]', 'AutoModerator')
+            GROUP BY author
+        ) u
+        GROUP BY author
+        ORDER BY total_activity DESC
+        LIMIT ?
+        ''',
+        (limit,)
+    ).fetchall()
+    conn.close()
+
+    payload = []
+    for idx, r in enumerate(rows, start=1):
+        payload.append({
+            'rank': idx,
+            'author': r['author'],
+            'posts_count': int(r['posts_count'] or 0),
+            'comments_count': int(r['comments_count'] or 0),
+            'total_activity': int(r['total_activity'] or 0),
+            'bar_label': f'U{idx}'
+        })
+    return jsonify({'users': payload})
+
+
+@app.route('/api/users/query')
+def users_query():
+    username = (request.args.get('username') or '').strip()
+    if not username:
+        return jsonify({'ok': False, 'error': 'username is required'}), 400
+
+    conn = get_raw_db_connection()
+    user_exists = conn.execute(
+        '''
+        SELECT 1
+        FROM (
+            SELECT author FROM posts
+            UNION ALL
+            SELECT author FROM comments
+        )
+        WHERE LOWER(author) = LOWER(?)
+        LIMIT 1
+        ''',
+        (username,)
+    ).fetchone() is not None
+
+    if not user_exists:
+        conn.close()
+        return jsonify({'ok': True, 'found': False, 'username': username, 'posts': [], 'comments': []})
+
+    posts = conn.execute(
+        '''
+        SELECT id, title, selftext, created_utc, num_comments
+        FROM posts
+        WHERE LOWER(author) = LOWER(?)
+        ORDER BY created_utc DESC
+        LIMIT 200
+        ''',
+        (username,)
+    ).fetchall()
+
+    comments = conn.execute(
+        '''
+        SELECT id, post_id, body, created_utc
+        FROM comments
+        WHERE LOWER(author) = LOWER(?)
+        ORDER BY created_utc DESC
+        LIMIT 300
+        ''',
+        (username,)
+    ).fetchall()
+    conn.close()
+
+    return jsonify({
+        'ok': True,
+        'found': True,
+        'username': username,
+        'posts_count': len(posts),
+        'comments_count': len(comments),
+        'posts': [dict(r) for r in posts],
+        'comments': [dict(r) for r in comments]
+    })
+
+
+@app.route('/api/keywords/analyze')
+def keywords_analyze():
+    keyword = (request.args.get('keyword') or '').strip().lower()
+    if not keyword or len(keyword) < 2:
+        return jsonify({'ok': False, 'error': 'keyword must be at least 2 characters'}), 400
+
+    conn = get_raw_db_connection()
+    post_rows = conn.execute('SELECT title, selftext FROM posts').fetchall()
+    comment_rows = conn.execute('SELECT body FROM comments').fetchall()
+    conn.close()
+
+    pattern = keyword_pattern(keyword)
+
+    docs = []
+    keyword_frequency = 0
+    for r in post_rows:
+        text = f"{r['title'] or ''} {r['selftext'] or ''}".strip()
+        if not text:
+            continue
+        c = len(pattern.findall(text))
+        keyword_frequency += c
+        docs.append(text)
+    for r in comment_rows:
+        text = (r['body'] or '').strip()
+        if not text:
+            continue
+        c = len(pattern.findall(text))
+        keyword_frequency += c
+        docs.append(text)
+
+    matched_token_sets = []
+    co_counts = Counter()
+    for doc in docs:
+        if not pattern.search(doc):
+            continue
+        tokens = set(tokenize_text(doc))
+        if keyword not in tokens:
+            tokens.add(keyword)
+        matched_token_sets.append(tokens)
+        for t in tokens:
+            if t == keyword:
+                continue
+            co_counts[t] += 1
+
+    top_10 = co_counts.most_common(10)
+    top_terms = [t for t, _ in top_10]
+
+    labels = [keyword] + top_terms
+    matrix = []
+    for a in labels:
+        row = []
+        for b in labels:
+            if a == b:
+                row.append(1.0)
+                continue
+            a_docs = 0
+            b_docs = 0
+            both_docs = 0
+            for tok_set in matched_token_sets:
+                has_a = a in tok_set
+                has_b = b in tok_set
+                if has_a:
+                    a_docs += 1
+                if has_b:
+                    b_docs += 1
+                if has_a and has_b:
+                    both_docs += 1
+            denom = (a_docs + b_docs - both_docs)
+            score = (both_docs / denom) if denom > 0 else 0.0  # Jaccard-like correlation
+            row.append(round(score, 3))
+        matrix.append(row)
+
+    return jsonify({
+        'ok': True,
+        'keyword': keyword,
+        'keyword_frequency': int(keyword_frequency),
+        'matched_documents': len(matched_token_sets),
+        'cooccurring': [{'term': t, 'count': int(c)} for t, c in top_10],
+        'heatmap': {
+            'labels': labels,
+            'matrix': matrix
+        }
+    })
+
+
+@app.route('/api/keywords/snippets')
+def keywords_snippets():
+    keyword = (request.args.get('keyword') or '').strip().lower()
+    kind = (request.args.get('kind') or 'posts').strip().lower()
+    offset = int(request.args.get('offset') or 0)
+    limit = int(request.args.get('limit') or 5)
+
+    if not keyword:
+        return jsonify({'ok': False, 'error': 'keyword is required'}), 400
+    if kind not in ('posts', 'comments'):
+        return jsonify({'ok': False, 'error': 'kind must be posts or comments'}), 400
+
+    offset = max(0, offset)
+    limit = max(1, min(20, limit))
+    pattern = keyword_pattern(keyword)
+
+    conn = get_raw_db_connection()
+    items = []
+    total = 0
+
+    if kind == 'posts':
+        rows = conn.execute(
+            '''
+            SELECT id, author, title, selftext, created_utc, num_comments
+            FROM posts
+            WHERE LOWER(COALESCE(title, '') || ' ' || COALESCE(selftext, '')) LIKE ?
+            ORDER BY created_utc DESC
+            ''',
+            (f'%{keyword}%',)
+        ).fetchall()
+        filtered = []
+        for r in rows:
+            full_text = f"{r['title'] or ''} {r['selftext'] or ''}"
+            if pattern.search(full_text):
+                filtered.append(r)
+        total = len(filtered)
+        slice_rows = filtered[offset: offset + limit]
+        items = [
+            {
+                'id': r['id'],
+                'author': r['author'],
+                'title': r['title'],
+                'selftext': r['selftext'],
+                'created_utc': r['created_utc'],
+                'num_comments': r['num_comments'],
+            }
+            for r in slice_rows
+        ]
+    else:
+        rows = conn.execute(
+            '''
+            SELECT id, author, post_id, body, created_utc
+            FROM comments
+            WHERE LOWER(COALESCE(body, '')) LIKE ?
+            ORDER BY created_utc DESC
+            ''',
+            (f'%{keyword}%',)
+        ).fetchall()
+        filtered = []
+        for r in rows:
+            if pattern.search(r['body'] or ''):
+                filtered.append(r)
+        total = len(filtered)
+        slice_rows = filtered[offset: offset + limit]
+        items = [
+            {
+                'id': r['id'],
+                'author': r['author'],
+                'post_id': r['post_id'],
+                'body': r['body'],
+                'created_utc': r['created_utc'],
+            }
+            for r in slice_rows
+        ]
+
+    conn.close()
+    next_offset = offset + len(items)
+    return jsonify({
+        'ok': True,
+        'keyword': keyword,
+        'kind': kind,
+        'offset': offset,
+        'limit': limit,
+        'next_offset': next_offset,
+        'total': total,
+        'has_more': next_offset < total,
+        'items': items
+    })
 
 
 if __name__ == '__main__':

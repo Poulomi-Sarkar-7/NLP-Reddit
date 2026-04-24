@@ -295,3 +295,32 @@ path.recharts-sector {
   border-color: var(--accent);
   box-shadow: 0 0 0 3px rgba(133, 57, 83, 0.15);
 }
+
+.heatmap-table {
+  width: max-content;
+  border-collapse: collapse;
+  min-width: 720px;
+}
+
+.heatmap-table th,
+.heatmap-table td {
+  border: 1px solid var(--card-border);
+  padding: 0.45rem 0.55rem;
+  text-align: center;
+  font-size: 0.84rem;
+}
+
+.heatmap-table thead th {
+  background: var(--card-bg);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.heatmap-table tbody th {
+  background: var(--card-bg);
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  text-align: left;
+}

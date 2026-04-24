@@ -3,6 +3,7 @@ import re
 import json
 import sqlite3
 from urllib import request, error
+from urllib.parse import quote_plus
 from env_utils import load_env_file
 
 
@@ -19,6 +20,10 @@ RETRIEVAL_STOPWORDS = {
     'that', 'it', 'they', 'we', 'you', 'me', 'my', 'our', 'their', 'at', 'by', 'as',
     'be', 'been', 'being', 'can', 'could', 'should', 'would', 'any', 'all'
 }
+GRAPH_STOPWORDS = RETRIEVAL_STOPWORDS.union({
+    'about', 'reddit', 'question', 'system', 'using', 'used', 'use', 'also', 'into',
+    'very', 'more', 'most', 'some', 'many', 'much', 'still', 'even', 'than'
+})
 
 
 def _chunk_text(text, max_chars=MAX_CHUNK_CHARS, overlap=CHUNK_OVERLAP):
@@ -255,6 +260,184 @@ def retrieve_context(query, top_k=8):
             }
         )
     return contexts
+
+
+def build_knowledge_graph(user_query, contexts, max_nodes=12, max_edges=18):
+    token_freq = {}
+    cooccur = {}
+
+    def _tokens(text):
+        words = [w.lower() for w in re.findall(r'\b[a-zA-Z][a-zA-Z0-9+\-]{2,}\b', text or '')]
+        return [w for w in words if w not in GRAPH_STOPWORDS and not w.isdigit()]
+
+    for ctx in contexts:
+        combined = f"{ctx.get('title', '')} {ctx.get('body', '')}"
+        toks = _tokens(combined)
+        if not toks:
+            continue
+
+        seen = []
+        for t in toks:
+            token_freq[t] = token_freq.get(t, 0) + 1
+            if t not in seen:
+                seen.append(t)
+
+        # co-occurrence within each retrieved chunk
+        for i in range(len(seen)):
+            for j in range(i + 1, len(seen)):
+                a, b = sorted((seen[i], seen[j]))
+                key = (a, b)
+                cooccur[key] = cooccur.get(key, 0) + 1
+
+    top_tokens = [k for k, _ in sorted(token_freq.items(), key=lambda x: x[1], reverse=True)[:max_nodes - 1]]
+    token_set = set(top_tokens)
+
+    nodes = [{'id': 'query', 'label': user_query.strip()[:60], 'size': 32}]
+    for t in top_tokens:
+        nodes.append({
+            'id': t,
+            'label': t,
+            'size': int(max(12, min(26, 10 + token_freq.get(t, 1) * 1.3)))
+        })
+
+    edges = []
+    # connect all important terms to query node
+    for t in top_tokens:
+        edges.append({'source': 'query', 'target': t, 'weight': token_freq.get(t, 1)})
+
+    pair_edges = []
+    for (a, b), w in cooccur.items():
+        if a in token_set and b in token_set:
+            pair_edges.append((a, b, w))
+    pair_edges.sort(key=lambda x: x[2], reverse=True)
+
+    for a, b, w in pair_edges[:max_edges]:
+        edges.append({'source': a, 'target': b, 'weight': w})
+
+    return {'nodes': nodes, 'edges': edges}
+
+
+def _normalize_token(text):
+    return (text or '').strip().lower()
+
+
+def _extract_tokens(text):
+    words = [w.lower() for w in re.findall(r'\b[a-zA-Z][a-zA-Z0-9+\-]{2,}\b', text or '')]
+    return [w for w in words if w not in GRAPH_STOPWORDS and not w.isdigit()]
+
+
+def _external_related_terms(term, max_terms=10):
+    # Free external lexical association source (no API key needed).
+    # Uses Datamuse "ml" (means-like) endpoint.
+    url = f'https://api.datamuse.com/words?ml={quote_plus(term)}&max={int(max_terms)}'
+    req = request.Request(
+        url,
+        headers={
+            'Accept': 'application/json',
+            'User-Agent': 'NLP-Reddit-RAG/1.0 (+local-dev)',
+        },
+        method='GET'
+    )
+    try:
+        with request.urlopen(req, timeout=8) as resp:
+            body = resp.read().decode('utf-8')
+            data = json.loads(body)
+            results = []
+            for row in data:
+                w = (row.get('word') or '').strip().lower()
+                if not w:
+                    continue
+                if w in GRAPH_STOPWORDS:
+                    continue
+                if len(w) < 3:
+                    continue
+                results.append(w)
+            return results[:max_terms]
+    except Exception:
+        # Silent fallback: graph still works from local data.
+        return []
+
+
+def expand_knowledge_graph(center_term, contexts, query_text=None, max_neighbors=10):
+    center = _normalize_token(center_term)
+    if not center:
+        return {'nodes': [], 'edges': [], 'center': ''}
+
+    local_counts = {}
+    pair_counts = {}
+
+    for ctx in contexts or []:
+        combined = f"{ctx.get('title', '')} {ctx.get('body', '')}"
+        toks = _extract_tokens(combined)
+        if not toks:
+            continue
+        unique = list(dict.fromkeys(toks))
+        if center not in unique:
+            continue
+
+        for t in unique:
+            if t == center:
+                continue
+            local_counts[t] = local_counts.get(t, 0) + 1
+
+        # neighbor-neighbor links (within center-containing chunks)
+        neighbors_in_chunk = [t for t in unique if t != center]
+        for i in range(len(neighbors_in_chunk)):
+            for j in range(i + 1, len(neighbors_in_chunk)):
+                a, b = sorted((neighbors_in_chunk[i], neighbors_in_chunk[j]))
+                key = (a, b)
+                pair_counts[key] = pair_counts.get(key, 0) + 1
+
+    top_local = [k for k, _ in sorted(local_counts.items(), key=lambda x: x[1], reverse=True)[:max_neighbors]]
+    ext = _external_related_terms(center, max_terms=max_neighbors)
+
+    merged_neighbors = []
+    seen = set()
+    for w in top_local + ext:
+        if w == center or w in seen:
+            continue
+        seen.add(w)
+        merged_neighbors.append(w)
+    merged_neighbors = merged_neighbors[: max_neighbors * 2]
+
+    nodes = []
+    edges = []
+
+    center_label = center_term.strip() if (center_term or '').strip() else center
+    nodes.append({'id': center, 'label': center_label, 'size': 34, 'type': 'center'})
+
+    if query_text:
+        nodes.append({'id': 'query', 'label': query_text[:60], 'size': 24, 'type': 'query'})
+        edges.append({'source': 'query', 'target': center, 'weight': 1, 'kind': 'query'})
+
+    local_set = set(top_local)
+    ext_set = set(ext)
+    for w in merged_neighbors:
+        score = local_counts.get(w, 0)
+        base_size = 14 + min(12, score * 2)
+        n_type = 'local_external' if (w in local_set and w in ext_set) else ('local' if w in local_set else 'external')
+        nodes.append({
+            'id': w,
+            'label': w,
+            'size': base_size,
+            'type': n_type
+        })
+        weight = max(1, score)
+        if w in ext_set:
+            weight += 1
+        edges.append({'source': center, 'target': w, 'weight': weight, 'kind': n_type})
+
+    neighbor_set = set(merged_neighbors)
+    bridge_pairs = sorted(pair_counts.items(), key=lambda x: x[1], reverse=True)
+    added = 0
+    for (a, b), w in bridge_pairs:
+        if a in neighbor_set and b in neighbor_set:
+            edges.append({'source': a, 'target': b, 'weight': w, 'kind': 'local_bridge'})
+            added += 1
+            if added >= 14:
+                break
+
+    return {'nodes': nodes, 'edges': edges, 'center': center}
 
 
 def build_prompt(user_query, contexts):

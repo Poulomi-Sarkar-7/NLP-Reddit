@@ -11,6 +11,10 @@ export default function ConversationSystem() {
   const [rebuilding, setRebuilding] = useState(false);
   const [answer, setAnswer] = useState('');
   const [contexts, setContexts] = useState([]);
+  const [knowledgeGraph, setKnowledgeGraph] = useState({ nodes: [], edges: [] });
+  const [graphBusy, setGraphBusy] = useState(false);
+  const [centerNodeId, setCenterNodeId] = useState('query');
+  const [graphHistory, setGraphHistory] = useState([]);
   const [error, setError] = useState('');
   const [providerStatus, setProviderStatus] = useState({ groq: false, google: false });
 
@@ -27,6 +31,9 @@ export default function ConversationSystem() {
     setError('');
     setAnswer('');
     setContexts([]);
+    setKnowledgeGraph({ nodes: [], edges: [] });
+    setCenterNodeId('query');
+    setGraphHistory([]);
 
     try {
       const res = await axios.post('http://localhost:5000/api/conversation/ask', {
@@ -38,6 +45,9 @@ export default function ConversationSystem() {
 
       setAnswer(res.data.answer || '');
       setContexts(res.data.contexts || []);
+      setKnowledgeGraph(res.data.knowledge_graph || { nodes: [], edges: [] });
+      setCenterNodeId('query');
+      setGraphHistory([]);
     } catch (e) {
       setError(e?.response?.data?.error || 'Failed to get response from conversation system.');
     } finally {
@@ -55,6 +65,41 @@ export default function ConversationSystem() {
     } finally {
       setRebuilding(false);
     }
+  };
+
+  const expandNode = async (node) => {
+    if (!node || !node.id) return;
+    const term = node.id === 'query' ? query : node.label;
+    if (!term) return;
+
+    setCenterNodeId(node.id);
+    setGraphBusy(true);
+    try {
+      const res = await axios.post('http://localhost:5000/api/conversation/expand_node', {
+        term,
+        query,
+        contexts,
+        max_neighbors: 12
+      });
+      const next = res.data?.graph || { nodes: [], edges: [] };
+      setGraphHistory(prev => [...prev, { graph: knowledgeGraph, center: centerNodeId }]);
+      setKnowledgeGraph(next);
+      if (next.center) {
+        setCenterNodeId(next.center);
+      }
+    } catch (e) {
+      setError(e?.response?.data?.error || 'Could not expand graph node.');
+    } finally {
+      setGraphBusy(false);
+    }
+  };
+
+  const goBackGraphView = () => {
+    if (!graphHistory.length) return;
+    const prev = graphHistory[graphHistory.length - 1];
+    setKnowledgeGraph(prev.graph || { nodes: [], edges: [] });
+    setCenterNodeId(prev.center || 'query');
+    setGraphHistory(graphHistory.slice(0, -1));
   };
 
   return (
@@ -165,6 +210,114 @@ export default function ConversationSystem() {
           </div>
         </div>
       )}
+
+      {knowledgeGraph.nodes.length > 0 && (
+        <div className="glass-card" style={{ marginTop: '1.5rem' }}>
+          <h3 style={{ marginBottom: '1rem' }}>Knowledge Graph (Question-Focused)</h3>
+          <p style={{ color: 'var(--text-dim)', marginBottom: '0.75rem' }}>
+            Click a node to re-center and expand related concepts (local Reddit + external semantic neighbors).
+            {graphBusy ? ' Expanding...' : ''}
+          </p>
+          <div style={{ marginBottom: '0.85rem' }}>
+            <button className="btn-secondary" onClick={goBackGraphView} disabled={graphBusy || graphHistory.length === 0}>
+              Back to Previous Graph View
+            </button>
+          </div>
+          <KnowledgeGraphView graph={knowledgeGraph} centerNodeId={centerNodeId} onNodeClick={expandNode} />
+        </div>
+      )}
+    </div>
+  );
+}
+
+function KnowledgeGraphView({ graph, centerNodeId, onNodeClick }) {
+  const width = 920;
+  const height = 520;
+  const cx = width / 2;
+  const cy = height / 2;
+  const center = centerNodeId || 'query';
+  const orderedNodes = [...(graph.nodes || [])].sort((a, b) => {
+    if (a.id === center) return -1;
+    if (b.id === center) return 1;
+    return (b.size || 12) - (a.size || 12);
+  });
+  const centerNode = orderedNodes.find(n => n.id === center) || orderedNodes[0];
+  const otherNodes = orderedNodes.filter(n => n.id !== centerNode?.id).slice(0, 36);
+  const radius = Math.min(width, height) * 0.34;
+
+  const positions = {};
+  if (centerNode) {
+    positions[centerNode.id] = { x: cx, y: cy };
+  }
+  otherNodes.forEach((n, idx) => {
+    const angle = (2 * Math.PI * idx) / Math.max(1, otherNodes.length);
+    positions[n.id] = {
+      x: cx + radius * Math.cos(angle),
+      y: cy + radius * Math.sin(angle)
+    };
+  });
+
+  const edgeColor = 'rgba(133, 57, 83, 0.35)';
+  const labelColor = 'var(--text-main)';
+  const getNodeStyle = (n) => {
+    if (!n) return {};
+    if (n.id === centerNode?.id) {
+      return { fill: 'var(--accent)', stroke: 'var(--accent-dark)', text: '#ffffff' };
+    }
+    if (n.type === 'query') {
+      return { fill: 'rgba(97, 45, 83, 0.85)', stroke: 'var(--accent-dark)', text: '#ffffff' };
+    }
+    if (n.type === 'external') {
+      return { fill: 'rgba(74, 222, 128, 0.18)', stroke: '#4ade80', text: labelColor };
+    }
+    if (n.type === 'local_external') {
+      return { fill: 'rgba(250, 204, 21, 0.22)', stroke: '#ca8a04', text: labelColor };
+    }
+    return { fill: 'rgba(133, 57, 83, 0.16)', stroke: 'var(--card-border)', text: labelColor };
+  };
+
+  return (
+    <div style={{ width: '100%', overflowX: 'auto' }}>
+      <svg viewBox={`0 0 ${width} ${height}`} style={{ width: '100%', minWidth: 700, height: 'auto' }}>
+        {graph.edges.map((e, idx) => {
+          const s = positions[e.source];
+          const t = positions[e.target];
+          if (!s || !t) return null;
+          const strokeWidth = Math.max(1, Math.min(4, (e.weight || 1) * 0.8));
+          return (
+            <line
+              key={`edge-${idx}`}
+              x1={s.x}
+              y1={s.y}
+              x2={t.x}
+              y2={t.y}
+              stroke={edgeColor}
+              strokeWidth={strokeWidth}
+            />
+          );
+        })}
+
+        {orderedNodes.map((n) => {
+          const p = positions[n.id];
+          if (!p) return null;
+          const style = getNodeStyle(n);
+          const isCenter = n.id === centerNode?.id;
+          const r = isCenter ? 36 : Math.max(12, Math.min(26, n.size || 14));
+          return (
+            <g key={`node-${n.id}`} style={{ cursor: 'pointer' }} onClick={() => onNodeClick && onNodeClick(n)}>
+              <circle cx={p.x} cy={p.y} r={r} fill={style.fill} stroke={style.stroke} strokeWidth={1.5} />
+              <text
+                x={p.x}
+                y={p.y + 4}
+                textAnchor="middle"
+                style={{ fill: style.text, fontSize: isCenter ? 11 : 10, fontWeight: 600, pointerEvents: 'none' }}
+              >
+                {(n.label || '').slice(0, isCenter ? 18 : 14)}
+              </text>
+            </g>
+          );
+        })}
+      </svg>
     </div>
   );
 }

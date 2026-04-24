@@ -3,7 +3,14 @@ from flask_cors import CORS
 import sqlite3
 import re
 from collections import Counter
-from rag_service import build_or_refresh_index, retrieve_context, generate_answer, available_providers
+from rag_service import (
+    build_or_refresh_index,
+    retrieve_context,
+    generate_answer,
+    available_providers,
+    build_knowledge_graph,
+    expand_knowledge_graph,
+)
 
 app = Flask(__name__)
 CORS(app)
@@ -375,15 +382,18 @@ def conversation_ask():
                 'ok': True,
                 'answer': 'I could not find relevant context in the Reddit repository for this question.',
                 'contexts': [],
+                'knowledge_graph': {'nodes': [], 'edges': []},
                 'provider': provider,
                 'model': model
             })
 
         answer = generate_answer(query, contexts, provider=provider, model=model)
+        kg = build_knowledge_graph(query, contexts)
         return jsonify({
             'ok': True,
             'answer': answer,
             'contexts': contexts,
+            'knowledge_graph': kg,
             'provider': provider,
             'model': model
         })
@@ -393,6 +403,29 @@ def conversation_ask():
             'error': str(e),
             'contexts': []
         }), 500
+
+
+@app.route('/api/conversation/expand_node', methods=['POST'])
+def conversation_expand_node():
+    payload = request.get_json(silent=True) or {}
+    term = (payload.get('term') or '').strip()
+    query = (payload.get('query') or '').strip()
+    contexts = payload.get('contexts') or []
+    max_neighbors = int(payload.get('max_neighbors') or 10)
+
+    if not term:
+        return jsonify({'ok': False, 'error': 'term is required'}), 400
+
+    try:
+        graph = expand_knowledge_graph(
+            center_term=term,
+            contexts=contexts,
+            query_text=query if query else None,
+            max_neighbors=max_neighbors
+        )
+        return jsonify({'ok': True, 'graph': graph})
+    except Exception as e:
+        return jsonify({'ok': False, 'error': str(e), 'graph': {'nodes': [], 'edges': []}}), 500
 
 
 if __name__ == '__main__':

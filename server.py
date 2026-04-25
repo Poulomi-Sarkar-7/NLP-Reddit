@@ -26,6 +26,14 @@ ANALYSIS_STOPWORDS = KEYWORD_STOPWORDS.union({
     'about', 'into', 'through', 'where', 'when', 'while', 'your', 'their', 'would', 'could',
     'should', 'very', 'much', 'many', 'more', 'most', 'than', 'then', 'there', 'here'
 })
+PROFANITY_WORDS = {
+    'fuck', 'fucking', 'shit', 'bullshit', 'bitch', 'asshole', 'bastard', 'damn', 'crap',
+    'dick', 'piss', 'prick', 'slut', 'whore', 'idiot', 'moron', 'stupid', 'sucks', 'wtf'
+}
+PROFANITY_REGEX = re.compile(
+    r'\b(' + '|'.join(re.escape(w) for w in sorted(PROFANITY_WORDS, key=len, reverse=True)) + r')\b',
+    flags=re.IGNORECASE
+)
 GENERIC_NOISE_WORDS = {
     'for', 'you', 'it', 'its', 'they', 'them', 'theirs', 'ours', 'mine', 'myself', 'yourself',
     'him', 'her', 'hers', 'his', 'who', 'whom', 'whose', 'which', 'what', 'why', 'how',
@@ -180,6 +188,33 @@ def pick_top_comments(comment_rows, limit=5):
     return selected
 
 
+def ranked_comments_with_profanity(comment_rows):
+    scored = []
+    for row in comment_rows:
+        body = (row['body'] or '').strip()
+        if not body:
+            continue
+        hits = [m.group(0).lower() for m in PROFANITY_REGEX.finditer(body)]
+        if not hits:
+            continue
+        scored.append({
+            'body': body,
+            'hits': hits,
+            'hit_count': len(hits)
+        })
+    scored.sort(key=lambda x: (x['hit_count'], len(x['body'])), reverse=True)
+    return scored
+
+
+def profanity_frequency(comment_rows):
+    freq = Counter()
+    for row in comment_rows:
+        body = row['body'] or ''
+        for m in PROFANITY_REGEX.finditer(body):
+            freq[m.group(0).lower()] += 1
+    return [{'word': w, 'count': int(c)} for w, c in freq.most_common(20)]
+
+
 def with_single_ai_topic(topics_rows):
     topics = [dict(row) for row in topics_rows]
     ai_scored = []
@@ -318,26 +353,29 @@ def topic_details(topic_id):
     comments_support = conn.execute('''
         SELECT body FROM comment_stances
         WHERE topic = ? AND stance = "Support" AND body IS NOT NULL
-        LIMIT 150
     ''', (topic_id,)).fetchall()
     
     comments_oppose = conn.execute('''
         SELECT body FROM comment_stances
         WHERE topic = ? AND stance = "Oppose" AND body IS NOT NULL
-        LIMIT 150
     ''', (topic_id,)).fetchall()
     comments_neutral = conn.execute('''
         SELECT body FROM comment_stances
         WHERE topic = ? AND stance = "Neutral" AND body IS NOT NULL
-        LIMIT 120
+    ''', (topic_id,)).fetchall()
+    all_topic_comments = conn.execute('''
+        SELECT body FROM comment_stances
+        WHERE topic = ? AND body IS NOT NULL
     ''', (topic_id,)).fetchall()
     
     conn.close()
 
     support_summary = summarize_comments(comments_support)
     oppose_summary = summarize_comments(comments_oppose)
+    neutral_summary = summarize_comments(comments_neutral)
     topic_info['support_summary'] = support_summary
     topic_info['oppose_summary'] = oppose_summary
+    topic_info['neutral_summary'] = neutral_summary
     topic_info['description'] = build_topic_overview(
         topic_info.get('label', 'this topic'),
         clean_keywords(topic_info.get('keywords', '')),
@@ -345,6 +383,8 @@ def topic_details(topic_id):
         comments_oppose,
         comments_neutral
     )
+    profanity_words = profanity_frequency(all_topic_comments)
+    profanity_ranked = ranked_comments_with_profanity(all_topic_comments)
     
     return jsonify({
         'info': topic_info,
@@ -352,8 +392,101 @@ def topic_details(topic_id):
         'stance_counts': stance_data,
         'top_comments': {
             'support': pick_top_comments(comments_support, limit=5),
-            'oppose': pick_top_comments(comments_oppose, limit=5)
+            'oppose': pick_top_comments(comments_oppose, limit=5),
+            'neutral': pick_top_comments(comments_neutral, limit=5)
+        },
+        'profanity': {
+            'top_words': profanity_words[:10],
+            'comments': [r['body'] for r in profanity_ranked[:5]],
+            'total_comments_with_profanity': len(profanity_ranked),
+            'has_more': len(profanity_ranked) > 5
         }
+    })
+
+
+@app.route('/api/topic/<int:topic_id>/comments')
+def topic_comments_paginated(topic_id):
+    stance = (request.args.get('stance') or '').strip().capitalize()
+    offset = int(request.args.get('offset') or 0)
+    limit = int(request.args.get('limit') or 5)
+
+    if stance not in ('Support', 'Oppose', 'Neutral'):
+        return jsonify({'ok': False, 'error': 'stance must be Support, Oppose, or Neutral'}), 400
+
+    offset = max(0, offset)
+    limit = max(1, min(20, limit))
+
+    conn = get_db_connection()
+    topic_exists = conn.execute('SELECT 1 FROM topics WHERE topic_id = ? LIMIT 1', (topic_id,)).fetchone()
+    if not topic_exists:
+        conn.close()
+        return jsonify({'ok': False, 'error': 'topic not found'}), 404
+
+    rows = conn.execute(
+        '''
+        SELECT body FROM comment_stances
+        WHERE topic = ? AND stance = ? AND body IS NOT NULL
+        ''',
+        (topic_id, stance)
+    ).fetchall()
+    conn.close()
+
+    ranked = pick_top_comments(rows, limit=5000)
+    total = len(ranked)
+    items = ranked[offset: offset + limit]
+    next_offset = offset + len(items)
+    return jsonify({
+        'ok': True,
+        'topic_id': topic_id,
+        'stance': stance,
+        'offset': offset,
+        'limit': limit,
+        'next_offset': next_offset,
+        'total': total,
+        'has_more': next_offset < total,
+        'items': items
+    })
+
+
+@app.route('/api/topic/<int:topic_id>/profanity')
+def topic_profanity_paginated(topic_id):
+    offset = int(request.args.get('offset') or 0)
+    limit = int(request.args.get('limit') or 5)
+    offset = max(0, offset)
+    limit = max(1, min(20, limit))
+
+    conn = get_db_connection()
+    topic_exists = conn.execute('SELECT 1 FROM topics WHERE topic_id = ? LIMIT 1', (topic_id,)).fetchone()
+    if not topic_exists:
+        conn.close()
+        return jsonify({'ok': False, 'error': 'topic not found'}), 404
+
+    rows = conn.execute(
+        '''
+        SELECT body FROM comment_stances
+        WHERE topic = ? AND body IS NOT NULL
+        ''',
+        (topic_id,)
+    ).fetchall()
+    conn.close()
+
+    ranked = ranked_comments_with_profanity(rows)
+    freq = profanity_frequency(rows)[:10]
+
+    total = len(ranked)
+    sliced = ranked[offset: offset + limit]
+    items = [r['body'] for r in sliced]
+    next_offset = offset + len(items)
+    return jsonify({
+        'ok': True,
+        'topic_id': topic_id,
+        'offset': offset,
+        'limit': limit,
+        'next_offset': next_offset,
+        'total': total,
+        'has_more': next_offset < total,
+        'top_words': freq,
+        'items': items
     })
 
 @app.route('/api/timeline_consolidated')

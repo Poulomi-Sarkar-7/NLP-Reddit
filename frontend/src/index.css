@@ -235,6 +235,13 @@ path.recharts-sector {
   align-items: start;
 }
 
+.comment-split-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
 .comment-split-grid > div:first-child {
   padding-right: 1rem;
   border-right: 1px solid var(--card-border);
@@ -263,6 +270,11 @@ path.recharts-sector {
   }
 
   .comment-split-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .comment-split-grid-3 {
     grid-template-columns: 1fr;
     gap: 1.5rem;
   }

@@ -7,7 +7,8 @@ import ConsolidatedTimeline from './pages/ConsolidatedTimeline';
 import ConversationSystem from './pages/ConversationSystem';
 import Users from './pages/Users';
 import Keywords from './pages/Keywords';
-import { LayoutDashboard, Moon, Sun, TrendingUp, MessageCircle, Users as UsersIcon, KeyRound } from 'lucide-react';
+import Sorting from './pages/Sorting';
+import { LayoutDashboard, Moon, Sun, TrendingUp, MessageCircle, Users as UsersIcon, KeyRound, ArrowUpDown } from 'lucide-react';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -33,6 +34,7 @@ function App() {
             <Link to="/conversation" className="btn-secondary"><MessageCircle size={16} style={{marginRight: 4}}/> Conversation</Link>
             <Link to="/users" className="btn-secondary"><UsersIcon size={16} style={{marginRight: 4}}/> Users</Link>
             <Link to="/keywords" className="btn-secondary"><KeyRound size={16} style={{marginRight: 4}}/> Keywords</Link>
+            <Link to="/sorting" className="btn-secondary"><ArrowUpDown size={16} style={{marginRight: 4}}/> Sorting</Link>
             <button onClick={toggleTheme} className="btn-secondary" title="Toggle Theme" style={{ padding: '0.5rem' }}>
               {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
             </button>
@@ -48,6 +50,7 @@ function App() {
             <Route path="/conversation" element={<ConversationSystem />} />
             <Route path="/users" element={<Users />} />
             <Route path="/keywords" element={<Keywords />} />
+            <Route path="/sorting" element={<Sorting />} />
           </Routes>
         </main>
       </div>

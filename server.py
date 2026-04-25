@@ -215,6 +215,18 @@ def profanity_frequency(comment_rows):
     return [{'word': w, 'count': int(c)} for w, c in freq.most_common(20)]
 
 
+def count_non_english_tokens(text):
+    # Heuristic: tokens with non a-z letters after punctuation cleanup.
+    count = 0
+    for tok in re.findall(r'\b[^\s]+\b', text or ''):
+        t = tok.strip(".,!?;:\"'()[]{}<>").lower()
+        if not t:
+            continue
+        if re.search(r'[^a-z]', t):
+            count += 1
+    return count
+
+
 def with_single_ai_topic(topics_rows):
     topics = [dict(row) for row in topics_rows]
     ai_scored = []
@@ -487,6 +499,119 @@ def topic_profanity_paginated(topic_id):
         'has_more': next_offset < total,
         'top_words': freq,
         'items': items
+    })
+
+
+@app.route('/api/sorting/topics')
+def sorting_topics():
+    metric = (request.args.get('metric') or 'most_comments').strip()
+    order = (request.args.get('order') or 'desc').strip().lower()
+    if order not in ('asc', 'desc'):
+        order = 'desc'
+
+    valid_metrics = {
+        'most_comments': 'Most Comments',
+        'avg_comment_length': 'Average Comment Length',
+        'mean_positive_sentiment': 'Mean Positive Sentiment',
+        'mean_negative_sentiment': 'Mean Negative Sentiment',
+        'mean_neutral_sentiment': 'Mean Neutral Sentiment',
+        'profanity': 'Profanity Frequency',
+        'non_english_words': 'Number of Non-English Words',
+    }
+    if metric not in valid_metrics:
+        return jsonify({'ok': False, 'error': 'Invalid metric'}), 400
+
+    conn = get_db_connection()
+    topics_rows = conn.execute('SELECT topic_id, label, status FROM topics ORDER BY topic_id').fetchall()
+    comment_rows = conn.execute(
+        '''
+        SELECT topic, stance, body
+        FROM comment_stances
+        WHERE body IS NOT NULL
+        '''
+    ).fetchall()
+    conn.close()
+
+    agg = {}
+    for t in topics_rows:
+        agg[t['topic_id']] = {
+            'topic_id': t['topic_id'],
+            'label': t['label'],
+            'status': t['status'],
+            'comment_count': 0,
+            'total_len': 0,
+            'support_count': 0,
+            'oppose_count': 0,
+            'neutral_count': 0,
+            'profanity_hits': 0,
+            'non_english_words': 0
+        }
+
+    for r in comment_rows:
+        topic_id = r['topic']
+        row = agg.get(topic_id)
+        if not row:
+            continue
+        body = r['body'] or ''
+        row['comment_count'] += 1
+        row['total_len'] += len(body)
+        stance = (r['stance'] or '').strip()
+        if stance == 'Support':
+            row['support_count'] += 1
+        elif stance == 'Oppose':
+            row['oppose_count'] += 1
+        else:
+            row['neutral_count'] += 1
+        row['profanity_hits'] += len(PROFANITY_REGEX.findall(body))
+        row['non_english_words'] += count_non_english_tokens(body)
+
+    enriched = []
+    for topic_id, row in agg.items():
+        total_comments = row['comment_count']
+        avg_len = (row['total_len'] / total_comments) if total_comments else 0.0
+        pos_mean = (row['support_count'] / total_comments) if total_comments else 0.0
+        neg_mean = (row['oppose_count'] / total_comments) if total_comments else 0.0
+        neu_mean = (row['neutral_count'] / total_comments) if total_comments else 0.0
+
+        metric_value_map = {
+            'most_comments': float(total_comments),
+            'avg_comment_length': float(avg_len),
+            'mean_positive_sentiment': float(pos_mean),
+            'mean_negative_sentiment': float(neg_mean),
+            'mean_neutral_sentiment': float(neu_mean),
+            'profanity': float(row['profanity_hits']),
+            'non_english_words': float(row['non_english_words']),
+        }
+        metric_value = metric_value_map[metric]
+        if metric in ('mean_positive_sentiment', 'mean_negative_sentiment', 'mean_neutral_sentiment'):
+            metric_display = f"{metric_value:.3f}"
+        elif metric == 'avg_comment_length':
+            metric_display = f"{metric_value:.2f}"
+        else:
+            metric_display = str(int(metric_value))
+
+        enriched.append({
+            'topic_id': row['topic_id'],
+            'label': row['label'],
+            'status': row['status'],
+            'metric_key': metric,
+            'metric_label': valid_metrics[metric],
+            'metric_value': metric_value,
+            'metric_display': metric_display,
+            'comment_count': total_comments,
+        })
+
+    reverse = order == 'desc'
+    enriched.sort(key=lambda x: (x['metric_value'], x['comment_count']), reverse=reverse)
+    for idx, item in enumerate(enriched, start=1):
+        item['rank'] = idx
+
+    return jsonify({
+        'ok': True,
+        'metric': metric,
+        'metric_label': valid_metrics[metric],
+        'order': order,
+        'topics': enriched
     })
 
 @app.route('/api/timeline_consolidated')

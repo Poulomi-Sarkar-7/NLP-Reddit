@@ -20,9 +20,9 @@ export default function Home({ theme = 'light' }) {
         <h1 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Reddit Deep Dive: cscareerquestions</h1>
         <p style={{ lineHeight: '1.6', fontSize: '1.1rem', color: 'var(--text-dim)' }}>
           This project analyzes over {stats.total_posts.toLocaleString()} posts and {stats.total_comments.toLocaleString()} comments 
-          from the Reddit community. Through Natural Language Processing—specifically Topic Modeling and Sentiment Stance Detection—we 
-          seek to uncover the most pressing issues, persistent trends, and controversial discussions in the computer science career sphere.
-          Understanding these patterns helps illuminate the collective mindset of modern software engineers and job seekers.
+          from the Reddit community on CS Career Questions. Through Natural Language Processing I 
+          seek to uncover patterns and trends in the community. I try to analyse sentiments, time trends,persistent topics, top keywords and more in the computer science career sphere.
+          Understanding these patterns helps illuminate the collective mindset of modern software engineers and job seekers. Additionally, I aso built a RAG based convresation agent that can answer questions about the data and trends in the subreddit. This project is a testament to the power of data analysis and NLP in extracting insights from large online communities.
         </p>
       </div>
 

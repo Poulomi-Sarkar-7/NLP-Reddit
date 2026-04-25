@@ -16,6 +16,9 @@
   --font-heading: 'Outfit', sans-serif;
   --radius-lg: 16px;
   --radius-sm: 8px;
+  --texture-1: rgba(16, 160, 84, 0.18);
+  --texture-2: rgba(16, 160, 84, 0.13);
+  --network-opacity: 0.38;
 }
 
 [data-theme='dark'] {
@@ -29,6 +32,9 @@
   --accent-light: #ab4b6d;
   --accent-dark: #612D53;
   --nav-bg: #1e1e1e;
+  --texture-1: rgba(16, 160, 84, 0.22);
+  --texture-2: rgba(16, 160, 84, 0.16);
+  --network-opacity: 0.46;
 }
 
 * {
@@ -39,7 +45,11 @@
 
 body {
   font-family: var(--font-family);
-  background: var(--bg-color);
+  background-color: var(--bg-color);
+  background-image:
+    radial-gradient(54rem 28rem at 12% 8%, var(--texture-1), transparent 70%),
+    radial-gradient(50rem 26rem at 86% 88%, var(--texture-2), transparent 72%);
+  background-attachment: fixed;
   color: var(--text-main);
   min-height: 100vh;
   margin: 0;
@@ -47,14 +57,28 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: var(--network-opacity);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1400 900'%3E%3Cg stroke='%2310a054' stroke-opacity='0.26' stroke-width='1.5' fill='none'%3E%3Cline x1='70' y1='170' x2='220' y2='120'/%3E%3Cline x1='220' y1='120' x2='350' y2='190'/%3E%3Cline x1='350' y1='190' x2='500' y2='140'/%3E%3Cline x1='500' y1='140' x2='640' y2='220'/%3E%3Cline x1='640' y1='220' x2='780' y2='150'/%3E%3Cline x1='780' y1='150' x2='940' y2='230'/%3E%3Cline x1='940' y1='230' x2='1090' y2='170'/%3E%3Cline x1='1090' y1='170' x2='1260' y2='250'/%3E%3Cline x1='120' y1='340' x2='260' y2='290'/%3E%3Cline x1='260' y1='290' x2='390' y2='360'/%3E%3Cline x1='390' y1='360' x2='540' y2='310'/%3E%3Cline x1='540' y1='310' x2='690' y2='380'/%3E%3Cline x1='690' y1='380' x2='850' y2='310'/%3E%3Cline x1='850' y1='310' x2='1010' y2='390'/%3E%3Cline x1='1010' y1='390' x2='1180' y2='330'/%3E%3Cline x1='170' y1='520' x2='320' y2='470'/%3E%3Cline x1='320' y1='470' x2='470' y2='540'/%3E%3Cline x1='470' y1='540' x2='620' y2='490'/%3E%3Cline x1='620' y1='490' x2='780' y2='560'/%3E%3Cline x1='780' y1='560' x2='930' y2='500'/%3E%3Cline x1='930' y1='500' x2='1090' y2='570'/%3E%3Cline x1='1090' y1='570' x2='1240' y2='520'/%3E%3Cline x1='220' y1='120' x2='260' y2='290'/%3E%3Cline x1='350' y1='190' x2='390' y2='360'/%3E%3Cline x1='500' y1='140' x2='540' y2='310'/%3E%3Cline x1='640' y1='220' x2='690' y2='380'/%3E%3Cline x1='780' y1='150' x2='850' y2='310'/%3E%3Cline x1='940' y1='230' x2='1010' y2='390'/%3E%3Cline x1='1090' y1='170' x2='1180' y2='330'/%3E%3Cline x1='260' y1='290' x2='320' y2='470'/%3E%3Cline x1='390' y1='360' x2='470' y2='540'/%3E%3Cline x1='540' y1='310' x2='620' y2='490'/%3E%3Cline x1='690' y1='380' x2='780' y2='560'/%3E%3Cline x1='850' y1='310' x2='930' y2='500'/%3E%3Cline x1='1010' y1='390' x2='1090' y2='570'/%3E%3Cline x1='1180' y1='330' x2='1240' y2='520'/%3E%3Cline x1='350' y1='190' x2='260' y2='290'/%3E%3Cline x1='500' y1='140' x2='390' y2='360'/%3E%3Cline x1='640' y1='220' x2='540' y2='310'/%3E%3Cline x1='780' y1='150' x2='690' y2='380'/%3E%3Cline x1='940' y1='230' x2='850' y2='310'/%3E%3Cline x1='1090' y1='170' x2='1010' y2='390'/%3E%3Cline x1='1260' y1='250' x2='1180' y2='330'/%3E%3C/g%3E%3Cg fill='%2310a054' fill-opacity='0.34'%3E%3Ccircle cx='220' cy='120' r='4.4'/%3E%3Ccircle cx='350' cy='190' r='4.2'/%3E%3Ccircle cx='500' cy='140' r='4.6'/%3E%3Ccircle cx='640' cy='220' r='4.3'/%3E%3Ccircle cx='780' cy='150' r='4.1'/%3E%3Ccircle cx='940' cy='230' r='4.3'/%3E%3Ccircle cx='1090' cy='170' r='4.5'/%3E%3Ccircle cx='1260' cy='250' r='4.2'/%3E%3Ccircle cx='260' cy='290' r='4.4'/%3E%3Ccircle cx='390' cy='360' r='4.1'/%3E%3Ccircle cx='540' cy='310' r='4.6'/%3E%3Ccircle cx='690' cy='380' r='4.3'/%3E%3Ccircle cx='850' cy='310' r='4.2'/%3E%3Ccircle cx='1010' cy='390' r='4.5'/%3E%3Ccircle cx='1180' cy='330' r='4.1'/%3E%3Ccircle cx='320' cy='470' r='4.5'/%3E%3Ccircle cx='470' cy='540' r='4.3'/%3E%3Ccircle cx='620' cy='490' r='4.1'/%3E%3Ccircle cx='780' cy='560' r='4.5'/%3E%3Ccircle cx='930' cy='500' r='4.2'/%3E%3Ccircle cx='1090' cy='570' r='4.4'/%3E%3Ccircle cx='1240' cy='520' r='4.2'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
 }
 
 .app-container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 2rem;
+  position: relative;
+  z-index: 1;
 }
 
 a {

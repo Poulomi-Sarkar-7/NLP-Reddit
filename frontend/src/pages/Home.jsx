@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Users, FileText, MessageSquare, ArrowRight } from 'lucide-react';
+import cardImage from '../assets/card1.jpg';
+import cardImageDark from '../assets/card2.jpg';
 
-export default function Home() {
+export default function Home({ theme = 'light' }) {
   const [stats, setStats] = useState({ total_posts: 0, total_users: 0, total_comments: 0 });
 
   useEffect(() => {
@@ -43,10 +45,22 @@ export default function Home() {
         </div>
       </div>
 
-      <div style={{ textAlign: 'center' }}>
-        <Link to="/topics" className="btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 2rem' }}>
-          Proceed to Topic Analysis <ArrowRight />
-        </Link>
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1.25rem', flexWrap: 'wrap' }}>
+        <img
+          src={theme === 'dark' ? cardImageDark : cardImage}
+          alt="Topic card illustration"
+          style={{
+            width: 'min(100%, 360px)',
+            display: 'block',
+            borderRadius: '14px',
+            border: '1px solid var(--card-border)'
+          }}
+        />
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flex: '1 1 220px' }}>
+          <Link to="/topics" className="btn-primary" style={{ fontSize: '1.2rem', padding: '1rem 2rem' }}>
+            Proceed to Topic Analysis <ArrowRight />
+          </Link>
+        </div>
       </div>
     </div>
   );

@@ -9,6 +9,8 @@ import Users from './pages/Users';
 import Keywords from './pages/Keywords';
 import Sorting from './pages/Sorting';
 import { LayoutDashboard, Moon, Sun, TrendingUp, MessageCircle, Users as UsersIcon, KeyRound, ArrowUpDown } from 'lucide-react';
+import dashImage from './assets/dash1.jpg';
+import dashImageDark from './assets/dash2.jpg';
 
 function App() {
   const [theme, setTheme] = useState('light');
@@ -24,6 +26,18 @@ function App() {
   return (
     <BrowserRouter>
       <div className="app-container">
+        <div style={{ marginBottom: '1rem' }}>
+          <img
+            src={theme === 'dark' ? dashImageDark : dashImage}
+            alt="Dashboard banner"
+            style={{
+              width: '100%',
+              display: 'block',
+              borderRadius: '16px',
+              border: '1px solid var(--card-border)'
+            }}
+          />
+        </div>
         <header className="header-nav">
           <Link to="/" className="logo flex items-center" style={{ display: 'flex', alignItems: 'center' }}>
             <LayoutDashboard className="mr-2" style={{ marginRight: '0.5rem' }} /> NLP Explorer
@@ -43,7 +57,7 @@ function App() {
         
         <main>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home theme={theme} />} />
             <Route path="/topics" element={<Topics />} />
             <Route path="/topic/:id" element={<TopicDetail />} />
             <Route path="/timeline" element={<ConsolidatedTimeline />} />

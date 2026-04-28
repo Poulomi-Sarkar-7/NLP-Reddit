@@ -22,7 +22,7 @@
 2026-04-29 02:57:06,884 | INFO | Groq translated row_id=19
 2026-04-29 02:57:07,881 | INFO | Groq translated row_id=20
 2026-04-29 02:57:07,898 | INFO | Attempting Gemini translations...
-2026-04-29 02:57:09,084 | WARNING | Gemini API failed row_id=1; switching to deterministic fallback. Error: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDBYxMVnAMSBM7hr9lGale3z54ve9p2S8g
+2026-04-29 02:57:09,084 | WARNING | Gemini API failed row_id=1; switching to deterministic fallback. Error: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=[REDACTED_API_KEY]
 2026-04-29 02:57:09,098 | INFO | Applied deterministic Gemini fallback using Groq outputs.
 2026-04-29 02:57:09,113 | INFO | Using default tokenizer.
 2026-04-29 02:57:10,118 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/config.json "HTTP/1.1 200 OK"

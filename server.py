@@ -2,7 +2,10 @@ from flask import Flask, jsonify, request
 from flask_cors import CORS
 import sqlite3
 import re
+import os
+import json
 from collections import Counter
+from urllib import request as urlrequest, error as urlerror
 from rag_service import (
     build_or_refresh_index,
     retrieve_context,
@@ -225,6 +228,75 @@ def count_non_english_tokens(text):
         if re.search(r'[^a-z]', t):
             count += 1
     return count
+
+
+def llm_translate_to_bengali(text, provider='groq', model=None):
+    prompt = (
+        "Translate the following English text to Bengali script.\n"
+        "Keep meaning faithful, preserve formatting where possible, and return only Bengali output.\n\n"
+        f"English text:\n{text}"
+    )
+    provider = (provider or 'groq').strip().lower()
+
+    if provider == 'groq':
+        api_key = os.getenv('GROQ_API_KEY')
+        if not api_key:
+            raise RuntimeError('Missing GROQ_API_KEY in environment.')
+        model = model or 'llama-3.3-70b-versatile'
+        payload = {
+            'model': model,
+            'messages': [
+                {'role': 'system', 'content': 'You are a professional translator to Bengali script.'},
+                {'role': 'user', 'content': prompt}
+            ],
+            'temperature': 0.2
+        }
+        req = urlrequest.Request(
+            'https://api.groq.com/openai/v1/chat/completions',
+            data=json.dumps(payload).encode('utf-8'),
+            headers={
+                'Content-Type': 'application/json',
+                'Authorization': f'Bearer {api_key}',
+                'Accept': 'application/json',
+                'User-Agent': 'NLP-Reddit-Translation/1.0'
+            },
+            method='POST'
+        )
+        with urlrequest.urlopen(req, timeout=60) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            return data['choices'][0]['message']['content']
+
+    if provider == 'google':
+        api_key = os.getenv('GOOGLE_API_KEY') or os.getenv('GEMINI_API_KEY')
+        if not api_key:
+            raise RuntimeError('Missing GOOGLE_API_KEY (or GEMINI_API_KEY) in environment.')
+        model = model or 'gemini-2.5-flash'
+        payload = {
+            'contents': [{'parts': [{'text': prompt}]}],
+            'generationConfig': {'temperature': 0.2}
+        }
+        req = urlrequest.Request(
+            f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',
+            data=json.dumps(payload).encode('utf-8'),
+            headers={
+                'Content-Type': 'application/json',
+                'x-goog-api-key': api_key,
+                'Accept': 'application/json',
+                'User-Agent': 'NLP-Reddit-Translation/1.0'
+            },
+            method='POST'
+        )
+        with urlrequest.urlopen(req, timeout=60) as resp:
+            data = json.loads(resp.read().decode('utf-8'))
+            candidates = data.get('candidates') or []
+            parts = (((candidates[0] or {}).get('content') or {}).get('parts') or []) if candidates else []
+            text_parts = [p.get('text', '') for p in parts if isinstance(p, dict)]
+            out = '\n'.join([t for t in text_parts if t.strip()]).strip()
+            if not out:
+                raise RuntimeError('Gemini returned empty translation.')
+            return out
+
+    raise RuntimeError("Unsupported provider. Use 'groq' or 'google'.")
 
 
 def with_single_ai_topic(topics_rows):
@@ -613,6 +685,82 @@ def sorting_topics():
         'order': order,
         'topics': enriched
     })
+
+
+@app.route('/api/translation/translate', methods=['POST'])
+def translation_translate():
+    payload = request.get_json(silent=True) or {}
+    query = (payload.get('query') or '').strip()
+    provider = (payload.get('provider') or 'groq').strip().lower()
+    model = (payload.get('model') or '').strip() or None
+
+    if not query:
+        return jsonify({'ok': False, 'error': 'query is required'}), 400
+
+    conn = get_raw_db_connection()
+
+    # Query strategy: exact post id first, then title/selftext search.
+    row = conn.execute(
+        '''
+        SELECT id, title, selftext
+        FROM posts
+        WHERE id = ?
+        LIMIT 1
+        ''',
+        (query,)
+    ).fetchone()
+    if row is None:
+        row = conn.execute(
+            '''
+            SELECT id, title, selftext
+            FROM posts
+            WHERE LOWER(COALESCE(title, '') || ' ' || COALESCE(selftext, '')) LIKE ?
+            ORDER BY created_utc DESC
+            LIMIT 1
+            ''',
+            (f'%{query.lower()}%',)
+        ).fetchone()
+    conn.close()
+
+    if row is None:
+        return jsonify({'ok': True, 'found': False, 'query': query, 'message': 'No matching post found.'})
+
+    english_text = f"Title: {row['title'] or ''}\n\nBody: {row['selftext'] or ''}".strip()
+    if provider == 'both':
+        try:
+            groq_out = llm_translate_to_bengali(english_text, provider='groq', model=model)
+            google_out = llm_translate_to_bengali(english_text, provider='google', model=model)
+            return jsonify({
+                'ok': True,
+                'found': True,
+                'post_id': row['id'],
+                'english_text': english_text,
+                'translations': {
+                    'groq': groq_out,
+                    'google': google_out
+                }
+            })
+        except urlerror.HTTPError as e:
+            detail = e.read().decode('utf-8', errors='ignore')
+            return jsonify({'ok': False, 'error': f'LLM endpoint error ({e.code}): {detail}'}), 500
+        except Exception as e:
+            return jsonify({'ok': False, 'error': str(e)}), 500
+
+    try:
+        translated = llm_translate_to_bengali(english_text, provider=provider, model=model)
+        return jsonify({
+            'ok': True,
+            'found': True,
+            'post_id': row['id'],
+            'english_text': english_text,
+            'translation': translated,
+            'provider': provider
+        })
+    except urlerror.HTTPError as e:
+        detail = e.read().decode('utf-8', errors='ignore')
+        return jsonify({'ok': False, 'error': f'LLM endpoint error ({e.code}): {detail}'}), 500
+    except Exception as e:
+        return jsonify({'ok': False, 'error': str(e)}), 500
 
 @app.route('/api/timeline_consolidated')
 def timeline_consolidated():

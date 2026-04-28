@@ -10,6 +10,7 @@ export default function ConversationSystem() {
   const [loading, setLoading] = useState(false);
   const [rebuilding, setRebuilding] = useState(false);
   const [answer, setAnswer] = useState('');
+  const [dualAnswers, setDualAnswers] = useState({ groq: '', google: '' });
   const [contexts, setContexts] = useState([]);
   const [knowledgeGraph, setKnowledgeGraph] = useState({ nodes: [], edges: [] });
   const [graphBusy, setGraphBusy] = useState(false);
@@ -30,24 +31,51 @@ export default function ConversationSystem() {
     setLoading(true);
     setError('');
     setAnswer('');
+    setDualAnswers({ groq: '', google: '' });
     setContexts([]);
     setKnowledgeGraph({ nodes: [], edges: [] });
     setCenterNodeId('query');
     setGraphHistory([]);
 
     try {
-      const res = await axios.post('http://localhost:5000/api/conversation/ask', {
-        query: trimmed,
-        provider,
-        model: model.trim() || null,
-        top_k: topK
-      });
+      if (provider === 'both') {
+        const [groqRes, googleRes] = await Promise.all([
+          axios.post('http://localhost:5000/api/conversation/ask', {
+            query: trimmed,
+            provider: 'groq',
+            model: model.trim() || null,
+            top_k: topK
+          }),
+          axios.post('http://localhost:5000/api/conversation/ask', {
+            query: trimmed,
+            provider: 'google',
+            model: model.trim() || null,
+            top_k: topK
+          })
+        ]);
 
-      setAnswer(res.data.answer || '');
-      setContexts(res.data.contexts || []);
-      setKnowledgeGraph(res.data.knowledge_graph || { nodes: [], edges: [] });
-      setCenterNodeId('query');
-      setGraphHistory([]);
+        setDualAnswers({
+          groq: groqRes.data.answer || '',
+          google: googleRes.data.answer || ''
+        });
+        setContexts(groqRes.data.contexts || googleRes.data.contexts || []);
+        setKnowledgeGraph({ nodes: [], edges: [] });
+        setCenterNodeId('query');
+        setGraphHistory([]);
+      } else {
+        const res = await axios.post('http://localhost:5000/api/conversation/ask', {
+          query: trimmed,
+          provider,
+          model: model.trim() || null,
+          top_k: topK
+        });
+
+        setAnswer(res.data.answer || '');
+        setContexts(res.data.contexts || []);
+        setKnowledgeGraph(res.data.knowledge_graph || { nodes: [], edges: [] });
+        setCenterNodeId('query');
+        setGraphHistory([]);
+      }
     } catch (e) {
       setError(e?.response?.data?.error || 'Failed to get response from conversation system.');
     } finally {
@@ -129,6 +157,7 @@ export default function ConversationSystem() {
               <select className="conversation-input" value={provider} onChange={(e) => setProvider(e.target.value)}>
                 <option value="groq">Groq</option>
                 <option value="google">Google AI Studio (Gemini)</option>
+                <option value="both">Both (Groq + Gemini)</option>
               </select>
             </div>
 
@@ -185,7 +214,24 @@ export default function ConversationSystem() {
         </div>
       )}
 
-      {answer && (
+      {provider === 'both' && (dualAnswers.groq || dualAnswers.google) && (
+        <div className="grid-cols-2" style={{ marginBottom: '1.5rem' }}>
+          <div className="glass-card">
+            <h3 style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <MessageSquare size={18} /> Groq Response
+            </h3>
+            <div style={{ whiteSpace: 'pre-wrap', lineHeight: '1.7' }}>{dualAnswers.groq || 'No response.'}</div>
+          </div>
+          <div className="glass-card">
+            <h3 style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <MessageSquare size={18} /> Gemini Response
+            </h3>
+            <div style={{ whiteSpace: 'pre-wrap', lineHeight: '1.7' }}>{dualAnswers.google || 'No response.'}</div>
+          </div>
+        </div>
+      )}
+
+      {provider !== 'both' && answer && (
         <div className="glass-card" style={{ marginBottom: '1.5rem' }}>
           <h3 style={{ marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <MessageSquare size={18} /> Generated Answer
@@ -211,7 +257,7 @@ export default function ConversationSystem() {
         </div>
       )}
 
-      {knowledgeGraph.nodes.length > 0 && (
+      {provider !== 'both' && knowledgeGraph.nodes.length > 0 && (
         <div className="glass-card" style={{ marginTop: '1.5rem' }}>
           <h3 style={{ marginBottom: '1rem' }}>Knowledge Graph (Question-Focused)</h3>
           <p style={{ color: 'var(--text-dim)', marginBottom: '0.75rem' }}>

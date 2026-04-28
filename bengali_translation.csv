@@ -1,0 +1,81 @@
+﻿"id","topic_label","difficulty_tags","source_text","ground_truth_bengali","groq_translation","gemini_translation"
+"iyddfv7","Work & Team","named_entities, slang, acronym","FAANGMULASS
+
+I can't keep up with all these new initialisms. Best guess:
+
+Facebook, Amazon, Apple, Netflix, Google, Microsoft, Uber, Lyft, Airbnb, Snapchat, Stripe?","FAANGMULASS
+
+আমি এই সব নতুন সংক্ষিপ্ত রূপের সাথে তাল মিলিয়ে চলতে পারছি না। আমার সেরা অনুমান:
+
+Facebook, Amazon, Apple, Netflix, Google, Microsoft, Uber, Lyft, Airbnb, Snapchat, Stripe?","",""
+"iw7bs7y","Offer & Company","long_form, negotiation_jargon, code_mixed_casual","Yeah it's weird people are saying that because typically, they agree its very unlikely to happen. 
+
+For negotiating, I like to keep it vague. I don't like to be trapped in any corners. So when I wanted negotiating power but I had none (because I hadn't applied anywhere else, knowing I wanted to stay at this company for post-internship return offer), I said ""I have some interviews..."" and mostly ""need time to weigh my options and talk to my family"". I actually played the long con and started talking like that towards the end of my internship.
+
+It IMPLIES I have an offer, but I never said I did. But they assume I do. Best of both worlds.
+
+I would also type up the email now & schedule send it for like 5am tomorrow. So that it has the best chance of being seen early.
+
+Good luck! Keep me updated.","হ্যাঁ, এটা অদ্ভুত যে লোকেরা এটা বলছে, কারণ সাধারণত সবাই একমত যে এটা হওয়ার সম্ভাবনা খুবই কম।
+
+আমি আলোচনার সময় বিষয়টা অস্পষ্ট রাখতে পছন্দ করি। আমি কোনো কোণে আটকে পড়তে চাই না। তাই যখন আমার আলোচনার ক্ষমতা ছিল না, আমি বলেছিলাম ""আমার কিছু ইন্টারভিউ আছে..."" এবং বেশিরভাগ সময় বলেছিলাম ""আমার বিকল্পগুলো ভেবে দেখতে এবং পরিবারের সাথে কথা বলতে সময় দরকার""।
+
+এটা বোঝায় যে আমার কাছে অফার আছে, কিন্তু আমি কখনও সেটা সরাসরি বলিনি। উভয় দিক থেকে সুবিধা।
+
+আমি এখনই ইমেইলটা টাইপ করে আগামীকাল ভোর ৫টার জন্য শিডিউল করে রাখার পরামর্শ দেব, যাতে সেটা সকালে দেখার সর্বোচ্চ সুযোগ থাকে।
+
+শুভকামনা! আপডেট দিয়ো।","",""
+"gy452za","Work & Team","short, career_progression_terms","Part of growing from junior to midlevel to senior is making mistakes and learning from them.","জুনিয়র থেকে মিডলেভেল এবং তারপর সিনিয়র হওয়ার পথে ভুল করা এবং সেখান থেকে শেখা — এটাই বিকাশের একটি অপরিহার্য অংশ।","",""
+"o34n21n","Work & Team","named_entity_google, informal, lowercase_reddit_style","my friend had a panic attack during his google onsite and they just... rescheduled him for 2 weeks later. he got the offer. most of these companies have seen everything.","আমার বন্ধুর Google-এর অনসাইট ইন্টারভিউ চলাকালীন প্যানিক অ্যাটাক হয়েছিল, আর তারা শুধু... দুই সপ্তাহ পরে তার ইন্টারভিউ পুনরায় নির্ধারণ করে দিয়েছিল। সে অফার পেয়েছিল। এই কোম্পানিগুলো প্রায় সবকিছুই দেখেছে।","",""
+"iw85xhg","Offer & Company","sarcasm, reddit_tone, ellipsis","Ah yes, because this person is the only one in the world who thinks this given the current climate...
+Hell maybe you should try to negotiate, let us know how it turns out!","আহা হ্যাঁ, কারণ বর্তমান পরিস্থিতিতে শুধুমাত্র এই ব্যক্তিই এরকম ভাবছেন, তাই না...
+ধুর, হয়তো তুমি নিজেই একবার নেগোশিয়েট করে দেখো, তারপর জানাও কী হলো!","",""
+"kqohrwy","Work & Team","leetcode_slang, technical_jargon, binary_tree_meme","Most companies are doing basic crud functions. You can easily go a decade without ever having to invert a binary tree or any other leetcode junk","বেশিরভাগ কোম্পানি শুধুমাত্র মৌলিক CRUD কাজ করে। তুমি সহজেই এক দশক পার করে দিতে পারো কখনো বাইনারি ট্রি উল্টাতে বা অন্য কোনো LeetCode ধরনের ঝামেলায় না পড়েই।","",""
+"m95c1hv","Work & Team","informal, salary_mention, absolute_bank_slang","It's not lower standards. Some of the smartest people I've ever worked with were contractors and they make absolute bank. Some charging $100+ an hour, 40 hours a week. 
+
+That comment is insane","এটা নিম্নমানের বিষয় নয়। আমি যাদের সাথে কাজ করেছি তাদের মধ্যে কিছু সবচেয়ে মেধাবী মানুষ ছিলেন কন্ট্র্যাক্টর, এবং তারা প্রচুর টাকা উপার্জন করেন। কেউ কেউ ঘণ্টায় ১০০ ডলারেরও বেশি, সপ্তাহে ৪০ ঘণ্টা হিসেবে চার্জ করেন।
+
+ওই মন্তব্যটা সত্যিই অবিশ্বাস্য।","",""
+"hh6accy","Work & Team","short, workplace_drama","3 of my teammates were denied promotions under this manager and then it was my turn.","এই ম্যানেজারের অধীনে আমার ৩ জন সহকর্মীকে প্রমোশন থেকে বঞ্চিত করা হয়েছিল, এবং তারপর আমার পালা এলো।","",""
+"lh36f9l","Work & Team","quote_rebuttal, netflix_reference, sarcasm","> If you cannot finish your work in the time that you're given, then that's not because you're lazy, but because they are failing at planning.
+
+how does that work exactly? you can always not finish work by not doing the work and watching netflix instead. that's not anyone else's fault","> যদি তুমি নির্ধারিত সময়ের মধ্যে কাজ শেষ করতে না পারো, তাহলে সেটা তোমার অলসতার কারণে নয়, বরং তারা পরিকল্পনায় ব্যর্থ হচ্ছে।
+
+এটা ঠিক কীভাবে কাজ করে? তুমি সবসময় কাজ না করে Netflix দেখে সময় পার করতে পারো এবং কাজ অসম্পূর্ণ রাখতে পারো। সেটার জন্য অন্য কাউকে দোষ দেওয়া যায় না।","",""
+"iw6n2yb","Offer & Company","code_mixed_english_hindi_style, heavy_slang, abbreviations, AITA_tone","Thank fucking Christ, an actual response to my question from someone who did it
+
+Perhaps they're playing word games w me, and my bonus is still negotiable like in ur case. If that's true, I really appreciate ur advice!
+
+It is blowing my mind how many ppl here r telling me I'll get rescinded for asking. Ofc they won't, they spent a shitload on my internship, they wouldn't throw that out over an email","ঈশ্বরকে ধন্যবাদ, অবশেষে এমন কেউ উত্তর দিয়েছে যে সত্যিই এটা করেছে।
+
+হয়তো তারা আমার সাথে শব্দের খেলা খেলছে, আর আমার বোনাস তোমার মতোই এখনও নেগোশিয়েবল। যদি সেটা সত্যি হয়, তোমার পরামর্শের জন্য সত্যিই কৃতজ্ঞ!
+
+এখানে এত লোক যে বলছে আমি জিজ্ঞেস করলে অফার বাতিল হয়ে যাবে — এটা আমার মাথা ঘুরিয়ে দিচ্ছে। অবশ্যই হবে না, তারা আমার ইন্টার্নশিপে প্রচুর খরচ করেছে, শুধু একটা ইমেইলের জন্য সেসব ছুঁড়ে ফেলবে না।","",""
+"glfa7f0","Computer & Science","named_entity_FAANG, career_advice, quoted_text","> I like coding and problem solving
+If you can keep this attitude in tact, you are better than 80% of programers, even in FAANG. Software engineering and computer science offers a wide range of career opportunities ranging from low stress and well paid to high performing and over paid. If you don't want to devote your whole life to it (which is the human thing to want) then you are still in a high paying field that absolutely needs staff","> আমি কোডিং এবং সমস্যা সমাধান পছন্দ করি।
+যদি তুমি এই মনোভাব ধরে রাখতে পারো, তাহলে তুমি FAANG-সহ ৮০% প্রোগ্রামারের চেয়ে ভালো। সফটওয়্যার ইঞ্জিনিয়ারিং এবং কম্পিউটার সায়েন্স ক্যারিয়ারের বিস্তৃত সুযোগ দেয় — কম চাপের ও ভালো বেতনের চাকরি থেকে শুরু করে উচ্চ-কর্মক্ষমতার এবং অতিরিক্ত বেতনের পদ পর্যন্ত। যদি তুমি পুরো জীবন এতে উৎসর্গ না করতে চাও (যা অত্যন্ত স্বাভাবিক), তবুও তুমি এমন একটি উচ্চ-বেতনের ক্ষেত্রে আছো যেখানে কর্মীর একান্ত প্রয়োজন।","",""
+"gj8tl1m","Resume & Advice","leetcode_slang, personal_life_mix, code_mixed_casual, DS_abbreviation","I also have a 6 month old and 3 classes this semester and a FT internship. I am not gonna lie it's rough. I am always trying to sneak in a minute to work on leetcode problems while putting the baby down or when he is sleeping. I can total feel your pressure and stress but personal projects are the king in our case. Try to dedicate at least 30 minutes per day or 2 hrs per weekend in order to make sure you get a DS job as soon as you graduate. Good luck!","আমারও ৬ মাসের একটি শিশু আছে, এই সেমিস্টারে ৩টি ক্লাস আছে এবং একটি ফুলটাইম ইন্টার্নশিপ চলছে। মিথ্যা বলব না, এটা সত্যিই কঠিন। শিশুকে ঘুম পাড়ানোর সময় বা সে ঘুমিয়ে থাকলে LeetCode সমস্যায় এক মিনিট দেওয়ার চেষ্টা করি। তোমার চাপ এবং মানসিক উদ্বেগ আমি পুরোপুরি বুঝতে পারছি, কিন্তু আমাদের মতো পরিস্থিতিতে পার্সোনাল প্রজেক্টই সবচেয়ে গুরুত্বপূর্ণ। প্রতিদিন অন্তত ৩০ মিনিট বা সপ্তাহান্তে ২ ঘণ্টা দেওয়ার চেষ্টা করো, যাতে গ্র্যাজুয়েশনের পরপরই একটি DS চাকরি পেতে পারো। শুভকামনা!","",""
+"gj7by4l","Resume & Advice","named_entity_levelfyi, URL, self_promotion, disclaimer","We (Co-Founder of Levels.fyi here) use verified data when possible to ensure our ranges are accurate. We don't have as much data as the other sites mentioned but have more accurate data for the companies we do cover. https://www.levels.fyi/verified/
+
+Disclaimer: I'm co-founder of Levels.fyi","আমরা (আমি Levels.fyi-এর সহ-প্রতিষ্ঠাতা) আমাদের বেতনের পরিসীমা সঠিক রাখতে যতটা সম্ভব যাচাইকৃত তথ্য ব্যবহার করি। উল্লিখিত অন্য সাইটগুলোর মতো আমাদের কাছে তেমন বেশি ডেটা নেই, কিন্তু আমরা যেসব কোম্পানি কভার করি সেগুলোর জন্য আমাদের তথ্য অনেক বেশি নির্ভুল। https://www.levels.fyi/verified/
+
+বিজ্ঞপ্তি: আমি Levels.fyi-এর সহ-প্রতিষ্ঠাতা।","",""
+"iw5932l","Resume & Advice","named_entity_uni_ranking, OA_abbreviation, international_student","I am an international sophomore (CS & Physics major) student at a US News Top 20 uni on the East Coast looking for my first internship. Sent out dozens if not hundreds of applications with 0 OAs so far. Any advice is welcomed!","আমি ইস্ট কোস্টের US News Top 20 র‍্যাংকিংয়ের একটি বিশ্ববিদ্যালয়ে CS ও Physics-এ ডুয়াল মেজর নিয়ে পড়া দ্বিতীয় বর্ষের একজন আন্তর্জাতিক শিক্ষার্থী, প্রথম ইন্টার্নশিপের খোঁজ করছি। এ পর্যন্ত কয়েক ডজন, হয়তো শতাধিক আবেদন পাঠিয়েছি কিন্তু একটিও OA পাইনি। যেকোনো পরামর্শ স্বাগত!","",""
+"iw57wvz","Resume & Advice","resume_rule_busting, one_page_myth","When you say you're low on space, is that because you're trying to force it to be one page?
+
+That rule doesn't apply to tech roles. Take all the room you need to cover the topics recruiters might be looking for.","তুমি যখন বলছো জায়গার অভাব, সেটা কি রিজিউমে এক পাতায় সীমাবদ্ধ রাখার চেষ্টার কারণে?
+
+এই নিয়মটা টেক চাকরির ক্ষেত্রে প্রযোজ্য নয়। রিক্রুটাররা যে বিষয়গুলো খুঁজছেন সেগুলো ঠিকমতো তুলে ধরতে যতটুকু জায়গা দরকার নাও।","",""
+"jkbf6i9","Computer & Science","economic_cycle, big_tech_reference, year_reference","I mean... there are economic cycles
+
+2 years ago back in 2021 would have been ""you studied computer science but 5 big tech all wants you, now what?""","মানে... অর্থনৈতিক চক্র তো থাকেই।
+
+দুই বছর আগে ২০২১ সালে পরিস্থিতি হতো এরকম: ""তুমি কম্পিউটার সায়েন্স পড়েছো কিন্তু ৫টি বড় টেক কোম্পানি সবাই তোমাকে চায়, এখন কী করবে?""","",""
+"nfft9oa","Computer & Science","GFC_abbreviation, boom_bust_idiom","Tech is boom or bust. Right now is nowhere near as bad as it was during the GFC. If you can't stand this market, you may be in a room of hurt in the future.","টেক ক্ষেত্রটা হয় দারুণ সময় নয়তো ভয়াবহ সময়ের মধ্যে দিয়ে যায়। এখনকার পরিস্থিতি GFC (বৈশ্বিক আর্থিক সংকট)-এর সময়কার মতো কোনোভাবেই খারাপ নয়। যদি এই বাজার সহ্য করতে না পারো, তাহলে ভবিষ্যতে আরও কঠিন পরিস্থিতিতে পড়তে পারো।","",""
+"nna41jr","Work & Team","LLM_abbreviation, bash_c_technical, lowercase_reddit","i love LLMs for showing me new possible solutions and explaining them. ive learned a lot of bash and c because of them","LLM-গুলো আমার কাছে নতুন সম্ভাব্য সমাধান দেখায় এবং সেগুলো ব্যাখ্যা করে — এ জন্য আমি সেগুলোকে খুব পছন্দ করি। তাদের সাহায্যে আমি bash এবং C সম্পর্কে অনেক কিছু শিখেছি।","",""
+"n69jxnm","Resume & Advice","H1B_visa_reference, labor_policy, exploitation_discourse","On paper it makes a lot of sense. In practice it's exploited to get cheaper labor. And the employee has a much harder time switching jobs once they are in","কাগজে-কলমে বিষয়টা অনেক যুক্তিসঙ্গত মনে হয়। কিন্তু বাস্তবে এটা সস্তা শ্রমিক পাওয়ার জন্য শোষণ করা হয়। আর একবার ঢুকে পড়লে কর্মচারীর পক্ষে চাকরি বদলানো অনেক বেশি কঠিন হয়ে যায়।","",""
+"g40mrrh","Resume & Advice","metaphor, humor, dating_analogy","Treat job requirements like someone who has a wishlist for dating.
+
+There's a reason they're single for life.","চাকরির যোগ্যতার তালিকাকে ডেটিংয়ের ইচ্ছা তালিকার মতো ভাবো।
+
+এদের কেন কেউ নেই, তার একটা কারণ তো আছেই।","",""

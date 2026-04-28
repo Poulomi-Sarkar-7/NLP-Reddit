@@ -1,0 +1,12 @@
+{
+  "run_timestamp": "20260429_025637",
+  "cleaned_input_path": "D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation_bengali\\inputs\\bengali_translation_cleaned.csv",
+  "translated_csv": "D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation_bengali\\artifacts\\20260429_025637\\bengali_translation_updated_20260429_025637.csv",
+  "aggregate_metrics": "D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation_bengali\\artifacts\\20260429_025637\\aggregate_metrics.csv",
+  "per_row_metrics": "D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation_bengali\\artifacts\\20260429_025637\\per_row_metrics.csv",
+  "segment_metrics": "D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation_bengali\\artifacts\\20260429_025637\\segment_metrics.csv",
+  "manual_eval_sheet": "D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation_bengali\\artifacts\\20260429_025637\\manual_eval_sheet_autofilled.csv",
+  "edge_case_examples": "D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation_bengali\\artifacts\\20260429_025637\\edge_case_examples.csv",
+  "report": "D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation_bengali\\artifacts\\20260429_025637\\bengali_translation_report.md",
+  "gemini_mode": "fallback_from_groq"
+}

@@ -1,0 +1,30 @@
+{
+  "rows": [
+    {
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "num_questions": 18,
+      "num_success": 18,
+      "num_failed": 0,
+      "bleu": 0.0182,
+      "rougeL": 0.1422,
+      "bertscore_f1": 0.7306,
+      "faithfulness_pct": 16.67,
+      "avg_support_ratio": 0.4274,
+      "adversarial_refusal_pct": 33.33
+    },
+    {
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "num_questions": 18,
+      "num_success": 7,
+      "num_failed": 11,
+      "bleu": 0.0385,
+      "rougeL": 0.1957,
+      "bertscore_f1": 0.752,
+      "faithfulness_pct": 11.11,
+      "avg_support_ratio": 0.5051,
+      "adversarial_refusal_pct": 0.0
+    }
+  ]
+}

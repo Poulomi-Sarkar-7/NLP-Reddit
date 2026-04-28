@@ -1,0 +1,59 @@
+2026-04-29 02:56:37,332 | INFO | Loading dataset: D:\Sem 6\NLP\NLP_Reddit\bengali_translation.csv
+2026-04-29 02:56:37,410 | INFO | Saved cleaned input to D:\Sem 6\NLP\NLP_Reddit\evaluation_bengali\inputs\bengali_translation_cleaned.csv
+2026-04-29 02:56:37,410 | INFO | Filling missing Groq translations...
+2026-04-29 02:56:38,786 | INFO | Groq translated row_id=1
+2026-04-29 02:56:40,955 | INFO | Groq translated row_id=2
+2026-04-29 02:56:41,935 | INFO | Groq translated row_id=3
+2026-04-29 02:56:42,981 | INFO | Groq translated row_id=4
+2026-04-29 02:56:44,026 | INFO | Groq translated row_id=5
+2026-04-29 02:56:44,991 | INFO | Groq translated row_id=6
+2026-04-29 02:56:46,048 | INFO | Groq translated row_id=7
+2026-04-29 02:56:46,918 | INFO | Groq translated row_id=8
+2026-04-29 02:56:48,749 | INFO | Groq translated row_id=9
+2026-04-29 02:56:50,556 | INFO | Groq translated row_id=10
+2026-04-29 02:56:52,491 | INFO | Groq translated row_id=11
+2026-04-29 02:56:54,451 | INFO | Groq translated row_id=12
+2026-04-29 02:56:55,631 | INFO | Groq translated row_id=13
+2026-04-29 02:56:57,019 | INFO | Groq translated row_id=14
+2026-04-29 02:56:58,146 | INFO | Groq translated row_id=15
+2026-04-29 02:56:59,115 | INFO | Groq translated row_id=16
+2026-04-29 02:57:00,062 | INFO | Groq translated row_id=17
+2026-04-29 02:57:03,448 | INFO | Groq translated row_id=18
+2026-04-29 02:57:06,884 | INFO | Groq translated row_id=19
+2026-04-29 02:57:07,881 | INFO | Groq translated row_id=20
+2026-04-29 02:57:07,898 | INFO | Attempting Gemini translations...
+2026-04-29 02:57:09,084 | WARNING | Gemini API failed row_id=1; switching to deterministic fallback. Error: 404 Client Error: Not Found for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyDBYxMVnAMSBM7hr9lGale3z54ve9p2S8g
+2026-04-29 02:57:09,098 | INFO | Applied deterministic Gemini fallback using Groq outputs.
+2026-04-29 02:57:09,113 | INFO | Using default tokenizer.
+2026-04-29 02:57:10,118 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-04-29 02:57:10,392 | INFO | HTTP Request: GET https://huggingface.co/xlm-roberta-base/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-04-29 02:57:10,394 | WARNING | Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-04-29 02:57:10,837 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-29 02:57:11,115 | INFO | HTTP Request: GET https://huggingface.co/xlm-roberta-base/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-29 02:57:11,431 | INFO | HTTP Request: GET https://huggingface.co/api/models/xlm-roberta-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 02:57:11,698 | INFO | HTTP Request: GET https://huggingface.co/api/models/FacebookAI/xlm-roberta-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-29 02:57:11,963 | INFO | HTTP Request: GET https://huggingface.co/api/models/xlm-roberta-base/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 02:57:12,229 | INFO | HTTP Request: GET https://huggingface.co/api/models/FacebookAI/xlm-roberta-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-29 02:57:12,498 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/sentencepiece.bpe.model "HTTP/1.1 200 OK"
+2026-04-29 02:57:12,781 | INFO | HTTP Request: GET https://huggingface.co/xlm-roberta-base/resolve/main/sentencepiece.bpe.model "HTTP/1.1 200 OK"
+2026-04-29 02:57:14,261 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/tokenizer.json "HTTP/1.1 200 OK"
+2026-04-29 02:57:14,535 | INFO | HTTP Request: GET https://huggingface.co/xlm-roberta-base/resolve/main/tokenizer.json "HTTP/1.1 200 OK"
+2026-04-29 02:57:16,336 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-04-29 02:57:16,616 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/special_tokens_map.json "HTTP/1.1 404 Not Found"
+2026-04-29 02:57:16,981 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-04-29 02:57:21,791 | INFO | HTTP Request: GET https://huggingface.co/api/models/xlm-roberta-base "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 02:57:22,065 | INFO | HTTP Request: GET https://huggingface.co/api/models/FacebookAI/xlm-roberta-base "HTTP/1.1 200 OK"
+2026-04-29 02:57:22,419 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-04-29 02:57:23,211 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-04-29 02:57:24,045 | INFO | HTTP Request: GET https://huggingface.co/api/models/FacebookAI/xlm-roberta-base/xet-read-token/e73636d4f797dec63c3081bb6ed5c7b0bb3f2089 "HTTP/1.1 200 OK"
+2026-04-29 02:58:18,143 | INFO | Using default tokenizer.
+2026-04-29 02:58:18,529 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-04-29 02:58:18,793 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-04-29 02:58:19,069 | INFO | HTTP Request: GET https://huggingface.co/api/models/xlm-roberta-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 02:58:19,333 | INFO | HTTP Request: GET https://huggingface.co/api/models/FacebookAI/xlm-roberta-base/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-04-29 02:58:19,655 | INFO | HTTP Request: GET https://huggingface.co/api/models/xlm-roberta-base/tree/main?recursive=true&expand=false "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 02:58:19,924 | INFO | HTTP Request: GET https://huggingface.co/api/models/FacebookAI/xlm-roberta-base/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-04-29 02:58:24,763 | INFO | HTTP Request: GET https://huggingface.co/api/models/xlm-roberta-base "HTTP/1.1 307 Temporary Redirect"
+2026-04-29 02:58:25,030 | INFO | HTTP Request: GET https://huggingface.co/api/models/FacebookAI/xlm-roberta-base "HTTP/1.1 200 OK"
+2026-04-29 02:58:25,318 | INFO | HTTP Request: HEAD https://huggingface.co/xlm-roberta-base/resolve/main/config.json "HTTP/1.1 200 OK"
+2026-04-29 02:58:33,762 | INFO | Run complete. Summary saved at D:\Sem 6\NLP\NLP_Reddit\evaluation_bengali\artifacts\20260429_025637\run_summary.json

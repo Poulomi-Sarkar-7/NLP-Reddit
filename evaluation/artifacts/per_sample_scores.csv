@@ -1,0 +1,433 @@
+question_id,question_type,provider,model,expected_in_corpus,error,bleu,rougeL,bertscore_f1,faithful,support_ratio,unsupported_sentence_ratio,abstained,answer_chars
+Q01,factual,groq,llama-3.3-70b-versatile,True,,0.0191,0.1587,0.7623,0,0.3947,0.5,False,809
+Q01,factual,google,gemini-2.5-flash,True,,0.0328,0.2113,0.7851,1,0.62,0.0,False,528
+Q02,opinion-summary,groq,llama-3.3-70b-versatile,True,,0.0433,0.2658,0.7853,1,0.5696,0.1667,False,776
+Q02,opinion-summary,google,gemini-2.5-flash,True,,0.0252,0.2727,0.777,0,0.5469,0.0,False,650
+Q03,factual,groq,llama-3.3-70b-versatile,True,,0.0118,0.1184,0.7036,0,0.5246,0.6,False,675
+Q03,factual,google,gemini-2.5-flash,True,,0.0633,0.1695,0.7304,0,0.6585,1.0,False,459
+Q04,opinion-summary,groq,llama-3.3-70b-versatile,True,,0.0093,0.1351,0.7118,0,0.3158,1.0,False,826
+Q04,opinion-summary,google,gemini-2.5-flash,True,,0.003,0.0684,0.725,0,0.375,1.0,False,238
+Q05,factual,groq,llama-3.3-70b-versatile,True,,0.0212,0.1087,0.7289,0,0.2222,1.0,False,288
+Q05,factual,google,gemini-2.5-flash,True,,0.0111,0.1463,0.7314,0,0.3478,1.0,False,208
+Q06,opinion-summary,groq,llama-3.3-70b-versatile,True,,0.011,0.0881,0.71,0,0.3134,0.6,False,666
+Q06,opinion-summary,google,gemini-2.5-flash,True,,0.0104,0.1111,0.6962,0,0.2778,1.0,False,352
+Q07,factual,groq,llama-3.3-70b-versatile,True,,0.02,0.219,0.7146,0,0.4032,0.1667,False,639
+Q07,factual,google,gemini-2.5-flash,True,,0.1238,0.3908,0.8189,1,0.7097,0.0,False,346
+Q08,opinion-summary,groq,llama-3.3-70b-versatile,True,,0.0142,0.1879,0.7568,0,0.44,1.0,False,723
+Q08,opinion-summary,google,gemini-2.5-flash,True,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 7.035153382s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""location"": ""global"",
+              ""model"": ""gemini-2.5-flash""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""7s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q09,factual,groq,llama-3.3-70b-versatile,True,,0.0066,0.1184,0.6889,0,0.3704,0.8333,False,543
+Q09,factual,google,gemini-2.5-flash,True,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 5.846900199s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""location"": ""global"",
+              ""model"": ""gemini-2.5-flash""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""5s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q10,opinion-summary,groq,llama-3.3-70b-versatile,True,,0.0573,0.2973,0.8094,1,0.625,0.1667,False,623
+Q10,opinion-summary,google,gemini-2.5-flash,True,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 4.279582836s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""location"": ""global"",
+              ""model"": ""gemini-2.5-flash""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""4s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q11,factual,groq,llama-3.3-70b-versatile,True,,0.0429,0.1413,0.7358,0,0.4767,0.7143,False,865
+Q11,factual,google,gemini-2.5-flash,True,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 2.417619763s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""location"": ""global"",
+              ""model"": ""gemini-2.5-flash""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""2s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q12,opinion-summary,groq,llama-3.3-70b-versatile,True,,0.0109,0.1369,0.7237,0,0.5364,0.5,False,1155
+Q12,opinion-summary,google,gemini-2.5-flash,True,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 367.444432ms."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""location"": ""global"",
+              ""model"": ""gemini-2.5-flash""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""0s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q13,factual,groq,llama-3.3-70b-versatile,True,,0.0164,0.114,0.7158,0,0.4909,1.0,False,567
+Q13,factual,google,gemini-2.5-flash,True,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 59.180432924s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""model"": ""gemini-2.5-flash"",
+              ""location"": ""global""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""59s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q14,opinion-summary,groq,llama-3.3-70b-versatile,True,,0.0126,0.1186,0.7425,0,0.2593,0.5,False,601
+Q14,opinion-summary,google,gemini-2.5-flash,True,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 57.901535175s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""location"": ""global"",
+              ""model"": ""gemini-2.5-flash""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""57s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q15,factual,groq,llama-3.3-70b-versatile,True,,0.0113,0.1127,0.7107,0,0.4394,0.7143,False,661
+Q15,factual,google,gemini-2.5-flash,True,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 56.142709827s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""location"": ""global"",
+              ""model"": ""gemini-2.5-flash""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""56s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q16,adversarial,groq,llama-3.3-70b-versatile,False,,0.0065,0.0777,0.7098,0,0.3542,0.8333,False,516
+Q16,adversarial,google,gemini-2.5-flash,False,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 54.656316958s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""model"": ""gemini-2.5-flash"",
+              ""location"": ""global""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""54s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q17,adversarial,groq,llama-3.3-70b-versatile,False,,0.0064,0.0727,0.7132,0,0.5273,1.0,False,580
+Q17,adversarial,google,gemini-2.5-flash,False,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 53.236211945s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""location"": ""global"",
+              ""model"": ""gemini-2.5-flash""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""53s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0
+Q18,adversarial,groq,llama-3.3-70b-versatile,False,,0.006,0.0877,0.7274,1,0.431,0.6667,True,616
+Q18,adversarial,google,gemini-2.5-flash,False,"LLM endpoint error (429): {
+  ""error"": {
+    ""code"": 429,
+    ""message"": ""You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\nPlease retry in 51.759109797s."",
+    ""status"": ""RESOURCE_EXHAUSTED"",
+    ""details"": [
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.Help"",
+        ""links"": [
+          {
+            ""description"": ""Learn more about Gemini API quotas"",
+            ""url"": ""https://ai.google.dev/gemini-api/docs/rate-limits""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.QuotaFailure"",
+        ""violations"": [
+          {
+            ""quotaMetric"": ""generativelanguage.googleapis.com/generate_content_free_tier_requests"",
+            ""quotaId"": ""GenerateRequestsPerMinutePerProjectPerModel-FreeTier"",
+            ""quotaDimensions"": {
+              ""location"": ""global"",
+              ""model"": ""gemini-2.5-flash""
+            },
+            ""quotaValue"": ""5""
+          }
+        ]
+      },
+      {
+        ""@type"": ""type.googleapis.com/google.rpc.RetryInfo"",
+        ""retryDelay"": ""51s""
+      }
+    ]
+  }
+}
+",nan,nan,nan,0,0.0,1.0,False,0

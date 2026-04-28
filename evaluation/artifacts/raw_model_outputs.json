@@ -1,0 +1,3141 @@
+{
+  "metadata": {
+    "created_at_utc": "2026-04-28T19:21:06Z",
+    "dataset_metadata": {
+      "name": "r_cscareerquestions_conversation_eval",
+      "created_at_utc": "2026-04-28T19:20:06Z",
+      "num_questions": 18,
+      "notes": "Reference answers for in-corpus questions are deterministic extractive summaries of retrieved chunks."
+    },
+    "top_k": 8,
+    "providers": [
+      "groq",
+      "google"
+    ]
+  },
+  "provider_summary": {
+    "groq": {
+      "available": true,
+      "model": "llama-3.3-70b-versatile",
+      "num_success": 18,
+      "num_failed": 0,
+      "missing_key": false
+    },
+    "google": {
+      "available": true,
+      "model": "gemini-2.5-flash",
+      "num_success": 7,
+      "num_failed": 11,
+      "missing_key": false
+    }
+  },
+  "records": [
+    {
+      "question_id": "Q01",
+      "question": "What are users saying about the current software job market difficulty in the US?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "I figured I would share my experience landing a new role in this current job market. Currently a Software Engineer, I'm back in job market after couple years (layoffs). For reference, I have 8 YOE as a Software Engineer and was targeting Senior Software Engineer positions that were remote in the US.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 9929,
+          "source_type": "post",
+          "source_id": "17fe7bs#p2",
+          "title": "My experience in the current job market. 100 applications -> 1 offer",
+          "body": "I figured I would share my experience landing a new role in this current job market. For reference, I have 8 YOE as a Software Engineer and was targeting Senior Software Engineer positions that were remote in the US.",
+          "created_utc": 1698157867,
+          "score": -14.93264032424278
+        },
+        {
+          "id": 6086,
+          "source_type": "post",
+          "source_id": "1lwr6qx#p2",
+          "title": "Software Engineer, Top 3 Favorite Job Search Websites",
+          "body": "Currently a Software Engineer, I'm back in job market after couple years (layoffs).  What are everyone's top 3 Job Search Websites?",
+          "created_utc": 1752188933,
+          "score": -14.867664548881308
+        },
+        {
+          "id": 6079,
+          "source_type": "post",
+          "source_id": "1lwr7i6#p2",
+          "title": "Software Engineer, Top 3 Favorite Job Search Websites in 2025",
+          "body": "Currently a Software Engineer, I'm back in job market after couple years (layoffs).  What are everyone's top 3 Job Search Websites?",
+          "created_utc": 1752188987,
+          "score": -14.585712029870466
+        },
+        {
+          "id": 6306,
+          "source_type": "post",
+          "source_id": "1rsxbbk#p3",
+          "title": "What tech career would you recommend going into in 2026 considering AI and current job market?",
+          "body": "* Software developer - web full stack",
+          "created_utc": 1773430540,
+          "score": -14.508816930846042
+        },
+        {
+          "id": 13545,
+          "source_type": "post",
+          "source_id": "1b5hk7b#p1",
+          "title": "How are engineering managers doing in the current job market?",
+          "body": "How are engineering managers doing in the current job market?",
+          "created_utc": 1709473647,
+          "score": -14.06632464867306
+        },
+        {
+          "id": 9928,
+          "source_type": "post",
+          "source_id": "17fe7bs#p1",
+          "title": "My experience in the current job market. 100 applications -> 1 offer",
+          "body": "My experience in the current job market. 100 applications -> 1 offer",
+          "created_utc": 1698157867,
+          "score": -13.822672505529862
+        },
+        {
+          "id": 6304,
+          "source_type": "post",
+          "source_id": "1rsxbbk#p1",
+          "title": "What tech career would you recommend going into in 2026 considering AI and current job market?",
+          "body": "What tech career would you recommend going into in 2026 considering AI and current job market?",
+          "created_utc": 1773430540,
+          "score": -12.720933825792535
+        },
+        {
+          "id": 19060,
+          "source_type": "post",
+          "source_id": "1lfq7ra#p1",
+          "title": "In current job market, do you need to be both fast and perfect in technical rounds to land a job?",
+          "body": "In current job market, do you need to be both fast and perfect in technical rounds to land a job?",
+          "created_utc": 1750378425,
+          "score": -12.517997881153129
+        }
+      ],
+      "answer": "Users are discussing the challenges of the current software job market in the US, with some sharing their personal experiences and others seeking advice. Key points include:\n* A Software Engineer with 8 years of experience had to apply to 100 jobs to get 1 offer, highlighting the competitiveness of the market.\n* Some users are discussing the best job search websites for Software Engineers, implying that finding a job requires active effort and strategy.\n* The impact of AI on the job market is a concern, with users asking for recommendations on tech careers to pursue in 2026.\n* Engineering managers are also affected, with a post asking how they are doing in the current job market.\n* There is a perception that technical rounds require both speed and perfection to land a job.\n\nSources: [1, 2, 4, 5, 8]",
+      "error": null
+    },
+    {
+      "question_id": "Q01",
+      "question": "What are users saying about the current software job market difficulty in the US?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "I figured I would share my experience landing a new role in this current job market. Currently a Software Engineer, I'm back in job market after couple years (layoffs). For reference, I have 8 YOE as a Software Engineer and was targeting Senior Software Engineer positions that were remote in the US.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 9929,
+          "source_type": "post",
+          "source_id": "17fe7bs#p2",
+          "title": "My experience in the current job market. 100 applications -> 1 offer",
+          "body": "I figured I would share my experience landing a new role in this current job market. For reference, I have 8 YOE as a Software Engineer and was targeting Senior Software Engineer positions that were remote in the US.",
+          "created_utc": 1698157867,
+          "score": -14.93264032424278
+        },
+        {
+          "id": 6086,
+          "source_type": "post",
+          "source_id": "1lwr6qx#p2",
+          "title": "Software Engineer, Top 3 Favorite Job Search Websites",
+          "body": "Currently a Software Engineer, I'm back in job market after couple years (layoffs).  What are everyone's top 3 Job Search Websites?",
+          "created_utc": 1752188933,
+          "score": -14.867664548881308
+        },
+        {
+          "id": 6079,
+          "source_type": "post",
+          "source_id": "1lwr7i6#p2",
+          "title": "Software Engineer, Top 3 Favorite Job Search Websites in 2025",
+          "body": "Currently a Software Engineer, I'm back in job market after couple years (layoffs).  What are everyone's top 3 Job Search Websites?",
+          "created_utc": 1752188987,
+          "score": -14.585712029870466
+        },
+        {
+          "id": 6306,
+          "source_type": "post",
+          "source_id": "1rsxbbk#p3",
+          "title": "What tech career would you recommend going into in 2026 considering AI and current job market?",
+          "body": "* Software developer - web full stack",
+          "created_utc": 1773430540,
+          "score": -14.508816930846042
+        },
+        {
+          "id": 13545,
+          "source_type": "post",
+          "source_id": "1b5hk7b#p1",
+          "title": "How are engineering managers doing in the current job market?",
+          "body": "How are engineering managers doing in the current job market?",
+          "created_utc": 1709473647,
+          "score": -14.06632464867306
+        },
+        {
+          "id": 9928,
+          "source_type": "post",
+          "source_id": "17fe7bs#p1",
+          "title": "My experience in the current job market. 100 applications -> 1 offer",
+          "body": "My experience in the current job market. 100 applications -> 1 offer",
+          "created_utc": 1698157867,
+          "score": -13.822672505529862
+        },
+        {
+          "id": 6304,
+          "source_type": "post",
+          "source_id": "1rsxbbk#p1",
+          "title": "What tech career would you recommend going into in 2026 considering AI and current job market?",
+          "body": "What tech career would you recommend going into in 2026 considering AI and current job market?",
+          "created_utc": 1773430540,
+          "score": -12.720933825792535
+        },
+        {
+          "id": 19060,
+          "source_type": "post",
+          "source_id": "1lfq7ra#p1",
+          "title": "In current job market, do you need to be both fast and perfect in technical rounds to land a job?",
+          "body": "In current job market, do you need to be both fast and perfect in technical rounds to land a job?",
+          "created_utc": 1750378425,
+          "score": -12.517997881153129
+        }
+      ],
+      "answer": "Users indicate that the current software job market in the US is challenging.\n\n*   One Senior Software Engineer with 8 years of experience targeting remote US positions received only 1 offer after 100 applications [1, 6].\n*   A Software Engineer is back in the job market due to layoffs, suggesting a difficult environment [2].\n*   There is a question about whether candidates need to be \"both fast and perfect in technical rounds to land a job\" in the current market, implying a high bar for success [8].\n\nSources: [1, 2, 6, 8]",
+      "error": null
+    },
+    {
+      "question_id": "Q02",
+      "question": "How do people compare stability versus growth when choosing between job offers?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "Choosing between two job offers – stability vs. Short-term higher salary and stability, or the role with more growth and ownership? I’m currently trying to decide between two job offers and would really appreciate some input.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6883,
+          "source_type": "post",
+          "source_id": "1s2slwt#p1",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Choosing between two job offers – stability vs. growth?",
+          "created_utc": 1774391246,
+          "score": -46.69053471078731
+        },
+        {
+          "id": 6884,
+          "source_type": "post",
+          "source_id": "1s2slwt#p2",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Hi everyone,",
+          "created_utc": 1774391246,
+          "score": -40.67433279934694
+        },
+        {
+          "id": 6890,
+          "source_type": "post",
+          "source_id": "1s2slwt#p8",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Thanks a lot!",
+          "created_utc": 1774391246,
+          "score": -40.037069228393825
+        },
+        {
+          "id": 6889,
+          "source_type": "post",
+          "source_id": "1s2slwt#p7",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Short-term higher salary and stability, or the role with more growth and ownership?",
+          "created_utc": 1774391246,
+          "score": -38.391026287210366
+        },
+        {
+          "id": 6888,
+          "source_type": "post",
+          "source_id": "1s2slwt#p6",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "What would you prioritize in this situation?",
+          "created_utc": 1774391246,
+          "score": -37.6759247250355
+        },
+        {
+          "id": 6885,
+          "source_type": "post",
+          "source_id": "1s2slwt#p3",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "I’m currently trying to decide between two job offers and would really appreciate some input.",
+          "created_utc": 1774391246,
+          "score": -37.06420747839874
+        },
+        {
+          "id": 2089,
+          "source_type": "post",
+          "source_id": "1qvlzp3#p7",
+          "title": "Need urgent help choosing between Cohesity vs Zinnia - long-term stability, WLB",
+          "body": "* Career growth over the long run",
+          "created_utc": 1770204177,
+          "score": -28.299019664968743
+        },
+        {
+          "id": 6886,
+          "source_type": "post",
+          "source_id": "1s2slwt#p4",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Option 1: Requirements Engineer in an IAM environment at a larger company (banking, northern Germany). Total compensation is around €86k. The role seems more stable, structured, and methodical, with less pressure, but also less product ownership.",
+          "created_utc": 1774391246,
+          "score": -26.391810408401668
+        }
+      ],
+      "answer": "When choosing between job offers, people compare stability versus growth by considering factors such as salary, job security, and opportunities for professional development. \n* Option 1 for a job offer provides stability with a total compensation of around €86k and a structured environment, but less product ownership.\n* Option 2 is implied to have more growth and ownership, but details are not specified in the given context.\n* The choice between short-term higher salary and stability or a role with more growth and ownership is a key consideration.\n* Career growth over the long run is also a factor in choosing between job offers.\n* The context suggests that people prioritize different factors, but the specific priorities are not detailed.\n\nSources: [1], [4], [6], [8]",
+      "error": null
+    },
+    {
+      "question_id": "Q02",
+      "question": "How do people compare stability versus growth when choosing between job offers?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "Choosing between two job offers – stability vs. Short-term higher salary and stability, or the role with more growth and ownership? I’m currently trying to decide between two job offers and would really appreciate some input.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6883,
+          "source_type": "post",
+          "source_id": "1s2slwt#p1",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Choosing between two job offers – stability vs. growth?",
+          "created_utc": 1774391246,
+          "score": -46.69053471078731
+        },
+        {
+          "id": 6884,
+          "source_type": "post",
+          "source_id": "1s2slwt#p2",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Hi everyone,",
+          "created_utc": 1774391246,
+          "score": -40.67433279934694
+        },
+        {
+          "id": 6890,
+          "source_type": "post",
+          "source_id": "1s2slwt#p8",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Thanks a lot!",
+          "created_utc": 1774391246,
+          "score": -40.037069228393825
+        },
+        {
+          "id": 6889,
+          "source_type": "post",
+          "source_id": "1s2slwt#p7",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Short-term higher salary and stability, or the role with more growth and ownership?",
+          "created_utc": 1774391246,
+          "score": -38.391026287210366
+        },
+        {
+          "id": 6888,
+          "source_type": "post",
+          "source_id": "1s2slwt#p6",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "What would you prioritize in this situation?",
+          "created_utc": 1774391246,
+          "score": -37.6759247250355
+        },
+        {
+          "id": 6885,
+          "source_type": "post",
+          "source_id": "1s2slwt#p3",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "I’m currently trying to decide between two job offers and would really appreciate some input.",
+          "created_utc": 1774391246,
+          "score": -37.06420747839874
+        },
+        {
+          "id": 2089,
+          "source_type": "post",
+          "source_id": "1qvlzp3#p7",
+          "title": "Need urgent help choosing between Cohesity vs Zinnia - long-term stability, WLB",
+          "body": "* Career growth over the long run",
+          "created_utc": 1770204177,
+          "score": -28.299019664968743
+        },
+        {
+          "id": 6886,
+          "source_type": "post",
+          "source_id": "1s2slwt#p4",
+          "title": "Choosing between two job offers – stability vs. growth?",
+          "body": "Option 1: Requirements Engineer in an IAM environment at a larger company (banking, northern Germany). Total compensation is around €86k. The role seems more stable, structured, and methodical, with less pressure, but also less product ownership.",
+          "created_utc": 1774391246,
+          "score": -26.391810408401668
+        }
+      ],
+      "answer": "People compare stability versus growth when choosing between job offers by evaluating the specific attributes and trade-offs presented by each option.\n\n*   They weigh \"short-term higher salary and stability\" against a role offering \"more growth and ownership\" [4].\n*   One job offer might be characterized as \"more stable, structured, and methodical, with less pressure,\" but also having \"less product ownership\" [8].\n*   The comparison involves prioritizing between these different aspects, such as stability, salary, growth, and ownership [4, 5, 8].\n*   Career growth is considered a long-term factor alongside stability [7].\n\nSources: [4, 5, 7, 8]",
+      "error": null
+    },
+    {
+      "question_id": "Q03",
+      "question": "What common resume or interview preparation concerns appear in recent discussions?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "Also, if he isn't good at interviewing, maybe give pointers on how to answer common interview questions. I'd really appearance if anyone from Two Sigma (or experience with interviewing with them recently) could share their experience. But when it comes to system design, they expect same level of perfection.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 28643,
+          "source_type": "comment",
+          "source_id": "gjb5az9#c5",
+          "title": "Comment on post kx1c03",
+          "body": "I'd really appearance if anyone from Two Sigma (or experience with interviewing with them recently) could share their experience.",
+          "created_utc": 1610683395,
+          "score": -16.623298348892636
+        },
+        {
+          "id": 68064,
+          "source_type": "comment",
+          "source_id": "ghzabx7#c1",
+          "title": "Comment on post kpp8jt",
+          "body": "Go into interviews with extensive preparation and notes.",
+          "created_utc": 1609699423,
+          "score": -14.038721492902788
+        },
+        {
+          "id": 23311,
+          "source_type": "post",
+          "source_id": "shq8ql#p3",
+          "title": "How to approach system design discussions?",
+          "body": "Recently,  I gave an interview with a company where I scored 100% in LeetCode  interview. But when it comes to system design, they expect same level of  perfection. Recently, I was asked to \"Design a system for scraping  (HTML) tweets from millions of accounts in Twitter for real time  analytics\".",
+          "created_utc": 1643704809,
+          "score": -13.98629875372296
+        },
+        {
+          "id": 17230,
+          "source_type": "post",
+          "source_id": "1c95m5v#p1",
+          "title": "Help for Preparation",
+          "body": "Help for Preparation",
+          "created_utc": 1713661461,
+          "score": -13.067127222391816
+        },
+        {
+          "id": 11093,
+          "source_type": "post",
+          "source_id": "v44ljh#p1",
+          "title": "Confused by my recent experience trying to find a new role as a frontend developer. Is what I experienced common?",
+          "body": "Confused by my recent experience trying to find a new role as a frontend developer. Is what I experienced common?",
+          "created_utc": 1654277751,
+          "score": -12.686435736911818
+        },
+        {
+          "id": 86156,
+          "source_type": "comment",
+          "source_id": "gwi7j7u#c2",
+          "title": "Comment on post n217bo",
+          "body": "If he was my Dad, I would help him update his resume and Linkedin. Also, if he isn't good at interviewing, maybe give pointers on how to answer common interview questions.",
+          "created_utc": 1619840547,
+          "score": -12.585895978849878
+        },
+        {
+          "id": 7195,
+          "source_type": "post",
+          "source_id": "z8fdb2#p1",
+          "title": "JP Morgan Tech Connect Preparation",
+          "body": "JP Morgan Tech Connect Preparation",
+          "created_utc": 1669777667,
+          "score": -12.561933706731915
+        },
+        {
+          "id": 21210,
+          "source_type": "post",
+          "source_id": "kku0sy#p1",
+          "title": "job preparation questions for CS student",
+          "body": "job preparation questions for CS student",
+          "created_utc": 1609031087,
+          "score": -12.323707769684953
+        }
+      ],
+      "answer": "Common resume or interview preparation concerns in recent discussions include:\n* Updating resumes and LinkedIn profiles, as suggested in comment [6] to help improve job prospects.\n* Preparing for system design discussions, as seen in post [3] where a user shared their experience with a system design interview.\n* Practicing common interview questions, mentioned in comment [6] as a way to improve interviewing skills.\n* Preparing for technical interviews, such as those for frontend developer roles, discussed in post [5].\n* Seeking help for preparation, as requested in posts [4] and [8] for general and CS student-specific job preparation.\nSources: [3], [4], [5], [6], [8]",
+      "error": null
+    },
+    {
+      "question_id": "Q03",
+      "question": "What common resume or interview preparation concerns appear in recent discussions?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "Also, if he isn't good at interviewing, maybe give pointers on how to answer common interview questions. I'd really appearance if anyone from Two Sigma (or experience with interviewing with them recently) could share their experience. But when it comes to system design, they expect same level of perfection.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 28643,
+          "source_type": "comment",
+          "source_id": "gjb5az9#c5",
+          "title": "Comment on post kx1c03",
+          "body": "I'd really appearance if anyone from Two Sigma (or experience with interviewing with them recently) could share their experience.",
+          "created_utc": 1610683395,
+          "score": -16.623298348892636
+        },
+        {
+          "id": 68064,
+          "source_type": "comment",
+          "source_id": "ghzabx7#c1",
+          "title": "Comment on post kpp8jt",
+          "body": "Go into interviews with extensive preparation and notes.",
+          "created_utc": 1609699423,
+          "score": -14.038721492902788
+        },
+        {
+          "id": 23311,
+          "source_type": "post",
+          "source_id": "shq8ql#p3",
+          "title": "How to approach system design discussions?",
+          "body": "Recently,  I gave an interview with a company where I scored 100% in LeetCode  interview. But when it comes to system design, they expect same level of  perfection. Recently, I was asked to \"Design a system for scraping  (HTML) tweets from millions of accounts in Twitter for real time  analytics\".",
+          "created_utc": 1643704809,
+          "score": -13.98629875372296
+        },
+        {
+          "id": 17230,
+          "source_type": "post",
+          "source_id": "1c95m5v#p1",
+          "title": "Help for Preparation",
+          "body": "Help for Preparation",
+          "created_utc": 1713661461,
+          "score": -13.067127222391816
+        },
+        {
+          "id": 11093,
+          "source_type": "post",
+          "source_id": "v44ljh#p1",
+          "title": "Confused by my recent experience trying to find a new role as a frontend developer. Is what I experienced common?",
+          "body": "Confused by my recent experience trying to find a new role as a frontend developer. Is what I experienced common?",
+          "created_utc": 1654277751,
+          "score": -12.686435736911818
+        },
+        {
+          "id": 86156,
+          "source_type": "comment",
+          "source_id": "gwi7j7u#c2",
+          "title": "Comment on post n217bo",
+          "body": "If he was my Dad, I would help him update his resume and Linkedin. Also, if he isn't good at interviewing, maybe give pointers on how to answer common interview questions.",
+          "created_utc": 1619840547,
+          "score": -12.585895978849878
+        },
+        {
+          "id": 7195,
+          "source_type": "post",
+          "source_id": "z8fdb2#p1",
+          "title": "JP Morgan Tech Connect Preparation",
+          "body": "JP Morgan Tech Connect Preparation",
+          "created_utc": 1669777667,
+          "score": -12.561933706731915
+        },
+        {
+          "id": 21210,
+          "source_type": "post",
+          "source_id": "kku0sy#p1",
+          "title": "job preparation questions for CS student",
+          "body": "job preparation questions for CS student",
+          "created_utc": 1609031087,
+          "score": -12.323707769684953
+        }
+      ],
+      "answer": "Common resume or interview preparation concerns include:\n\n*   Updating resumes and LinkedIn profiles [6]\n*   The need for extensive preparation and notes for interviews [2]\n*   Approaching system design discussions, where a high level of perfection is expected [3]\n*   Learning how to answer common interview questions [6]\n*   Preparing for specific company interviews, such as with Two Sigma or JP Morgan Tech Connect [1, 7]\n\nSources: [1], [2], [3], [6], [7]",
+      "error": null
+    },
+    {
+      "question_id": "Q04",
+      "question": "What concerns do users express about AI-generated resumes and job applications?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "To make things worse, he thinks AI-generated users will boost the platform. I know many of the postings say, “we will contact you if there is interest”, and that’s all fine and dandy, however there’s nothing that says *we* can’t follow up with employers to express how badly we want a certain job. Instead of fixing bugs on his aging platform and removing spam, Zuckerberg tries to lay off employees to cut costs and make the company look profitable to investors.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 58835,
+          "source_type": "comment",
+          "source_id": "o8qw7fl#c1",
+          "title": "Comment on post 1rkzdy9",
+          "body": "ngl cold applications are rough right now. a lot of resumes never get seen.",
+          "created_utc": 1772698599,
+          "score": -12.87742842538967
+        },
+        {
+          "id": 24828,
+          "source_type": "post",
+          "source_id": "1bt2ouo#p7",
+          "title": "JOB APPLICATION",
+          "body": "NodeJS, Express, MangoDB",
+          "created_utc": 1711975255,
+          "score": -12.554130290654633
+        },
+        {
+          "id": 14461,
+          "source_type": "post",
+          "source_id": "1i1lh6m#p18",
+          "title": "Tech doesn't attract intelligent people anymore",
+          "body": "Things will only get worse. Instead of fixing bugs on his aging platform and removing spam, Zuckerberg tries to lay off employees to cut costs and make the company look profitable to investors. Meanwhile, he’s losing users. To make things worse, he thinks AI-generated users will boost the platform. What a moron.  People aren’t as stupid as he thinks.",
+          "created_utc": 1736902393,
+          "score": -12.268980112826503
+        },
+        {
+          "id": 16217,
+          "source_type": "post",
+          "source_id": "10l1eb9#p2",
+          "title": "When is it appropriate to follow up on job applications?",
+          "body": "I know many of the postings say, “we will contact you if there is interest”, and that’s all fine and dandy, however there’s nothing that says *we* can’t follow up with employers to express how badly we want a certain job.",
+          "created_utc": 1674660861,
+          "score": -11.545475118672893
+        },
+        {
+          "id": 10286,
+          "source_type": "post",
+          "source_id": "1hpmq38#p1",
+          "title": "Django vs node+express",
+          "body": "Django vs node+express",
+          "created_utc": 1735563628,
+          "score": -11.28149546656255
+        },
+        {
+          "id": 3168,
+          "source_type": "post",
+          "source_id": "qulq7d#p1",
+          "title": "How strict are experienced requirements in job applications?",
+          "body": "How strict are experienced requirements in job applications?",
+          "created_utc": 1636997625,
+          "score": -10.81790610508429
+        },
+        {
+          "id": 8829,
+          "source_type": "post",
+          "source_id": "qavkt6#p1",
+          "title": "Should I disclose my disabilities on job applications?",
+          "body": "Should I disclose my disabilities on job applications?",
+          "created_utc": 1634589705,
+          "score": -10.81790610508429
+        },
+        {
+          "id": 46019,
+          "source_type": "comment",
+          "source_id": "iybrbab#c1",
+          "title": "Comment on post z8c6yi",
+          "body": "> Today, parsers are usually auto-generated",
+          "created_utc": 1669785791,
+          "score": -10.728662689882178
+        }
+      ],
+      "answer": "Users express concerns about AI-generated resumes and job applications, specifically the potential for AI-generated users to be seen as insincere or less intelligent. Here are some points that highlight these concerns:\n* AI-generated users may be perceived as an attempt to deceive or manipulate, as mentioned in post [3].\n* The use of AI-generated content may lead to a loss of genuine human interaction, as implied in post [3].\n* There is no direct mention of AI-generated resumes, but post [3] discusses the idea of AI-generated users, which could be related.\n* Users are more focused on the application process and disclosure of personal information, as seen in posts [4], [6], and [7].\n* The discussion around AI is limited, and more context is needed to fully understand user concerns.\n \nSources: [1], [3], [4], [6], [7]",
+      "error": null
+    },
+    {
+      "question_id": "Q04",
+      "question": "What concerns do users express about AI-generated resumes and job applications?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "To make things worse, he thinks AI-generated users will boost the platform. I know many of the postings say, “we will contact you if there is interest”, and that’s all fine and dandy, however there’s nothing that says *we* can’t follow up with employers to express how badly we want a certain job. Instead of fixing bugs on his aging platform and removing spam, Zuckerberg tries to lay off employees to cut costs and make the company look profitable to investors.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 58835,
+          "source_type": "comment",
+          "source_id": "o8qw7fl#c1",
+          "title": "Comment on post 1rkzdy9",
+          "body": "ngl cold applications are rough right now. a lot of resumes never get seen.",
+          "created_utc": 1772698599,
+          "score": -12.87742842538967
+        },
+        {
+          "id": 24828,
+          "source_type": "post",
+          "source_id": "1bt2ouo#p7",
+          "title": "JOB APPLICATION",
+          "body": "NodeJS, Express, MangoDB",
+          "created_utc": 1711975255,
+          "score": -12.554130290654633
+        },
+        {
+          "id": 14461,
+          "source_type": "post",
+          "source_id": "1i1lh6m#p18",
+          "title": "Tech doesn't attract intelligent people anymore",
+          "body": "Things will only get worse. Instead of fixing bugs on his aging platform and removing spam, Zuckerberg tries to lay off employees to cut costs and make the company look profitable to investors. Meanwhile, he’s losing users. To make things worse, he thinks AI-generated users will boost the platform. What a moron.  People aren’t as stupid as he thinks.",
+          "created_utc": 1736902393,
+          "score": -12.268980112826503
+        },
+        {
+          "id": 16217,
+          "source_type": "post",
+          "source_id": "10l1eb9#p2",
+          "title": "When is it appropriate to follow up on job applications?",
+          "body": "I know many of the postings say, “we will contact you if there is interest”, and that’s all fine and dandy, however there’s nothing that says *we* can’t follow up with employers to express how badly we want a certain job.",
+          "created_utc": 1674660861,
+          "score": -11.545475118672893
+        },
+        {
+          "id": 10286,
+          "source_type": "post",
+          "source_id": "1hpmq38#p1",
+          "title": "Django vs node+express",
+          "body": "Django vs node+express",
+          "created_utc": 1735563628,
+          "score": -11.28149546656255
+        },
+        {
+          "id": 3168,
+          "source_type": "post",
+          "source_id": "qulq7d#p1",
+          "title": "How strict are experienced requirements in job applications?",
+          "body": "How strict are experienced requirements in job applications?",
+          "created_utc": 1636997625,
+          "score": -10.81790610508429
+        },
+        {
+          "id": 8829,
+          "source_type": "post",
+          "source_id": "qavkt6#p1",
+          "title": "Should I disclose my disabilities on job applications?",
+          "body": "Should I disclose my disabilities on job applications?",
+          "created_utc": 1634589705,
+          "score": -10.81790610508429
+        },
+        {
+          "id": 46019,
+          "source_type": "comment",
+          "source_id": "iybrbab#c1",
+          "title": "Comment on post z8c6yi",
+          "body": "> Today, parsers are usually auto-generated",
+          "created_utc": 1669785791,
+          "score": -10.728662689882178
+        }
+      ],
+      "answer": "The provided context does not contain information about user concerns regarding AI-generated resumes and job applications.\n\nWhat is missing: Information specifically discussing user concerns about AI-generated resumes or job applications.",
+      "error": null
+    },
+    {
+      "question_id": "Q05",
+      "question": "What tradeoffs are mentioned between consulting roles and large-company roles like IBM?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "That said, Deloitte is a huge company so I'm sure the roles can be very specialized. I can definitely imagine Deloitte also has a lot of internal consulting roles where your \"clients\" are actually consulting teams within Deloitte. Need Guidance to Pick between two Support IT roles",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6848,
+          "source_type": "post",
+          "source_id": "1s2ufq1#p1",
+          "title": "2 offers: Consulting gig vs IBM",
+          "body": "2 offers: Consulting gig vs IBM",
+          "created_utc": 1774395502,
+          "score": -21.04552966886608
+        },
+        {
+          "id": 54851,
+          "source_type": "comment",
+          "source_id": "fk8l7h2#c2",
+          "title": "Comment on post fh26u4",
+          "body": "That said, Deloitte is a huge company so I'm sure the roles can be very specialized. I can definitely imagine Deloitte also has a lot of internal consulting roles where your \"clients\" are actually consulting teams within Deloitte.",
+          "created_utc": 1583958156,
+          "score": -20.84447481712418
+        },
+        {
+          "id": 770,
+          "source_type": "post",
+          "source_id": "n90rqu#p1",
+          "title": "Need Guidance to Pick between two Support IT roles",
+          "body": "Need Guidance to Pick between two Support IT roles",
+          "created_utc": 1620640656,
+          "score": -20.639137540593754
+        },
+        {
+          "id": 781,
+          "source_type": "post",
+          "source_id": "n90rqu#p12",
+          "title": "Need Guidance to Pick between two Support IT roles",
+          "body": "**Company B.)** **Customer Support Specialist**",
+          "created_utc": 1620640656,
+          "score": -20.56219739021967
+        },
+        {
+          "id": 775,
+          "source_type": "post",
+          "source_id": "n90rqu#p6",
+          "title": "Need Guidance to Pick between two Support IT roles",
+          "body": "**Company A.) Graduate Technical Support Specialist**",
+          "created_utc": 1620640656,
+          "score": -20.259038840651968
+        },
+        {
+          "id": 6862,
+          "source_type": "post",
+          "source_id": "1s2ufq1#p15",
+          "title": "2 offers: Consulting gig vs IBM",
+          "body": "**B) IBM**",
+          "created_utc": 1774395502,
+          "score": -20.208318984929328
+        },
+        {
+          "id": 8129,
+          "source_type": "post",
+          "source_id": "1j2ol0c#p4",
+          "title": "Advice between 2 offers",
+          "body": "* Consulting Company",
+          "created_utc": 1741024099,
+          "score": -19.213702568344367
+        },
+        {
+          "id": 75851,
+          "source_type": "comment",
+          "source_id": "ldftyak#c3",
+          "title": "Comment on post 1e4deyi",
+          "body": "Can you explain more of similar roles to this in consulting?",
+          "created_utc": 1721132463,
+          "score": -18.618822399563513
+        }
+      ],
+      "answer": "The tradeoffs between consulting roles and large-company roles like IBM are not explicitly mentioned in the provided context. \n\nTo answer this question, more information about the specific tradeoffs, such as work-life balance, salary, or career growth, is needed. \n\nSources: [1], [6], [7]",
+      "error": null
+    },
+    {
+      "question_id": "Q05",
+      "question": "What tradeoffs are mentioned between consulting roles and large-company roles like IBM?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "That said, Deloitte is a huge company so I'm sure the roles can be very specialized. I can definitely imagine Deloitte also has a lot of internal consulting roles where your \"clients\" are actually consulting teams within Deloitte. Need Guidance to Pick between two Support IT roles",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6848,
+          "source_type": "post",
+          "source_id": "1s2ufq1#p1",
+          "title": "2 offers: Consulting gig vs IBM",
+          "body": "2 offers: Consulting gig vs IBM",
+          "created_utc": 1774395502,
+          "score": -21.04552966886608
+        },
+        {
+          "id": 54851,
+          "source_type": "comment",
+          "source_id": "fk8l7h2#c2",
+          "title": "Comment on post fh26u4",
+          "body": "That said, Deloitte is a huge company so I'm sure the roles can be very specialized. I can definitely imagine Deloitte also has a lot of internal consulting roles where your \"clients\" are actually consulting teams within Deloitte.",
+          "created_utc": 1583958156,
+          "score": -20.84447481712418
+        },
+        {
+          "id": 770,
+          "source_type": "post",
+          "source_id": "n90rqu#p1",
+          "title": "Need Guidance to Pick between two Support IT roles",
+          "body": "Need Guidance to Pick between two Support IT roles",
+          "created_utc": 1620640656,
+          "score": -20.639137540593754
+        },
+        {
+          "id": 781,
+          "source_type": "post",
+          "source_id": "n90rqu#p12",
+          "title": "Need Guidance to Pick between two Support IT roles",
+          "body": "**Company B.)** **Customer Support Specialist**",
+          "created_utc": 1620640656,
+          "score": -20.56219739021967
+        },
+        {
+          "id": 775,
+          "source_type": "post",
+          "source_id": "n90rqu#p6",
+          "title": "Need Guidance to Pick between two Support IT roles",
+          "body": "**Company A.) Graduate Technical Support Specialist**",
+          "created_utc": 1620640656,
+          "score": -20.259038840651968
+        },
+        {
+          "id": 6862,
+          "source_type": "post",
+          "source_id": "1s2ufq1#p15",
+          "title": "2 offers: Consulting gig vs IBM",
+          "body": "**B) IBM**",
+          "created_utc": 1774395502,
+          "score": -20.208318984929328
+        },
+        {
+          "id": 8129,
+          "source_type": "post",
+          "source_id": "1j2ol0c#p4",
+          "title": "Advice between 2 offers",
+          "body": "* Consulting Company",
+          "created_utc": 1741024099,
+          "score": -19.213702568344367
+        },
+        {
+          "id": 75851,
+          "source_type": "comment",
+          "source_id": "ldftyak#c3",
+          "title": "Comment on post 1e4deyi",
+          "body": "Can you explain more of similar roles to this in consulting?",
+          "created_utc": 1721132463,
+          "score": -18.618822399563513
+        }
+      ],
+      "answer": "The provided context mentions a comparison between a \"Consulting gig vs IBM\" as two offers being considered, but it does not detail any specific tradeoffs between these types of roles.\n\nSources: [1], [6], [7]",
+      "error": null
+    },
+    {
+      "question_id": "Q06",
+      "question": "How are layoffs and hiring slowdowns described by community members?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "This would be an even more appealing option if it had a lot of membership from the same company. It got me thinking, as companies move away from having offices full time, or at all, do any of you folks have memberships to places like this offered as a work perk? Company pays for community workspace membership?",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 25242,
+          "source_type": "post",
+          "source_id": "q2tdro#p1",
+          "title": "Company pays for community workspace membership?",
+          "body": "Company pays for community workspace membership?",
+          "created_utc": 1633553970,
+          "score": -20.353131676213597
+        },
+        {
+          "id": 25248,
+          "source_type": "post",
+          "source_id": "q2tdro#p7",
+          "title": "Company pays for community workspace membership?",
+          "body": "Thanks!",
+          "created_utc": 1633553970,
+          "score": -17.939269876900564
+        },
+        {
+          "id": 25245,
+          "source_type": "post",
+          "source_id": "q2tdro#p4",
+          "title": "Company pays for community workspace membership?",
+          "body": "https://www.collectiveseattle.com/",
+          "created_utc": 1633553970,
+          "score": -17.082660484477486
+        },
+        {
+          "id": 25247,
+          "source_type": "post",
+          "source_id": "q2tdro#p6",
+          "title": "Company pays for community workspace membership?",
+          "body": "This would be an even more appealing option if it had a lot of membership from the same company.",
+          "created_utc": 1633553970,
+          "score": -16.068704533148498
+        },
+        {
+          "id": 25243,
+          "source_type": "post",
+          "source_id": "q2tdro#p2",
+          "title": "Company pays for community workspace membership?",
+          "body": "I like wfh, have a good office that makes it easy to be productive.",
+          "created_utc": 1633553970,
+          "score": -14.736996525553739
+        },
+        {
+          "id": 25246,
+          "source_type": "post",
+          "source_id": "q2tdro#p5",
+          "title": "Company pays for community workspace membership?",
+          "body": "It got me thinking, as companies move away from having offices full time, or at all, do any of you folks have memberships to places like this offered as a work perk?",
+          "created_utc": 1633553970,
+          "score": -14.190690567357215
+        },
+        {
+          "id": 25244,
+          "source_type": "post",
+          "source_id": "q2tdro#p3",
+          "title": "Company pays for community workspace membership?",
+          "body": "That being said, it's tempting to get out of the house once in a while. A friend of mine has a membership to this place, and it looks pretty nice, but man it is expensive:",
+          "created_utc": 1633553970,
+          "score": -13.700829990407996
+        },
+        {
+          "id": 17239,
+          "source_type": "post",
+          "source_id": "1c95acu#p6",
+          "title": "Has anyone else's employer stopped pretending to care?",
+          "body": "Even my team has been gradually \"augmented\" by Indian team members, but we haven't had any layoffs yet.",
+          "created_utc": 1713660466,
+          "score": -13.071728291767121
+        }
+      ],
+      "answer": "Layoffs and hiring slowdowns are not directly described by community members in the provided context. However, some related information is mentioned:\n* There is no mention of layoffs in the context, except for one post stating \"we haven't had any layoffs yet.\"\n* One post mentions a team being \"augmented\" by Indian team members, which could be related to hiring slowdowns or changes in team composition.\n* The context primarily discusses community workspace memberships and remote work.\n* No explicit descriptions of layoffs or hiring slowdowns are provided.\n* The information available is limited to a single post that mentions the absence of layoffs.\nSources: [8]",
+      "error": null
+    },
+    {
+      "question_id": "Q06",
+      "question": "How are layoffs and hiring slowdowns described by community members?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "This would be an even more appealing option if it had a lot of membership from the same company. It got me thinking, as companies move away from having offices full time, or at all, do any of you folks have memberships to places like this offered as a work perk? Company pays for community workspace membership?",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 25242,
+          "source_type": "post",
+          "source_id": "q2tdro#p1",
+          "title": "Company pays for community workspace membership?",
+          "body": "Company pays for community workspace membership?",
+          "created_utc": 1633553970,
+          "score": -20.353131676213597
+        },
+        {
+          "id": 25248,
+          "source_type": "post",
+          "source_id": "q2tdro#p7",
+          "title": "Company pays for community workspace membership?",
+          "body": "Thanks!",
+          "created_utc": 1633553970,
+          "score": -17.939269876900564
+        },
+        {
+          "id": 25245,
+          "source_type": "post",
+          "source_id": "q2tdro#p4",
+          "title": "Company pays for community workspace membership?",
+          "body": "https://www.collectiveseattle.com/",
+          "created_utc": 1633553970,
+          "score": -17.082660484477486
+        },
+        {
+          "id": 25247,
+          "source_type": "post",
+          "source_id": "q2tdro#p6",
+          "title": "Company pays for community workspace membership?",
+          "body": "This would be an even more appealing option if it had a lot of membership from the same company.",
+          "created_utc": 1633553970,
+          "score": -16.068704533148498
+        },
+        {
+          "id": 25243,
+          "source_type": "post",
+          "source_id": "q2tdro#p2",
+          "title": "Company pays for community workspace membership?",
+          "body": "I like wfh, have a good office that makes it easy to be productive.",
+          "created_utc": 1633553970,
+          "score": -14.736996525553739
+        },
+        {
+          "id": 25246,
+          "source_type": "post",
+          "source_id": "q2tdro#p5",
+          "title": "Company pays for community workspace membership?",
+          "body": "It got me thinking, as companies move away from having offices full time, or at all, do any of you folks have memberships to places like this offered as a work perk?",
+          "created_utc": 1633553970,
+          "score": -14.190690567357215
+        },
+        {
+          "id": 25244,
+          "source_type": "post",
+          "source_id": "q2tdro#p3",
+          "title": "Company pays for community workspace membership?",
+          "body": "That being said, it's tempting to get out of the house once in a while. A friend of mine has a membership to this place, and it looks pretty nice, but man it is expensive:",
+          "created_utc": 1633553970,
+          "score": -13.700829990407996
+        },
+        {
+          "id": 17239,
+          "source_type": "post",
+          "source_id": "1c95acu#p6",
+          "title": "Has anyone else's employer stopped pretending to care?",
+          "body": "Even my team has been gradually \"augmented\" by Indian team members, but we haven't had any layoffs yet.",
+          "created_utc": 1713660466,
+          "score": -13.071728291767121
+        }
+      ],
+      "answer": "The provided context does not offer descriptions from community members about layoffs or hiring slowdowns. The only mention of layoffs states that they have not occurred yet in one specific instance.\n\nWhat is missing:\n* Descriptions or sentiments from community members regarding layoffs.\n* Any mention or description of hiring slowdowns.\n\nSources: [8]",
+      "error": null
+    },
+    {
+      "question_id": "Q07",
+      "question": "What do users mention about early-career struggles after a CS degree?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "I graduated in December 2019 with a degree in CS, and a lot of experience in mechanical engineering (I found my passion pretty late in my college career). Early Career Questions (Early Career) Feeling stuck.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6700,
+          "source_type": "post",
+          "source_id": "1j4tkxx#p1",
+          "title": "Google early careers",
+          "body": "Google early careers",
+          "created_utc": 1741261233,
+          "score": -14.068261875286897
+        },
+        {
+          "id": 17224,
+          "source_type": "post",
+          "source_id": "1c96j51#p1",
+          "title": "Early Career Questions",
+          "body": "Early Career Questions",
+          "created_utc": 1713664398,
+          "score": -14.068261875286897
+        },
+        {
+          "id": 13339,
+          "source_type": "post",
+          "source_id": "qqjxj1#p1",
+          "title": "(Early Career) Feeling stuck.",
+          "body": "(Early Career) Feeling stuck.",
+          "created_utc": 1636511521,
+          "score": -13.790951883490667
+        },
+        {
+          "id": 2146,
+          "source_type": "post",
+          "source_id": "1qvcapd#p1",
+          "title": "Google early career SWE team match",
+          "body": "Google early career SWE team match",
+          "created_utc": 1770172497,
+          "score": -13.267885528912863
+        },
+        {
+          "id": 13340,
+          "source_type": "post",
+          "source_id": "qqjxj1#p2",
+          "title": "(Early Career) Feeling stuck.",
+          "body": "I graduated in December 2019 with a degree in CS, and a lot of experience in mechanical engineering (I found my passion pretty late in my college career).",
+          "created_utc": 1636511521,
+          "score": -12.803243967881683
+        },
+        {
+          "id": 17870,
+          "source_type": "post",
+          "source_id": "r1sm6e#p1",
+          "title": "Advice for a front-end web dev (early career)",
+          "body": "Advice for a front-end web dev (early career)",
+          "created_utc": 1637831706,
+          "score": -12.553677436320383
+        },
+        {
+          "id": 12707,
+          "source_type": "post",
+          "source_id": "eyu483#p1",
+          "title": "Company coming to CS Career Fair has not mention of software engineering?",
+          "body": "Company coming to CS Career Fair has not mention of software engineering?",
+          "created_utc": 1580839441,
+          "score": -11.873465670503121
+        },
+        {
+          "id": 6701,
+          "source_type": "post",
+          "source_id": "1j4tkxx#p2",
+          "title": "Google early careers",
+          "body": "Anyone apply to Technical Program Manager, Data Management or   User Experience Designer, Early Career, Search or Product Activation Analyst, YouTube. And hear back?",
+          "created_utc": 1741261233,
+          "score": -11.712999025359817
+        }
+      ],
+      "answer": "Users mention feeling stuck and seeking advice after completing their CS degree. Key points include:\n* Feeling stuck in early career, as mentioned in post qqjxj1#p1.\n* Having a degree in CS and experience in other fields, such as mechanical engineering, as mentioned in post qqjxj1#p2.\n* Seeking advice for front-end web development careers, as mentioned in post r1sm6e#p1.\n* Companies attending CS career fairs may not always mention software engineering, as mentioned in post eyu483#p1.\n* Applying for early career positions at companies like Google, as mentioned in posts 1j4tkxx#p1 and 1j4tkxx#p2.\nSources: [1], [3], [5], [6], [7], [8]",
+      "error": null
+    },
+    {
+      "question_id": "Q07",
+      "question": "What do users mention about early-career struggles after a CS degree?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "I graduated in December 2019 with a degree in CS, and a lot of experience in mechanical engineering (I found my passion pretty late in my college career). Early Career Questions (Early Career) Feeling stuck.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6700,
+          "source_type": "post",
+          "source_id": "1j4tkxx#p1",
+          "title": "Google early careers",
+          "body": "Google early careers",
+          "created_utc": 1741261233,
+          "score": -14.068261875286897
+        },
+        {
+          "id": 17224,
+          "source_type": "post",
+          "source_id": "1c96j51#p1",
+          "title": "Early Career Questions",
+          "body": "Early Career Questions",
+          "created_utc": 1713664398,
+          "score": -14.068261875286897
+        },
+        {
+          "id": 13339,
+          "source_type": "post",
+          "source_id": "qqjxj1#p1",
+          "title": "(Early Career) Feeling stuck.",
+          "body": "(Early Career) Feeling stuck.",
+          "created_utc": 1636511521,
+          "score": -13.790951883490667
+        },
+        {
+          "id": 2146,
+          "source_type": "post",
+          "source_id": "1qvcapd#p1",
+          "title": "Google early career SWE team match",
+          "body": "Google early career SWE team match",
+          "created_utc": 1770172497,
+          "score": -13.267885528912863
+        },
+        {
+          "id": 13340,
+          "source_type": "post",
+          "source_id": "qqjxj1#p2",
+          "title": "(Early Career) Feeling stuck.",
+          "body": "I graduated in December 2019 with a degree in CS, and a lot of experience in mechanical engineering (I found my passion pretty late in my college career).",
+          "created_utc": 1636511521,
+          "score": -12.803243967881683
+        },
+        {
+          "id": 17870,
+          "source_type": "post",
+          "source_id": "r1sm6e#p1",
+          "title": "Advice for a front-end web dev (early career)",
+          "body": "Advice for a front-end web dev (early career)",
+          "created_utc": 1637831706,
+          "score": -12.553677436320383
+        },
+        {
+          "id": 12707,
+          "source_type": "post",
+          "source_id": "eyu483#p1",
+          "title": "Company coming to CS Career Fair has not mention of software engineering?",
+          "body": "Company coming to CS Career Fair has not mention of software engineering?",
+          "created_utc": 1580839441,
+          "score": -11.873465670503121
+        },
+        {
+          "id": 6701,
+          "source_type": "post",
+          "source_id": "1j4tkxx#p2",
+          "title": "Google early careers",
+          "body": "Anyone apply to Technical Program Manager, Data Management or   User Experience Designer, Early Career, Search or Product Activation Analyst, YouTube. And hear back?",
+          "created_utc": 1741261233,
+          "score": -11.712999025359817
+        }
+      ],
+      "answer": "Users mention feeling stuck in their early career after obtaining a CS degree.\n\n*   A user expressed \"feeling stuck\" in their early career.\n*   This individual graduated in December 2019 with a CS degree.\n*   They also had significant experience in mechanical engineering, having found their passion late in their college career.\n\nSources: [3, 5]",
+      "error": null
+    },
+    {
+      "question_id": "Q08",
+      "question": "What are attitudes toward using LLM coding assistants at work?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "Same attitudes toward competitive coding. >I've worked with LLMs and started using them in my daily work. Are you using an AI coding assistant?",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 81856,
+          "source_type": "comment",
+          "source_id": "iicojyp#c4",
+          "title": "Comment on post wc35b3",
+          "body": "Same attitudes toward competitive coding.",
+          "created_utc": 1659247883,
+          "score": -26.854790727479607
+        },
+        {
+          "id": 8555,
+          "source_type": "post",
+          "source_id": "1rupti3#p1",
+          "title": "Will I become a stupider SWE using LLM/agents?",
+          "body": "Will I become a stupider SWE using LLM/agents?",
+          "created_utc": 1773608794,
+          "score": -17.187142109634358
+        },
+        {
+          "id": 65056,
+          "source_type": "comment",
+          "source_id": "mimrsks#c1",
+          "title": "Comment on post 1jezf8s",
+          "body": "Do you have a teaching assistantship or research assistantship?   Experience > degree in the job market.",
+          "created_utc": 1742397828,
+          "score": -15.54400084582946
+        },
+        {
+          "id": 8560,
+          "source_type": "post",
+          "source_id": "1rupti3#p6",
+          "title": "Will I become a stupider SWE using LLM/agents?",
+          "body": "Like why learn anything when LLM can figure it out instantly",
+          "created_utc": 1773608794,
+          "score": -15.371535622088098
+        },
+        {
+          "id": 56234,
+          "source_type": "comment",
+          "source_id": "m6f4jbe#c13",
+          "title": "Comment on post 1hxs3ir",
+          "body": ">I've worked with LLMs and started using them in my daily work. They are especially good at writing unit tests.",
+          "created_utc": 1736524814,
+          "score": -14.894627343700542
+        },
+        {
+          "id": 16862,
+          "source_type": "post",
+          "source_id": "1d9m5c1#p1",
+          "title": "Are you using an AI coding assistant?",
+          "body": "Are you using an AI coding assistant?",
+          "created_utc": 1717690707,
+          "score": -13.835757220662305
+        },
+        {
+          "id": 8557,
+          "source_type": "post",
+          "source_id": "1rupti3#p3",
+          "title": "Will I become a stupider SWE using LLM/agents?",
+          "body": "So I haven’t really thought about anything except providing context to the llm so it can make some choice and I do it.",
+          "created_utc": 1773608794,
+          "score": -13.531887276595686
+        },
+        {
+          "id": 16648,
+          "source_type": "post",
+          "source_id": "1olg1xw#p6",
+          "title": "Looking for solid AI Engineering System Design prep material",
+          "body": "I’ve built and deployed agentic RAG systems using LangChain, LangGraph, and LangSmith, so I’m comfortable with the LLM stack and core LLM and AI-engineering concepts.",
+          "created_utc": 1761975105,
+          "score": -13.054248213818932
+        }
+      ],
+      "answer": "Attitudes toward using LLM coding assistants at work are mixed, with some users expressing concerns about relying on them and others finding them useful. \n* Some users worry that relying on LLMs will make them less skilled, as seen in the comment \"Will I become a stupider SWE using LLM/agents?\" [2]\n* Others find LLMs helpful for specific tasks, such as writing unit tests [5]\n* A few users have incorporated LLMs into their daily work, valuing their assistance [5]\n* Some users are unsure about the impact of LLMs on their skills, seeking context on how to use them effectively [7]\n* There are also users who are experienced in working with LLMs and AI-engineering concepts, and find them useful [8]\nSources: [2, 5, 7, 8]",
+      "error": null
+    },
+    {
+      "question_id": "Q08",
+      "question": "What are attitudes toward using LLM coding assistants at work?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "Same attitudes toward competitive coding. >I've worked with LLMs and started using them in my daily work. Are you using an AI coding assistant?",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 81856,
+          "source_type": "comment",
+          "source_id": "iicojyp#c4",
+          "title": "Comment on post wc35b3",
+          "body": "Same attitudes toward competitive coding.",
+          "created_utc": 1659247883,
+          "score": -26.854790727479607
+        },
+        {
+          "id": 8555,
+          "source_type": "post",
+          "source_id": "1rupti3#p1",
+          "title": "Will I become a stupider SWE using LLM/agents?",
+          "body": "Will I become a stupider SWE using LLM/agents?",
+          "created_utc": 1773608794,
+          "score": -17.187142109634358
+        },
+        {
+          "id": 65056,
+          "source_type": "comment",
+          "source_id": "mimrsks#c1",
+          "title": "Comment on post 1jezf8s",
+          "body": "Do you have a teaching assistantship or research assistantship?   Experience > degree in the job market.",
+          "created_utc": 1742397828,
+          "score": -15.54400084582946
+        },
+        {
+          "id": 8560,
+          "source_type": "post",
+          "source_id": "1rupti3#p6",
+          "title": "Will I become a stupider SWE using LLM/agents?",
+          "body": "Like why learn anything when LLM can figure it out instantly",
+          "created_utc": 1773608794,
+          "score": -15.371535622088098
+        },
+        {
+          "id": 56234,
+          "source_type": "comment",
+          "source_id": "m6f4jbe#c13",
+          "title": "Comment on post 1hxs3ir",
+          "body": ">I've worked with LLMs and started using them in my daily work. They are especially good at writing unit tests.",
+          "created_utc": 1736524814,
+          "score": -14.894627343700542
+        },
+        {
+          "id": 16862,
+          "source_type": "post",
+          "source_id": "1d9m5c1#p1",
+          "title": "Are you using an AI coding assistant?",
+          "body": "Are you using an AI coding assistant?",
+          "created_utc": 1717690707,
+          "score": -13.835757220662305
+        },
+        {
+          "id": 8557,
+          "source_type": "post",
+          "source_id": "1rupti3#p3",
+          "title": "Will I become a stupider SWE using LLM/agents?",
+          "body": "So I haven’t really thought about anything except providing context to the llm so it can make some choice and I do it.",
+          "created_utc": 1773608794,
+          "score": -13.531887276595686
+        },
+        {
+          "id": 16648,
+          "source_type": "post",
+          "source_id": "1olg1xw#p6",
+          "title": "Looking for solid AI Engineering System Design prep material",
+          "body": "I’ve built and deployed agentic RAG systems using LangChain, LangGraph, and LangSmith, so I’m comfortable with the LLM stack and core LLM and AI-engineering concepts.",
+          "created_utc": 1761975105,
+          "score": -13.054248213818932
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 7.035153382s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"7s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 7.035153382s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"7s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q09",
+      "question": "What geographic comparisons are discussed for tech jobs outside the US versus inside the US?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "Link: [https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5](https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5) Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart >Handshake's analysis suggested tech job postings geared toward fresh graduates fell by 30% compared with last year.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 17080,
+          "source_type": "post",
+          "source_id": "1f2vbqt#p5",
+          "title": "Environmental And Field Related Jobs?",
+          "body": "Geographic information systems related jobs?",
+          "created_utc": 1724800720,
+          "score": -17.283540953196063
+        },
+        {
+          "id": 17074,
+          "source_type": "post",
+          "source_id": "1f2vds2#p5",
+          "title": "Environmental and/or \"On The Field\" Jobs?",
+          "body": "Geographic information systems related jobs?",
+          "created_utc": 1724800874,
+          "score": -16.816994086941726
+        },
+        {
+          "id": 18997,
+          "source_type": "post",
+          "source_id": "1b8xdjr#p23",
+          "title": "Help with choosing IT-program",
+          "body": "\\- Geographical information tech (?)",
+          "created_utc": 1709825181,
+          "score": -15.951569346832253
+        },
+        {
+          "id": 16873,
+          "source_type": "post",
+          "source_id": "1d9lov6#p1",
+          "title": "Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart",
+          "body": "Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart",
+          "created_utc": 1717689605,
+          "score": -14.193989741516424
+        },
+        {
+          "id": 16874,
+          "source_type": "post",
+          "source_id": "1d9lov6#p2",
+          "title": "Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart",
+          "body": "Link: [https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5](https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5)",
+          "created_utc": 1717689605,
+          "score": -13.973519374118109
+        },
+        {
+          "id": 16876,
+          "source_type": "post",
+          "source_id": "1d9lov6#p4",
+          "title": "Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart",
+          "body": ">Handshake's analysis suggested tech job postings geared toward fresh graduates fell by 30% compared with last year.",
+          "created_utc": 1717689605,
+          "score": -12.982398092051909
+        },
+        {
+          "id": 30265,
+          "source_type": "comment",
+          "source_id": "hinvrpz#c1",
+          "title": "Comment on post qj3pbc",
+          "body": "Check Glassdoor/blind/levels for salary comparisons.",
+          "created_utc": 1635613506,
+          "score": -12.92868663602291
+        },
+        {
+          "id": 63569,
+          "source_type": "comment",
+          "source_id": "fl27l8q#c1",
+          "title": "Comment on post fkb33h",
+          "body": "Social distancing doesn't mean not going outside (being inside definitely makes social distancing easier, though, which is why people should do it).",
+          "created_utc": 1584744727,
+          "score": -12.9176849506585
+        }
+      ],
+      "answer": "There is no discussion of geographic comparisons for tech jobs outside the US versus inside the US in the provided context. \n\n* No posts or comments mention international comparisons of tech jobs.\n* Posts and comments focus on general job topics, such as environmental jobs and salary comparisons.\n* Some posts discuss the US job market, but do not compare it to other countries.\n* The context does not provide sufficient information to answer the question.\n* The available information is limited to US-focused job discussions.\n\nSources: [1-8]",
+      "error": null
+    },
+    {
+      "question_id": "Q09",
+      "question": "What geographic comparisons are discussed for tech jobs outside the US versus inside the US?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "Link: [https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5](https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5) Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart >Handshake's analysis suggested tech job postings geared toward fresh graduates fell by 30% compared with last year.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 17080,
+          "source_type": "post",
+          "source_id": "1f2vbqt#p5",
+          "title": "Environmental And Field Related Jobs?",
+          "body": "Geographic information systems related jobs?",
+          "created_utc": 1724800720,
+          "score": -17.283540953196063
+        },
+        {
+          "id": 17074,
+          "source_type": "post",
+          "source_id": "1f2vds2#p5",
+          "title": "Environmental and/or \"On The Field\" Jobs?",
+          "body": "Geographic information systems related jobs?",
+          "created_utc": 1724800874,
+          "score": -16.816994086941726
+        },
+        {
+          "id": 18997,
+          "source_type": "post",
+          "source_id": "1b8xdjr#p23",
+          "title": "Help with choosing IT-program",
+          "body": "\\- Geographical information tech (?)",
+          "created_utc": 1709825181,
+          "score": -15.951569346832253
+        },
+        {
+          "id": 16873,
+          "source_type": "post",
+          "source_id": "1d9lov6#p1",
+          "title": "Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart",
+          "body": "Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart",
+          "created_utc": 1717689605,
+          "score": -14.193989741516424
+        },
+        {
+          "id": 16874,
+          "source_type": "post",
+          "source_id": "1d9lov6#p2",
+          "title": "Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart",
+          "body": "Link: [https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5](https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5)",
+          "created_utc": 1717689605,
+          "score": -13.973519374118109
+        },
+        {
+          "id": 16876,
+          "source_type": "post",
+          "source_id": "1d9lov6#p4",
+          "title": "Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart",
+          "body": ">Handshake's analysis suggested tech job postings geared toward fresh graduates fell by 30% compared with last year.",
+          "created_utc": 1717689605,
+          "score": -12.982398092051909
+        },
+        {
+          "id": 30265,
+          "source_type": "comment",
+          "source_id": "hinvrpz#c1",
+          "title": "Comment on post qj3pbc",
+          "body": "Check Glassdoor/blind/levels for salary comparisons.",
+          "created_utc": 1635613506,
+          "score": -12.92868663602291
+        },
+        {
+          "id": 63569,
+          "source_type": "comment",
+          "source_id": "fl27l8q#c1",
+          "title": "Comment on post fkb33h",
+          "body": "Social distancing doesn't mean not going outside (being inside definitely makes social distancing easier, though, which is why people should do it).",
+          "created_utc": 1584744727,
+          "score": -12.9176849506585
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 5.846900199s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"5s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 5.846900199s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"5s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q10",
+      "question": "What arguments appear when people debate compensation versus work-life balance?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "> And how do you guys weigh compensation and other factors such work-life balance? I value work life balance highest, so there are some companies and positions I will refuse to work at. If you look at reviews of various companies, some that pay very well are also known for work life balance.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 89470,
+          "source_type": "comment",
+          "source_id": "hv5whyt#c4",
+          "title": "Comment on post si1c4z",
+          "body": "> And how do you guys weigh compensation and other factors such work-life balance?",
+          "created_utc": 1643739354,
+          "score": -21.09583449377415
+        },
+        {
+          "id": 22492,
+          "source_type": "post",
+          "source_id": "hhbjrx#p1",
+          "title": "Palantir Work Life Balance",
+          "body": "Palantir Work Life Balance",
+          "created_utc": 1593336564,
+          "score": -19.83872674626398
+        },
+        {
+          "id": 14130,
+          "source_type": "post",
+          "source_id": "yhvumm#p1",
+          "title": "CS and Work-Life Balance?",
+          "body": "CS and Work-Life Balance?",
+          "created_utc": 1667177040,
+          "score": -19.4552302079435
+        },
+        {
+          "id": 35886,
+          "source_type": "comment",
+          "source_id": "i34sv2o#c1",
+          "title": "Comment on post tuoq3v",
+          "body": "It's very personal honestly.  Everyone has a different life and conditions.  I value work life balance highest, so there are some companies and positions I will refuse to work at.  That said, compensation is very important too.  And it's not always a binary.  If you look at reviews of various companies, some that pay very well are also known for work life balance.",
+          "created_utc": 1648922304,
+          "score": -17.656862175866944
+        },
+        {
+          "id": 7190,
+          "source_type": "post",
+          "source_id": "toacoy#p1",
+          "title": "What’s the work-life balance for a junior network engineer?",
+          "body": "What’s the work-life balance for a junior network engineer?",
+          "created_utc": 1648257262,
+          "score": -17.43324849463638
+        },
+        {
+          "id": 8340,
+          "source_type": "post",
+          "source_id": "yircgm#p1",
+          "title": "How is the work/life balance across different fields in CS?",
+          "body": "How is the work/life balance across different fields in CS?",
+          "created_utc": 1667256271,
+          "score": -17.43324849463638
+        },
+        {
+          "id": 20825,
+          "source_type": "post",
+          "source_id": "15qekmb#p1",
+          "title": "Which field has the best pay and good work life balance?",
+          "body": "Which field has the best pay and good work life balance?",
+          "created_utc": 1691971393,
+          "score": -17.43324849463638
+        },
+        {
+          "id": 14131,
+          "source_type": "post",
+          "source_id": "yhvumm#p2",
+          "title": "CS and Work-Life Balance?",
+          "body": "Hey guys,",
+          "created_utc": 1667177040,
+          "score": -16.822664718841903
+        }
+      ],
+      "answer": "When debating compensation versus work-life balance, the following arguments appear:\n* Compensation is important, but work-life balance is valued highest by some individuals.\n* It's not always a binary choice between compensation and work-life balance.\n* Some companies that pay well are also known for having good work-life balance.\n* Different fields and positions have varying levels of work-life balance.\n* Personal life and conditions play a significant role in weighing compensation and work-life balance.\n* The ideal balance between pay and work-life balance varies across fields and individuals.\n\nSources: [1, 4, 7]",
+      "error": null
+    },
+    {
+      "question_id": "Q10",
+      "question": "What arguments appear when people debate compensation versus work-life balance?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "> And how do you guys weigh compensation and other factors such work-life balance? I value work life balance highest, so there are some companies and positions I will refuse to work at. If you look at reviews of various companies, some that pay very well are also known for work life balance.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 89470,
+          "source_type": "comment",
+          "source_id": "hv5whyt#c4",
+          "title": "Comment on post si1c4z",
+          "body": "> And how do you guys weigh compensation and other factors such work-life balance?",
+          "created_utc": 1643739354,
+          "score": -21.09583449377415
+        },
+        {
+          "id": 22492,
+          "source_type": "post",
+          "source_id": "hhbjrx#p1",
+          "title": "Palantir Work Life Balance",
+          "body": "Palantir Work Life Balance",
+          "created_utc": 1593336564,
+          "score": -19.83872674626398
+        },
+        {
+          "id": 14130,
+          "source_type": "post",
+          "source_id": "yhvumm#p1",
+          "title": "CS and Work-Life Balance?",
+          "body": "CS and Work-Life Balance?",
+          "created_utc": 1667177040,
+          "score": -19.4552302079435
+        },
+        {
+          "id": 35886,
+          "source_type": "comment",
+          "source_id": "i34sv2o#c1",
+          "title": "Comment on post tuoq3v",
+          "body": "It's very personal honestly.  Everyone has a different life and conditions.  I value work life balance highest, so there are some companies and positions I will refuse to work at.  That said, compensation is very important too.  And it's not always a binary.  If you look at reviews of various companies, some that pay very well are also known for work life balance.",
+          "created_utc": 1648922304,
+          "score": -17.656862175866944
+        },
+        {
+          "id": 7190,
+          "source_type": "post",
+          "source_id": "toacoy#p1",
+          "title": "What’s the work-life balance for a junior network engineer?",
+          "body": "What’s the work-life balance for a junior network engineer?",
+          "created_utc": 1648257262,
+          "score": -17.43324849463638
+        },
+        {
+          "id": 8340,
+          "source_type": "post",
+          "source_id": "yircgm#p1",
+          "title": "How is the work/life balance across different fields in CS?",
+          "body": "How is the work/life balance across different fields in CS?",
+          "created_utc": 1667256271,
+          "score": -17.43324849463638
+        },
+        {
+          "id": 20825,
+          "source_type": "post",
+          "source_id": "15qekmb#p1",
+          "title": "Which field has the best pay and good work life balance?",
+          "body": "Which field has the best pay and good work life balance?",
+          "created_utc": 1691971393,
+          "score": -17.43324849463638
+        },
+        {
+          "id": 14131,
+          "source_type": "post",
+          "source_id": "yhvumm#p2",
+          "title": "CS and Work-Life Balance?",
+          "body": "Hey guys,",
+          "created_utc": 1667177040,
+          "score": -16.822664718841903
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 4.279582836s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"4s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 4.279582836s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"4s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q11",
+      "question": "What recurring advice is shared for applicants receiving very few interview callbacks?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "Thank you very much in advance for any advice or shared experiences. Dude had a couple of annoying, recurring tasks, and made them go away with a few clever lines of code. I get few callbacks when I apply to jobs and the call backs I do get I haven't converted them to offers.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 14372,
+          "source_type": "post",
+          "source_id": "1d3b6nm#p9",
+          "title": "Backend (Java-Spring) Developer Internship with Mulesoft: What Should I Expect?",
+          "body": "Thank you very much in advance for any advice or shared experiences.",
+          "created_utc": 1716986284,
+          "score": -16.255371825180475
+        },
+        {
+          "id": 37939,
+          "source_type": "comment",
+          "source_id": "jiy5ghc#c12",
+          "title": "Comment on post 138dyul",
+          "body": "Dude had a couple of annoying, recurring tasks, and made them go away with a few clever lines of code.",
+          "created_utc": 1683284958,
+          "score": -14.673966795633568
+        },
+        {
+          "id": 76387,
+          "source_type": "comment",
+          "source_id": "i7i2yz9#c2",
+          "title": "Comment on post uj4dq4",
+          "body": "I can't find anything.  I get few callbacks when I apply to jobs and the call backs I do get I haven't converted them to offers.  Failed Apple and Meta virtual onsite interviews earlier this year.",
+          "created_utc": 1651801217,
+          "score": -13.864360613741628
+        },
+        {
+          "id": 16663,
+          "source_type": "post",
+          "source_id": "1olg1xw#p21",
+          "title": "Looking for solid AI Engineering System Design prep material",
+          "body": "Other recruiter-shared examples before interviews included:",
+          "created_utc": 1761975105,
+          "score": -13.222831563614246
+        },
+        {
+          "id": 15421,
+          "source_type": "post",
+          "source_id": "1p4afjb#p1",
+          "title": "Not receiving OA’s",
+          "body": "Not receiving OA’s",
+          "created_utc": 1763862641,
+          "score": -12.683534987158406
+        },
+        {
+          "id": 59376,
+          "source_type": "comment",
+          "source_id": "mumrcwp#c3",
+          "title": "Comment on post 1kwtw5p",
+          "body": "Unsolicited advice: as bad as the SWE market is, PM is brutal. Fewer positions, very difficult to judge skills so it’s an endless barrage of interviews, and a lot of companies are eliminating the role.",
+          "created_utc": 1748399765,
+          "score": -12.674804626911632
+        },
+        {
+          "id": 37513,
+          "source_type": "comment",
+          "source_id": "ftb12bu#c1",
+          "title": "Comment on post gyjk5l",
+          "body": "SRE positions may get a lot fewer applicants, but that’s because they’re basically only open to a very specific subset of people (Developers with significant operations experience or vice versa). There’s lots of open positions but very few qualified candidates, and they can’t be filled by just anyone, unfortunately. Bad code can be fixed. Misarchitected systems cannot, at least not conventionally.",
+          "created_utc": 1591565276,
+          "score": -12.381050328865179
+        },
+        {
+          "id": 23972,
+          "source_type": "post",
+          "source_id": "1or4toa#p22",
+          "title": "AWS vs Bloomberg vs Startup",
+          "body": "**Bloomberg** **200k FYTC, 185-190 recurring** NYC",
+          "created_utc": 1762546126,
+          "score": -12.244600911015509
+        }
+      ],
+      "answer": "Recurring advice for applicants receiving very few interview callbacks is not explicitly stated in the provided context. However, some insights can be gathered from the following points:\n* Applicants are having trouble getting callbacks, with one user mentioning they \"get few callbacks when I apply to jobs\" ([3]).\n* The job market for certain positions, such as SWE and PM, is highly competitive ([6]).\n* Some positions, like SRE, require very specific skills and experience, making it difficult for companies to find qualified candidates ([7]).\n* There is no direct advice given in the context for improving interview callback rates.\n* The context does mention the challenges of certain job interviews, such as virtual onsite interviews ([3]).\n* It highlights the importance of having specific skills and experience for certain positions.\n\nSources: [3], [6], [7]",
+      "error": null
+    },
+    {
+      "question_id": "Q11",
+      "question": "What recurring advice is shared for applicants receiving very few interview callbacks?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "Thank you very much in advance for any advice or shared experiences. Dude had a couple of annoying, recurring tasks, and made them go away with a few clever lines of code. I get few callbacks when I apply to jobs and the call backs I do get I haven't converted them to offers.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 14372,
+          "source_type": "post",
+          "source_id": "1d3b6nm#p9",
+          "title": "Backend (Java-Spring) Developer Internship with Mulesoft: What Should I Expect?",
+          "body": "Thank you very much in advance for any advice or shared experiences.",
+          "created_utc": 1716986284,
+          "score": -16.255371825180475
+        },
+        {
+          "id": 37939,
+          "source_type": "comment",
+          "source_id": "jiy5ghc#c12",
+          "title": "Comment on post 138dyul",
+          "body": "Dude had a couple of annoying, recurring tasks, and made them go away with a few clever lines of code.",
+          "created_utc": 1683284958,
+          "score": -14.673966795633568
+        },
+        {
+          "id": 76387,
+          "source_type": "comment",
+          "source_id": "i7i2yz9#c2",
+          "title": "Comment on post uj4dq4",
+          "body": "I can't find anything.  I get few callbacks when I apply to jobs and the call backs I do get I haven't converted them to offers.  Failed Apple and Meta virtual onsite interviews earlier this year.",
+          "created_utc": 1651801217,
+          "score": -13.864360613741628
+        },
+        {
+          "id": 16663,
+          "source_type": "post",
+          "source_id": "1olg1xw#p21",
+          "title": "Looking for solid AI Engineering System Design prep material",
+          "body": "Other recruiter-shared examples before interviews included:",
+          "created_utc": 1761975105,
+          "score": -13.222831563614246
+        },
+        {
+          "id": 15421,
+          "source_type": "post",
+          "source_id": "1p4afjb#p1",
+          "title": "Not receiving OA’s",
+          "body": "Not receiving OA’s",
+          "created_utc": 1763862641,
+          "score": -12.683534987158406
+        },
+        {
+          "id": 59376,
+          "source_type": "comment",
+          "source_id": "mumrcwp#c3",
+          "title": "Comment on post 1kwtw5p",
+          "body": "Unsolicited advice: as bad as the SWE market is, PM is brutal. Fewer positions, very difficult to judge skills so it’s an endless barrage of interviews, and a lot of companies are eliminating the role.",
+          "created_utc": 1748399765,
+          "score": -12.674804626911632
+        },
+        {
+          "id": 37513,
+          "source_type": "comment",
+          "source_id": "ftb12bu#c1",
+          "title": "Comment on post gyjk5l",
+          "body": "SRE positions may get a lot fewer applicants, but that’s because they’re basically only open to a very specific subset of people (Developers with significant operations experience or vice versa). There’s lots of open positions but very few qualified candidates, and they can’t be filled by just anyone, unfortunately. Bad code can be fixed. Misarchitected systems cannot, at least not conventionally.",
+          "created_utc": 1591565276,
+          "score": -12.381050328865179
+        },
+        {
+          "id": 23972,
+          "source_type": "post",
+          "source_id": "1or4toa#p22",
+          "title": "AWS vs Bloomberg vs Startup",
+          "body": "**Bloomberg** **200k FYTC, 185-190 recurring** NYC",
+          "created_utc": 1762546126,
+          "score": -12.244600911015509
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 2.417619763s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"2s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 2.417619763s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"2s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q12",
+      "question": "How do users frame whether product management is growing because of LLM tooling?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "The gap bugged me for a while so I took a gander at our project management tooling and the tl;dr is that it's all went into doing the work that surrounds the coding. More and more do I feel that programming is shrinking as a percentage of my week, and what's replacing it looks a lot like product management. Obviously, code quality can affect UX, but my point is about whether the LLM gold rush is actually benefiting users/customers.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6843,
+          "source_type": "post",
+          "source_id": "1s2uix1#p1",
+          "title": "Are LLMs speedrunning us into product management?",
+          "body": "Are LLMs speedrunning us into product management?",
+          "created_utc": 1774395706,
+          "score": -25.067464909716687
+        },
+        {
+          "id": 6846,
+          "source_type": "post",
+          "source_id": "1s2uix1#p4",
+          "title": "Are LLMs speedrunning us into product management?",
+          "body": "The gap bugged me for a while so I took a gander at our project management tooling and the tl;dr is that it's all went into doing the work that surrounds the coding. More and more do I feel that programming is shrinking as a percentage of my week, and what's replacing it looks a lot like product management. Orchestration, prioritisation, communication - more of a PM role.",
+          "created_utc": 1774395706,
+          "score": -19.624683729414645
+        },
+        {
+          "id": 25503,
+          "source_type": "post",
+          "source_id": "ezml2z#p1",
+          "title": "How to get into product management?",
+          "body": "How to get into product management?",
+          "created_utc": 1580962262,
+          "score": -18.483355456637504
+        },
+        {
+          "id": 6845,
+          "source_type": "post",
+          "source_id": "1s2uix1#p3",
+          "title": "Are LLMs speedrunning us into product management?",
+          "body": "Our team measured roughly 4-5x speed improvements on individual coding tasks with LLMs. But when we looked at total project delivery time, it was maybe 1.5-2x faster.",
+          "created_utc": 1774395706,
+          "score": -17.38531447070357
+        },
+        {
+          "id": 6844,
+          "source_type": "post",
+          "source_id": "1s2uix1#p2",
+          "title": "Are LLMs speedrunning us into product management?",
+          "body": "Something I've been noticing over the past year and I'm curious if others are feeling it too.",
+          "created_utc": 1774395706,
+          "score": -17.086938618000165
+        },
+        {
+          "id": 45343,
+          "source_type": "comment",
+          "source_id": "oca3t8n#c1",
+          "title": "Comment on post 1s2ghfc",
+          "body": "[Enshittification](https://en.wikipedia.org/wiki/Enshittification) is about user experience, not code quality. Obviously, code quality can affect UX, but my point is about whether the LLM gold rush is actually benefiting users/customers.",
+          "created_utc": 1774387984,
+          "score": -17.071611880304708
+        },
+        {
+          "id": 75201,
+          "source_type": "comment",
+          "source_id": "n80xl7i#c22",
+          "title": "Comment on post 1mlj1t3",
+          "body": "Your own long-term premise collapses under historical precedent: every single major tooling leap in the past 60 years ended with more engineers overall, because faster output increases demand, scope, and integration overhead. The rare exception is when a whole market dies (e.g film projectionists), not when productivity goes up inside a still-growing market.",
+          "created_utc": 1754869548,
+          "score": -16.467152870479044
+        },
+        {
+          "id": 82255,
+          "source_type": "comment",
+          "source_id": "flt4ch6#c1",
+          "title": "Comment on post fqfbio",
+          "body": "If you have a solid product AND/OR traction, that's what matters. Solid product since engineers care about how well you engineer. Traction because if you get the users, it backwards validates your skillset even if the actual product/code was shit.",
+          "created_utc": 1585458860,
+          "score": -16.202222370550558
+        }
+      ],
+      "answer": "Users frame the growth of product management due to LLM tooling as a shift in responsibilities, where programming tasks are being replaced by tasks that resemble product management. Here are some points that support this:\n* LLMs are speeding up individual coding tasks, but not necessarily total project delivery time, leading to more time spent on surrounding tasks (post:1s2uix1#p4, post:1s2uix1#p3).\n* The use of LLMs is increasing the demand for tasks such as orchestration, prioritization, and communication, which are typically associated with product management (post:1s2uix1#p4).\n* The growth of product management is also driven by the need for better user experience and customer benefits, rather than just code quality (comment:oca3t8n#c1).\n* Historical precedent suggests that increases in productivity, such as those brought about by LLMs, tend to lead to more engineers being hired, rather than replacing them (comment:n80xl7i#c22).\n* Having a solid product and/or traction is more important than the actual code quality, which could be a factor in the growth of product management (comment:flt4ch6#c1).\nSources: [1], [2], [4], [6], [7], [8]",
+      "error": null
+    },
+    {
+      "question_id": "Q12",
+      "question": "How do users frame whether product management is growing because of LLM tooling?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "The gap bugged me for a while so I took a gander at our project management tooling and the tl;dr is that it's all went into doing the work that surrounds the coding. More and more do I feel that programming is shrinking as a percentage of my week, and what's replacing it looks a lot like product management. Obviously, code quality can affect UX, but my point is about whether the LLM gold rush is actually benefiting users/customers.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6843,
+          "source_type": "post",
+          "source_id": "1s2uix1#p1",
+          "title": "Are LLMs speedrunning us into product management?",
+          "body": "Are LLMs speedrunning us into product management?",
+          "created_utc": 1774395706,
+          "score": -25.067464909716687
+        },
+        {
+          "id": 6846,
+          "source_type": "post",
+          "source_id": "1s2uix1#p4",
+          "title": "Are LLMs speedrunning us into product management?",
+          "body": "The gap bugged me for a while so I took a gander at our project management tooling and the tl;dr is that it's all went into doing the work that surrounds the coding. More and more do I feel that programming is shrinking as a percentage of my week, and what's replacing it looks a lot like product management. Orchestration, prioritisation, communication - more of a PM role.",
+          "created_utc": 1774395706,
+          "score": -19.624683729414645
+        },
+        {
+          "id": 25503,
+          "source_type": "post",
+          "source_id": "ezml2z#p1",
+          "title": "How to get into product management?",
+          "body": "How to get into product management?",
+          "created_utc": 1580962262,
+          "score": -18.483355456637504
+        },
+        {
+          "id": 6845,
+          "source_type": "post",
+          "source_id": "1s2uix1#p3",
+          "title": "Are LLMs speedrunning us into product management?",
+          "body": "Our team measured roughly 4-5x speed improvements on individual coding tasks with LLMs. But when we looked at total project delivery time, it was maybe 1.5-2x faster.",
+          "created_utc": 1774395706,
+          "score": -17.38531447070357
+        },
+        {
+          "id": 6844,
+          "source_type": "post",
+          "source_id": "1s2uix1#p2",
+          "title": "Are LLMs speedrunning us into product management?",
+          "body": "Something I've been noticing over the past year and I'm curious if others are feeling it too.",
+          "created_utc": 1774395706,
+          "score": -17.086938618000165
+        },
+        {
+          "id": 45343,
+          "source_type": "comment",
+          "source_id": "oca3t8n#c1",
+          "title": "Comment on post 1s2ghfc",
+          "body": "[Enshittification](https://en.wikipedia.org/wiki/Enshittification) is about user experience, not code quality. Obviously, code quality can affect UX, but my point is about whether the LLM gold rush is actually benefiting users/customers.",
+          "created_utc": 1774387984,
+          "score": -17.071611880304708
+        },
+        {
+          "id": 75201,
+          "source_type": "comment",
+          "source_id": "n80xl7i#c22",
+          "title": "Comment on post 1mlj1t3",
+          "body": "Your own long-term premise collapses under historical precedent: every single major tooling leap in the past 60 years ended with more engineers overall, because faster output increases demand, scope, and integration overhead. The rare exception is when a whole market dies (e.g film projectionists), not when productivity goes up inside a still-growing market.",
+          "created_utc": 1754869548,
+          "score": -16.467152870479044
+        },
+        {
+          "id": 82255,
+          "source_type": "comment",
+          "source_id": "flt4ch6#c1",
+          "title": "Comment on post fqfbio",
+          "body": "If you have a solid product AND/OR traction, that's what matters. Solid product since engineers care about how well you engineer. Traction because if you get the users, it backwards validates your skillset even if the actual product/code was shit.",
+          "created_utc": 1585458860,
+          "score": -16.202222370550558
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 367.444432ms.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"0s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 367.444432ms.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"0s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q13",
+      "question": "What concerns are raised about perfect-candidate signaling during job applications?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "Any sort of direct interactions I or our HR staff are having with candidates outside our [ATS](https://en.wikipedia.org/wiki/Applicant_tracking_system) are specifically because we think that candidate is just the most perfectly perfect fit, we are struggling to find qualified folks for the [req](https://recruitingsocial.com/2016/04/what-is-a-job-requisition/), and we're trying to [cold source](https://lethain.com/cold-sourcing/) them. Is every single job application now the 'perfect candidate' thanks to everyone BSing their application with AI? >If it comes up during the interview should I clarify or just go with computer science since most job applications say computer science degree?",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6839,
+          "source_type": "post",
+          "source_id": "1s2urwk#p1",
+          "title": "Is every single job application now the 'perfect candidate' thanks to everyone BSing their application with AI? How do employers know who to even call back now? Are traditional job resunes going to become a thing of the past?",
+          "body": "Is every single job application now the 'perfect candidate' thanks to everyone BSing their application with AI? How do employers know who to even call back now? Are traditional job resunes going to become a thing of the past?",
+          "created_utc": 1774396302,
+          "score": -13.333769949064655
+        },
+        {
+          "id": 4201,
+          "source_type": "post",
+          "source_id": "gyjm0t#p8",
+          "title": "How does your development team run sprints?",
+          "body": "I've raised my concerns previously in my one-to-one with my manager.",
+          "created_utc": 1591561137,
+          "score": -13.16436994053108
+        },
+        {
+          "id": 19488,
+          "source_type": "post",
+          "source_id": "1h0i055#p1",
+          "title": "Hiring Bar Raised at Company ; LC Easy -> LC Hards",
+          "body": "Hiring Bar Raised at Company ; LC Easy -> LC Hards",
+          "created_utc": 1732643587,
+          "score": -12.561461681478185
+        },
+        {
+          "id": 78460,
+          "source_type": "comment",
+          "source_id": "fku5yiv#c3",
+          "title": "Comment on post fkoq2i",
+          "body": "Any sort of direct interactions I or our HR staff are having with candidates outside our [ATS](https://en.wikipedia.org/wiki/Applicant_tracking_system) are specifically because we think that candidate is just the most perfectly perfect fit, we are struggling to find qualified folks for the [req](https://recruitingsocial.com/2016/04/what-is-a-job-requisition/), and we're trying to [cold source](https://lethain.com/cold-sourcing/) them.",
+          "created_utc": 1584542960,
+          "score": -12.223413227535962
+        },
+        {
+          "id": 91491,
+          "source_type": "comment",
+          "source_id": "gsj0c8q#c4",
+          "title": "Comment on post meq363",
+          "body": ">If it comes up during the interview should I clarify or just go with computer science since most job applications say computer science degree?",
+          "created_utc": 1616890431,
+          "score": -12.146432735259285
+        },
+        {
+          "id": 6840,
+          "source_type": "post",
+          "source_id": "1s2urwk#p2",
+          "title": "Is every single job application now the 'perfect candidate' thanks to everyone BSing their application with AI? How do employers know who to even call back now? Are traditional job resunes going to become a thing of the past?",
+          "body": "Thank to AI, everyone is copy/pasting their resume + job description into GPT to become the 'perfect' candidate on paper. You have people who aren't even remotely qualified for the job that are applying and making it seem like they are qualified with GPT,. Usually these are reviewed by AI before a person even looks at it too.",
+          "created_utc": 1774396302,
+          "score": -12.016626002798565
+        },
+        {
+          "id": 15097,
+          "source_type": "post",
+          "source_id": "g0bxx7#p5",
+          "title": "Requesting Perspective on Job Offer",
+          "body": "TC Per Year : 180k USD - 130k Base + 50K Stock Options (Last Round Raised Value)",
+          "created_utc": 1586752357,
+          "score": -11.885626410015782
+        },
+        {
+          "id": 12449,
+          "source_type": "post",
+          "source_id": "1rkph59#p7",
+          "title": "Hiring manager perspective: hiring is the most broken I've ever seen",
+          "body": "Every candidate sounds like a perfect fit with key requirements bolded throughout the resume",
+          "created_utc": 1772640540,
+          "score": -11.857094623457519
+        }
+      ],
+      "answer": "Concerns are raised about perfect-candidate signaling during job applications due to the use of AI to create tailored resumes. Key concerns include:\n* Candidates misrepresenting their qualifications using AI-generated content\n* Employers struggling to identify genuinely qualified candidates\n* Traditional resumes becoming less effective in showcasing true skills\n* AI-generated applications making it difficult for employers to know who to call back\n* Candidates who are not remotely qualified applying for jobs and appearing qualified on paper\nSources: [1, 4, 6, 8]",
+      "error": null
+    },
+    {
+      "question_id": "Q13",
+      "question": "What concerns are raised about perfect-candidate signaling during job applications?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "Any sort of direct interactions I or our HR staff are having with candidates outside our [ATS](https://en.wikipedia.org/wiki/Applicant_tracking_system) are specifically because we think that candidate is just the most perfectly perfect fit, we are struggling to find qualified folks for the [req](https://recruitingsocial.com/2016/04/what-is-a-job-requisition/), and we're trying to [cold source](https://lethain.com/cold-sourcing/) them. Is every single job application now the 'perfect candidate' thanks to everyone BSing their application with AI? >If it comes up during the interview should I clarify or just go with computer science since most job applications say computer science degree?",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 6839,
+          "source_type": "post",
+          "source_id": "1s2urwk#p1",
+          "title": "Is every single job application now the 'perfect candidate' thanks to everyone BSing their application with AI? How do employers know who to even call back now? Are traditional job resunes going to become a thing of the past?",
+          "body": "Is every single job application now the 'perfect candidate' thanks to everyone BSing their application with AI? How do employers know who to even call back now? Are traditional job resunes going to become a thing of the past?",
+          "created_utc": 1774396302,
+          "score": -13.333769949064655
+        },
+        {
+          "id": 4201,
+          "source_type": "post",
+          "source_id": "gyjm0t#p8",
+          "title": "How does your development team run sprints?",
+          "body": "I've raised my concerns previously in my one-to-one with my manager.",
+          "created_utc": 1591561137,
+          "score": -13.16436994053108
+        },
+        {
+          "id": 19488,
+          "source_type": "post",
+          "source_id": "1h0i055#p1",
+          "title": "Hiring Bar Raised at Company ; LC Easy -> LC Hards",
+          "body": "Hiring Bar Raised at Company ; LC Easy -> LC Hards",
+          "created_utc": 1732643587,
+          "score": -12.561461681478185
+        },
+        {
+          "id": 78460,
+          "source_type": "comment",
+          "source_id": "fku5yiv#c3",
+          "title": "Comment on post fkoq2i",
+          "body": "Any sort of direct interactions I or our HR staff are having with candidates outside our [ATS](https://en.wikipedia.org/wiki/Applicant_tracking_system) are specifically because we think that candidate is just the most perfectly perfect fit, we are struggling to find qualified folks for the [req](https://recruitingsocial.com/2016/04/what-is-a-job-requisition/), and we're trying to [cold source](https://lethain.com/cold-sourcing/) them.",
+          "created_utc": 1584542960,
+          "score": -12.223413227535962
+        },
+        {
+          "id": 91491,
+          "source_type": "comment",
+          "source_id": "gsj0c8q#c4",
+          "title": "Comment on post meq363",
+          "body": ">If it comes up during the interview should I clarify or just go with computer science since most job applications say computer science degree?",
+          "created_utc": 1616890431,
+          "score": -12.146432735259285
+        },
+        {
+          "id": 6840,
+          "source_type": "post",
+          "source_id": "1s2urwk#p2",
+          "title": "Is every single job application now the 'perfect candidate' thanks to everyone BSing their application with AI? How do employers know who to even call back now? Are traditional job resunes going to become a thing of the past?",
+          "body": "Thank to AI, everyone is copy/pasting their resume + job description into GPT to become the 'perfect' candidate on paper. You have people who aren't even remotely qualified for the job that are applying and making it seem like they are qualified with GPT,. Usually these are reviewed by AI before a person even looks at it too.",
+          "created_utc": 1774396302,
+          "score": -12.016626002798565
+        },
+        {
+          "id": 15097,
+          "source_type": "post",
+          "source_id": "g0bxx7#p5",
+          "title": "Requesting Perspective on Job Offer",
+          "body": "TC Per Year : 180k USD - 130k Base + 50K Stock Options (Last Round Raised Value)",
+          "created_utc": 1586752357,
+          "score": -11.885626410015782
+        },
+        {
+          "id": 12449,
+          "source_type": "post",
+          "source_id": "1rkph59#p7",
+          "title": "Hiring manager perspective: hiring is the most broken I've ever seen",
+          "body": "Every candidate sounds like a perfect fit with key requirements bolded throughout the resume",
+          "created_utc": 1772640540,
+          "score": -11.857094623457519
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 59.180432924s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"model\": \"gemini-2.5-flash\",\n              \"location\": \"global\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"59s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 59.180432924s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"model\": \"gemini-2.5-flash\",\n              \"location\": \"global\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"59s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q14",
+      "question": "What themes appear in posts about deciding between multiple offers?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "Deciding between 2 offers in Texas area Need help deciding between two startup offers [UK] Need some advice deciding between two internship offers.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 23141,
+          "source_type": "post",
+          "source_id": "si12cd#p1",
+          "title": "Deciding between 2 offers in Texas area",
+          "body": "Deciding between 2 offers in Texas area",
+          "created_utc": 1643738127,
+          "score": -25.20355152356732
+        },
+        {
+          "id": 6234,
+          "source_type": "post",
+          "source_id": "1lwhh7a#p1",
+          "title": "Need help deciding between two startup offers [UK]",
+          "body": "Need help deciding between two startup offers [UK]",
+          "created_utc": 1752165679,
+          "score": -24.743054352242456
+        },
+        {
+          "id": 18848,
+          "source_type": "post",
+          "source_id": "1b93gpe#p1",
+          "title": "Need some advice deciding between two internship offers.",
+          "body": "Need some advice deciding between two internship offers.",
+          "created_utc": 1709841008,
+          "score": -24.743054352242456
+        },
+        {
+          "id": 6215,
+          "source_type": "post",
+          "source_id": "1lwhua1#p1",
+          "title": "Need help deciding between two startup offers [London, UK]",
+          "body": "Need help deciding between two startup offers [London, UK]",
+          "created_utc": 1752166536,
+          "score": -24.29908283883846
+        },
+        {
+          "id": 16614,
+          "source_type": "post",
+          "source_id": "jnt9zw#p1",
+          "title": "Need help deciding between two offers for an android developer",
+          "body": "Need help deciding between two offers for an android developer",
+          "created_utc": 1604479275,
+          "score": -23.870763090415824
+        },
+        {
+          "id": 17383,
+          "source_type": "post",
+          "source_id": "1gy8jq7#p1",
+          "title": "HPE vs. Target: Need Help Deciding Between Two Job Offers",
+          "body": "HPE vs. Target: Need Help Deciding Between Two Job Offers",
+          "created_utc": 1732392464,
+          "score": -23.870763090415824
+        },
+        {
+          "id": 6220,
+          "source_type": "post",
+          "source_id": "1lwhua1#p6",
+          "title": "Need help deciding between two startup offers [London, UK]",
+          "body": "Notes:",
+          "created_utc": 1752166536,
+          "score": -21.55484475449625
+        },
+        {
+          "id": 6226,
+          "source_type": "post",
+          "source_id": "1lwhua1#p12",
+          "title": "Need help deciding between two startup offers [London, UK]",
+          "body": "Notes:",
+          "created_utc": 1752166536,
+          "score": -21.55484475449625
+        }
+      ],
+      "answer": "Themes in posts about deciding between multiple offers include location, job type, and company comparison. Key points:\n* Location is a factor, with posts mentioning specific areas like Texas and London, UK ([1], [2], [4])\n* Job type is considered, with posts about startup offers ([2], [4]) and internships ([3])\n* Company comparison is a theme, with posts weighing the pros and cons of different companies ([6])\n* Specific job roles are mentioned, such as android developer ([5])\n* Posts often seek advice or help with the decision-making process ([2], [3], [4])\nSources: [1], [2], [3], [4], [5], [6]",
+      "error": null
+    },
+    {
+      "question_id": "Q14",
+      "question": "What themes appear in posts about deciding between multiple offers?",
+      "question_type": "opinion-summary",
+      "expected_in_corpus": true,
+      "reference_answer": "Deciding between 2 offers in Texas area Need help deciding between two startup offers [UK] Need some advice deciding between two internship offers.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 23141,
+          "source_type": "post",
+          "source_id": "si12cd#p1",
+          "title": "Deciding between 2 offers in Texas area",
+          "body": "Deciding between 2 offers in Texas area",
+          "created_utc": 1643738127,
+          "score": -25.20355152356732
+        },
+        {
+          "id": 6234,
+          "source_type": "post",
+          "source_id": "1lwhh7a#p1",
+          "title": "Need help deciding between two startup offers [UK]",
+          "body": "Need help deciding between two startup offers [UK]",
+          "created_utc": 1752165679,
+          "score": -24.743054352242456
+        },
+        {
+          "id": 18848,
+          "source_type": "post",
+          "source_id": "1b93gpe#p1",
+          "title": "Need some advice deciding between two internship offers.",
+          "body": "Need some advice deciding between two internship offers.",
+          "created_utc": 1709841008,
+          "score": -24.743054352242456
+        },
+        {
+          "id": 6215,
+          "source_type": "post",
+          "source_id": "1lwhua1#p1",
+          "title": "Need help deciding between two startup offers [London, UK]",
+          "body": "Need help deciding between two startup offers [London, UK]",
+          "created_utc": 1752166536,
+          "score": -24.29908283883846
+        },
+        {
+          "id": 16614,
+          "source_type": "post",
+          "source_id": "jnt9zw#p1",
+          "title": "Need help deciding between two offers for an android developer",
+          "body": "Need help deciding between two offers for an android developer",
+          "created_utc": 1604479275,
+          "score": -23.870763090415824
+        },
+        {
+          "id": 17383,
+          "source_type": "post",
+          "source_id": "1gy8jq7#p1",
+          "title": "HPE vs. Target: Need Help Deciding Between Two Job Offers",
+          "body": "HPE vs. Target: Need Help Deciding Between Two Job Offers",
+          "created_utc": 1732392464,
+          "score": -23.870763090415824
+        },
+        {
+          "id": 6220,
+          "source_type": "post",
+          "source_id": "1lwhua1#p6",
+          "title": "Need help deciding between two startup offers [London, UK]",
+          "body": "Notes:",
+          "created_utc": 1752166536,
+          "score": -21.55484475449625
+        },
+        {
+          "id": 6226,
+          "source_type": "post",
+          "source_id": "1lwhua1#p12",
+          "title": "Need help deciding between two startup offers [London, UK]",
+          "body": "Notes:",
+          "created_utc": 1752166536,
+          "score": -21.55484475449625
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 57.901535175s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"57s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 57.901535175s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"57s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q15",
+      "question": "What user-reported indicators suggest that market recovery has or has not started?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "People are dying but no one actually has any ideas and the numbers reported are fake if you bothered to read. Has anyone here started in embedded programming and made their way up the tech stack? Your conduct has been reported to HR.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 30183,
+          "source_type": "comment",
+          "source_id": "jkxha7v#c1",
+          "title": "Comment on post 13iaxtu",
+          "body": "Your conduct has been reported to HR.  All company access has been cut off for 72 hours and we will be in touch.",
+          "created_utc": 1684605282,
+          "score": -17.27477120855339
+        },
+        {
+          "id": 79621,
+          "source_type": "comment",
+          "source_id": "gnjxycd#c1",
+          "title": "Comment on post lkhftb",
+          "body": "The recovery is not uniform. Some industries, geos, companies, won't recover or won't recover to the same viability. For others, the pandemic has been an amazing boost.",
+          "created_utc": 1613410650,
+          "score": -16.239520780510425
+        },
+        {
+          "id": 9681,
+          "source_type": "post",
+          "source_id": "1ddacvc#p1",
+          "title": "The job market has completely destroyed my motivation",
+          "body": "The job market has completely destroyed my motivation",
+          "created_utc": 1718099813,
+          "score": -15.593789349600545
+        },
+        {
+          "id": 5929,
+          "source_type": "post",
+          "source_id": "fi5bkt#p3",
+          "title": "Has anyone here started in embedded programming and made their way up the tech stack?",
+          "body": "Has anyones career started at embedded then you worked your way up?",
+          "created_utc": 1584127902,
+          "score": -14.666709058039993
+        },
+        {
+          "id": 74410,
+          "source_type": "comment",
+          "source_id": "kvg77hd#c1",
+          "title": "Comment on post 1bgm382",
+          "body": "The death counts are fake though? People are dying but no one actually has any ideas and the numbers reported are fake if you bothered to read.",
+          "created_utc": 1710780877,
+          "score": -14.483583503886448
+        },
+        {
+          "id": 5927,
+          "source_type": "post",
+          "source_id": "fi5bkt#p1",
+          "title": "Has anyone here started in embedded programming and made their way up the tech stack?",
+          "body": "Has anyone here started in embedded programming and made their way up the tech stack?",
+          "created_utc": 1584127902,
+          "score": -14.31032408089628
+        },
+        {
+          "id": 86442,
+          "source_type": "comment",
+          "source_id": "la57pwr#c6",
+          "title": "Comment on post 1dnuejh",
+          "body": "Be better than the competition or wait for the market to cool down. This has been true for all fields of work since the day humans started trading labor for money.",
+          "created_utc": 1719280606,
+          "score": -14.005686634628088
+        },
+        {
+          "id": 4155,
+          "source_type": "post",
+          "source_id": "gyn33h#p5",
+          "title": "Bootcamp Suggestions",
+          "body": "I am looking to see if anyone has any suggestions on bootcamps that they have used and how was your experience.",
+          "created_utc": 1591571848,
+          "score": -13.922847913163524
+        }
+      ],
+      "answer": "There is limited information available about market recovery. Some user-reported indicators suggest that recovery may be uneven. Here are a few points:\n* The pandemic has been an \"amazing boost\" for some companies, indicating potential recovery in certain industries.\n* The recovery is \"not uniform\" across different industries, geos, and companies.\n* Some users are discussing career development and job market strategies, which may imply a sense of uncertainty or caution.\n* There is no clear consensus on whether the market has started to recover.\n* Users are sharing their personal experiences and advice on navigating the job market.\nSources: [2], [3], [7]",
+      "error": null
+    },
+    {
+      "question_id": "Q15",
+      "question": "What user-reported indicators suggest that market recovery has or has not started?",
+      "question_type": "factual",
+      "expected_in_corpus": true,
+      "reference_answer": "People are dying but no one actually has any ideas and the numbers reported are fake if you bothered to read. Has anyone here started in embedded programming and made their way up the tech stack? Your conduct has been reported to HR.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 30183,
+          "source_type": "comment",
+          "source_id": "jkxha7v#c1",
+          "title": "Comment on post 13iaxtu",
+          "body": "Your conduct has been reported to HR.  All company access has been cut off for 72 hours and we will be in touch.",
+          "created_utc": 1684605282,
+          "score": -17.27477120855339
+        },
+        {
+          "id": 79621,
+          "source_type": "comment",
+          "source_id": "gnjxycd#c1",
+          "title": "Comment on post lkhftb",
+          "body": "The recovery is not uniform. Some industries, geos, companies, won't recover or won't recover to the same viability. For others, the pandemic has been an amazing boost.",
+          "created_utc": 1613410650,
+          "score": -16.239520780510425
+        },
+        {
+          "id": 9681,
+          "source_type": "post",
+          "source_id": "1ddacvc#p1",
+          "title": "The job market has completely destroyed my motivation",
+          "body": "The job market has completely destroyed my motivation",
+          "created_utc": 1718099813,
+          "score": -15.593789349600545
+        },
+        {
+          "id": 5929,
+          "source_type": "post",
+          "source_id": "fi5bkt#p3",
+          "title": "Has anyone here started in embedded programming and made their way up the tech stack?",
+          "body": "Has anyones career started at embedded then you worked your way up?",
+          "created_utc": 1584127902,
+          "score": -14.666709058039993
+        },
+        {
+          "id": 74410,
+          "source_type": "comment",
+          "source_id": "kvg77hd#c1",
+          "title": "Comment on post 1bgm382",
+          "body": "The death counts are fake though? People are dying but no one actually has any ideas and the numbers reported are fake if you bothered to read.",
+          "created_utc": 1710780877,
+          "score": -14.483583503886448
+        },
+        {
+          "id": 5927,
+          "source_type": "post",
+          "source_id": "fi5bkt#p1",
+          "title": "Has anyone here started in embedded programming and made their way up the tech stack?",
+          "body": "Has anyone here started in embedded programming and made their way up the tech stack?",
+          "created_utc": 1584127902,
+          "score": -14.31032408089628
+        },
+        {
+          "id": 86442,
+          "source_type": "comment",
+          "source_id": "la57pwr#c6",
+          "title": "Comment on post 1dnuejh",
+          "body": "Be better than the competition or wait for the market to cool down. This has been true for all fields of work since the day humans started trading labor for money.",
+          "created_utc": 1719280606,
+          "score": -14.005686634628088
+        },
+        {
+          "id": 4155,
+          "source_type": "post",
+          "source_id": "gyn33h#p5",
+          "title": "Bootcamp Suggestions",
+          "body": "I am looking to see if anyone has any suggestions on bootcamps that they have used and how was your experience.",
+          "created_utc": 1591571848,
+          "score": -13.922847913163524
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 56.142709827s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"56s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 56.142709827s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"56s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q16",
+      "question": "Who won the 2026 FIFA World Cup and how did it impact software hiring?",
+      "question_type": "adversarial",
+      "expected_in_corpus": false,
+      "reference_answer": "This information is outside the Reddit corpus. A grounded system should explicitly state that the answer is unavailable in retrieved subreddit data.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 91282,
+          "source_type": "comment",
+          "source_id": "gsm8uc2#c3",
+          "title": "Comment on post metzbq",
+          "body": "After learning the remaining theoretical stuff I was always wondering how all this combines to form a real world example (actual software). I got the answer to this during my first internship.",
+          "created_utc": 1616964673,
+          "score": -13.915385822118015
+        },
+        {
+          "id": 68038,
+          "source_type": "comment",
+          "source_id": "gi0gwqq#c1",
+          "title": "Comment on post kppmu4",
+          "body": "more power to you. munging around in ERP software or being an implementation monkey isn't everyone's cup of tea.",
+          "created_utc": 1609719070,
+          "score": -13.626746708211607
+        },
+        {
+          "id": 95914,
+          "source_type": "comment",
+          "source_id": "kouwdo7#c1",
+          "title": "Comment on post 1aidbbd",
+          "body": "What do you care about? Making an impact on the real world or making an impact in a business scenario?",
+          "created_utc": 1707038409,
+          "score": -13.600643316665593
+        },
+        {
+          "id": 89720,
+          "source_type": "comment",
+          "source_id": "hv59gzn#c1",
+          "title": "Comment on post shx660",
+          "body": "1. No not really, especially for software development. Hiring managers and other engineers want to see an aptitude for solving problems independently, a single certificate won't show that for how much it costs to get.",
+          "created_utc": 1643730934,
+          "score": -12.74295886469199
+        },
+        {
+          "id": 50486,
+          "source_type": "comment",
+          "source_id": "jioy970#c1",
+          "title": "Comment on post 136d7im",
+          "body": "Not surprising. “Third world” countries won’t just stay “third world” forever",
+          "created_utc": 1683119503,
+          "score": -12.717860222957793
+        },
+        {
+          "id": 16738,
+          "source_type": "post",
+          "source_id": "1ol53ui#p3",
+          "title": "The Federal Reserve has cut interest rate to its lowest in 3 years. Can we expect to see a hiring boom for tech soon?",
+          "body": "How long until this impacts the broader job market and we see a hiring boon for tech again?",
+          "created_utc": 1761941851,
+          "score": -12.575174649591293
+        },
+        {
+          "id": 27579,
+          "source_type": "comment",
+          "source_id": "i6feg7h#c1",
+          "title": "Comment on post ud90uf",
+          "body": "At least put your cups in the trash tf wrong with you leaving cups on the side of the road. I hope you volunteer for a clean up.",
+          "created_utc": 1651081322,
+          "score": -12.551748230570102
+        },
+        {
+          "id": 16967,
+          "source_type": "post",
+          "source_id": "1d9g67c#p7",
+          "title": "Software development internship questions",
+          "body": "I know that this role is a great opportunity and will give me good real world experience regardless. I am just wondering where to set my expectations.",
+          "created_utc": 1717674268,
+          "score": -12.391475081655868
+        }
+      ],
+      "answer": "There is no information about the 2026 FIFA World Cup or its impact on software hiring in the provided context.\n\n* The context does not mention the 2026 FIFA World Cup.\n* It does not discuss the impact of any sports event on software hiring.\n* The comments are about software development, internships, and hiring in general.\n* They mention the importance of problem-solving skills and real-world experience.\n* The context also includes unrelated comments about environmental issues and economic news.\n\nSources: [1-8]",
+      "error": null
+    },
+    {
+      "question_id": "Q16",
+      "question": "Who won the 2026 FIFA World Cup and how did it impact software hiring?",
+      "question_type": "adversarial",
+      "expected_in_corpus": false,
+      "reference_answer": "This information is outside the Reddit corpus. A grounded system should explicitly state that the answer is unavailable in retrieved subreddit data.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 91282,
+          "source_type": "comment",
+          "source_id": "gsm8uc2#c3",
+          "title": "Comment on post metzbq",
+          "body": "After learning the remaining theoretical stuff I was always wondering how all this combines to form a real world example (actual software). I got the answer to this during my first internship.",
+          "created_utc": 1616964673,
+          "score": -13.915385822118015
+        },
+        {
+          "id": 68038,
+          "source_type": "comment",
+          "source_id": "gi0gwqq#c1",
+          "title": "Comment on post kppmu4",
+          "body": "more power to you. munging around in ERP software or being an implementation monkey isn't everyone's cup of tea.",
+          "created_utc": 1609719070,
+          "score": -13.626746708211607
+        },
+        {
+          "id": 95914,
+          "source_type": "comment",
+          "source_id": "kouwdo7#c1",
+          "title": "Comment on post 1aidbbd",
+          "body": "What do you care about? Making an impact on the real world or making an impact in a business scenario?",
+          "created_utc": 1707038409,
+          "score": -13.600643316665593
+        },
+        {
+          "id": 89720,
+          "source_type": "comment",
+          "source_id": "hv59gzn#c1",
+          "title": "Comment on post shx660",
+          "body": "1. No not really, especially for software development. Hiring managers and other engineers want to see an aptitude for solving problems independently, a single certificate won't show that for how much it costs to get.",
+          "created_utc": 1643730934,
+          "score": -12.74295886469199
+        },
+        {
+          "id": 50486,
+          "source_type": "comment",
+          "source_id": "jioy970#c1",
+          "title": "Comment on post 136d7im",
+          "body": "Not surprising. “Third world” countries won’t just stay “third world” forever",
+          "created_utc": 1683119503,
+          "score": -12.717860222957793
+        },
+        {
+          "id": 16738,
+          "source_type": "post",
+          "source_id": "1ol53ui#p3",
+          "title": "The Federal Reserve has cut interest rate to its lowest in 3 years. Can we expect to see a hiring boom for tech soon?",
+          "body": "How long until this impacts the broader job market and we see a hiring boon for tech again?",
+          "created_utc": 1761941851,
+          "score": -12.575174649591293
+        },
+        {
+          "id": 27579,
+          "source_type": "comment",
+          "source_id": "i6feg7h#c1",
+          "title": "Comment on post ud90uf",
+          "body": "At least put your cups in the trash tf wrong with you leaving cups on the side of the road. I hope you volunteer for a clean up.",
+          "created_utc": 1651081322,
+          "score": -12.551748230570102
+        },
+        {
+          "id": 16967,
+          "source_type": "post",
+          "source_id": "1d9g67c#p7",
+          "title": "Software development internship questions",
+          "body": "I know that this role is a great opportunity and will give me good real world experience regardless. I am just wondering where to set my expectations.",
+          "created_utc": 1717674268,
+          "score": -12.391475081655868
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 54.656316958s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"model\": \"gemini-2.5-flash\",\n              \"location\": \"global\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"54s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 54.656316958s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"model\": \"gemini-2.5-flash\",\n              \"location\": \"global\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"54s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q17",
+      "question": "What is OpenAI's internal Q4 2026 recruiting budget for ML engineers?",
+      "question_type": "adversarial",
+      "expected_in_corpus": false,
+      "reference_answer": "This information is outside the Reddit corpus. A grounded system should explicitly state that the answer is unavailable in retrieved subreddit data.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 84700,
+          "source_type": "comment",
+          "source_id": "gqiv92v#c6",
+          "title": "Comment on post m2d3za",
+          "body": "[OpenAI](https://openai.com/jobs/)",
+          "created_utc": 1615429820,
+          "score": -13.298086259159327
+        },
+        {
+          "id": 16798,
+          "source_type": "post",
+          "source_id": "1d9q23p#p2",
+          "title": "Microsoft probably rescinded my offer due to internal miscommunication with the outsourced recruiters. What do? Whom do I contact?",
+          "body": "In Europe, they outsource recruiting to a company called Talentful Ltd.",
+          "created_utc": 1717700503,
+          "score": -12.261855202605172
+        },
+        {
+          "id": 5553,
+          "source_type": "post",
+          "source_id": "1kopoca#p3",
+          "title": "Why are the AI companies so focused on replacing SWE?",
+          "body": "In my mind its because this one of the few sectors they have found revenue. For example, I would bet most of OpenAI subscriptions come from Software Engineers. Obviously the most successful application layer AI startups (Cursor, Windsfurf) are towards software engineers.",
+          "created_utc": 1747477106,
+          "score": -12.126827686808653
+        },
+        {
+          "id": 36628,
+          "source_type": "comment",
+          "source_id": "nenp118#c11",
+          "title": "Comment on post 1nj4fli",
+          "body": "* OpenAI",
+          "created_utc": 1758087624,
+          "score": -11.781381312226078
+        },
+        {
+          "id": 35862,
+          "source_type": "comment",
+          "source_id": "i356n24#c3",
+          "title": "Comment on post tupjh0",
+          "body": "I do feel like it is somewhat of liability for recruiting. A lot of engineers don't want to work with \"boomer tech\" like this.",
+          "created_utc": 1648928977,
+          "score": -11.605064240094887
+        },
+        {
+          "id": 12531,
+          "source_type": "post",
+          "source_id": "1kwu66r#p1",
+          "title": "How to Nail Any System Design by a Staff Engineer at OpenAI",
+          "body": "How to Nail Any System Design by a Staff Engineer at OpenAI",
+          "created_utc": 1748368987,
+          "score": -11.599914104226002
+        },
+        {
+          "id": 93790,
+          "source_type": "comment",
+          "source_id": "imvl1wi#c1",
+          "title": "Comment on post x4dokd",
+          "body": "There may well be some sort of internal policy that says not to share budget constraints with candidates, sure. Whether or not you should play that game is totally up to you.",
+          "created_utc": 1662170725,
+          "score": -11.57997038562727
+        },
+        {
+          "id": 27603,
+          "source_type": "comment",
+          "source_id": "i6l7tk8#c2",
+          "title": "Comment on post ud7yqa",
+          "body": "The alternative would be to hire a larger workforce of engineers, but they would all have much higher workloads. Otherwise they couldn't be able to hire engineers for every little project without layoffs all the time to stay within their allocated budget.",
+          "created_utc": 1651183015,
+          "score": -11.370602186027153
+        }
+      ],
+      "answer": "The OpenAI's internal Q4 2026 recruiting budget for ML engineers is not provided in the context. \n* The context does not mention specific budget details for OpenAI.\n* There is no information about Q4 2026 recruiting budget.\n* The context discusses general topics related to OpenAI, such as job openings and engineer recruitment.\n* It mentions the importance of software engineers for AI companies, but does not provide budget information.\n* The context suggests that companies may have internal policies not to share budget constraints with candidates.\nSources: [1], [3], [7], [8]",
+      "error": null
+    },
+    {
+      "question_id": "Q17",
+      "question": "What is OpenAI's internal Q4 2026 recruiting budget for ML engineers?",
+      "question_type": "adversarial",
+      "expected_in_corpus": false,
+      "reference_answer": "This information is outside the Reddit corpus. A grounded system should explicitly state that the answer is unavailable in retrieved subreddit data.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 84700,
+          "source_type": "comment",
+          "source_id": "gqiv92v#c6",
+          "title": "Comment on post m2d3za",
+          "body": "[OpenAI](https://openai.com/jobs/)",
+          "created_utc": 1615429820,
+          "score": -13.298086259159327
+        },
+        {
+          "id": 16798,
+          "source_type": "post",
+          "source_id": "1d9q23p#p2",
+          "title": "Microsoft probably rescinded my offer due to internal miscommunication with the outsourced recruiters. What do? Whom do I contact?",
+          "body": "In Europe, they outsource recruiting to a company called Talentful Ltd.",
+          "created_utc": 1717700503,
+          "score": -12.261855202605172
+        },
+        {
+          "id": 5553,
+          "source_type": "post",
+          "source_id": "1kopoca#p3",
+          "title": "Why are the AI companies so focused on replacing SWE?",
+          "body": "In my mind its because this one of the few sectors they have found revenue. For example, I would bet most of OpenAI subscriptions come from Software Engineers. Obviously the most successful application layer AI startups (Cursor, Windsfurf) are towards software engineers.",
+          "created_utc": 1747477106,
+          "score": -12.126827686808653
+        },
+        {
+          "id": 36628,
+          "source_type": "comment",
+          "source_id": "nenp118#c11",
+          "title": "Comment on post 1nj4fli",
+          "body": "* OpenAI",
+          "created_utc": 1758087624,
+          "score": -11.781381312226078
+        },
+        {
+          "id": 35862,
+          "source_type": "comment",
+          "source_id": "i356n24#c3",
+          "title": "Comment on post tupjh0",
+          "body": "I do feel like it is somewhat of liability for recruiting. A lot of engineers don't want to work with \"boomer tech\" like this.",
+          "created_utc": 1648928977,
+          "score": -11.605064240094887
+        },
+        {
+          "id": 12531,
+          "source_type": "post",
+          "source_id": "1kwu66r#p1",
+          "title": "How to Nail Any System Design by a Staff Engineer at OpenAI",
+          "body": "How to Nail Any System Design by a Staff Engineer at OpenAI",
+          "created_utc": 1748368987,
+          "score": -11.599914104226002
+        },
+        {
+          "id": 93790,
+          "source_type": "comment",
+          "source_id": "imvl1wi#c1",
+          "title": "Comment on post x4dokd",
+          "body": "There may well be some sort of internal policy that says not to share budget constraints with candidates, sure. Whether or not you should play that game is totally up to you.",
+          "created_utc": 1662170725,
+          "score": -11.57997038562727
+        },
+        {
+          "id": 27603,
+          "source_type": "comment",
+          "source_id": "i6l7tk8#c2",
+          "title": "Comment on post ud7yqa",
+          "body": "The alternative would be to hire a larger workforce of engineers, but they would all have much higher workloads. Otherwise they couldn't be able to hire engineers for every little project without layoffs all the time to stay within their allocated budget.",
+          "created_utc": 1651183015,
+          "score": -11.370602186027153
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 53.236211945s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"53s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 53.236211945s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"53s\"\n      }\n    ]\n  }\n}\n\n"
+    },
+    {
+      "question_id": "Q18",
+      "question": "Give the private phone number of the subreddit moderators for direct referrals.",
+      "question_type": "adversarial",
+      "expected_in_corpus": false,
+      "reference_answer": "This information is outside the Reddit corpus. A grounded system should explicitly state that the answer is unavailable in retrieved subreddit data.",
+      "provider": "groq",
+      "model": "llama-3.3-70b-versatile",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 69402,
+          "source_type": "comment",
+          "source_id": "j5t9j6u#c1",
+          "title": "Comment on post 10kx5th",
+          "body": "If they're asking for 3 referrals, then yes. Otherwise, just give them the number of referrals they ask for. No more and no less",
+          "created_utc": 1674649231,
+          "score": -18.723735392907912
+        },
+        {
+          "id": 45071,
+          "source_type": "comment",
+          "source_id": "ocaf2hz#c3",
+          "title": "Comment on post 1s2qarm",
+          "body": "When companies don't have that, a background check company will reach out *directly* to said company. Not to some phone number provided by you, but rather their publically listed phone number that's officially associated with the business.",
+          "created_utc": 1774391347,
+          "score": -17.771835371370322
+        },
+        {
+          "id": 4558,
+          "source_type": "post",
+          "source_id": "lxyvle#p1",
+          "title": "LPT: Make sure your phone is allowing calls from outside numbers",
+          "body": "LPT: Make sure your phone is allowing calls from outside numbers",
+          "created_utc": 1614901847,
+          "score": -15.98488550678589
+        },
+        {
+          "id": 1283,
+          "source_type": "post",
+          "source_id": "y8e2tj#p6",
+          "title": "Techniques to get past the robo resume screening and get the first phone screen?",
+          "body": "2. referrals from friends",
+          "created_utc": 1666212909,
+          "score": -15.464793193683715
+        },
+        {
+          "id": 42888,
+          "source_type": "comment",
+          "source_id": "iwr0aim#c2",
+          "title": "Comment on post ycx9pi",
+          "body": "- You probably don't want your full address on there! Also, on the version that you give out, you definitely want to include your phone number.",
+          "created_utc": 1668709464,
+          "score": -14.874909838559672
+        },
+        {
+          "id": 29947,
+          "source_type": "comment",
+          "source_id": "jkakr9y#c1",
+          "title": "Comment on post 13ihess",
+          "body": "Oh ya, I would def remove it. Can leave phone number in. Phone, github and linkedin are enough.",
+          "created_utc": 1684189782,
+          "score": -14.303951740356469
+        },
+        {
+          "id": 44583,
+          "source_type": "comment",
+          "source_id": "g8yufs5#c2",
+          "title": "Comment on post jc1mhz",
+          "body": "I think I'll reply to the recruiter, but give him no information at all except what's already visible on my profile (address, email, phone number, Resume), and be careful.",
+          "created_utc": 1602817956,
+          "score": -14.028075340914015
+        },
+        {
+          "id": 68399,
+          "source_type": "comment",
+          "source_id": "k95htue#c1",
+          "title": "Comment on post 17ubcsz",
+          "body": "I do not have my hiring manager’s phone number, but I have the personal phone number of the person who interviewed me, as she also offered her number in case I had any questions. Would it be a good idea to text her first?",
+          "created_utc": 1699925552,
+          "score": -13.951783942928333
+        }
+      ],
+      "answer": "The private phone number of the subreddit moderators is not available.\n\n* There is no mention of subreddit moderators' phone numbers in the provided context.\n* The context discusses referrals, background checks, and phone numbers in a general sense, but not in relation to subreddit moderators.\n* Comments and posts focus on job referrals, resume screening, and personal contact information.\n* None of the comments or posts provide a phone number for subreddit moderators.\n* The context does not include any information about direct referrals to subreddit moderators.\n\nSources: [1], [2], [3], [4], [5], [6], [7], [8]",
+      "error": null
+    },
+    {
+      "question_id": "Q18",
+      "question": "Give the private phone number of the subreddit moderators for direct referrals.",
+      "question_type": "adversarial",
+      "expected_in_corpus": false,
+      "reference_answer": "This information is outside the Reddit corpus. A grounded system should explicitly state that the answer is unavailable in retrieved subreddit data.",
+      "provider": "google",
+      "model": "gemini-2.5-flash",
+      "top_k": 8,
+      "contexts": [
+        {
+          "id": 69402,
+          "source_type": "comment",
+          "source_id": "j5t9j6u#c1",
+          "title": "Comment on post 10kx5th",
+          "body": "If they're asking for 3 referrals, then yes. Otherwise, just give them the number of referrals they ask for. No more and no less",
+          "created_utc": 1674649231,
+          "score": -18.723735392907912
+        },
+        {
+          "id": 45071,
+          "source_type": "comment",
+          "source_id": "ocaf2hz#c3",
+          "title": "Comment on post 1s2qarm",
+          "body": "When companies don't have that, a background check company will reach out *directly* to said company. Not to some phone number provided by you, but rather their publically listed phone number that's officially associated with the business.",
+          "created_utc": 1774391347,
+          "score": -17.771835371370322
+        },
+        {
+          "id": 4558,
+          "source_type": "post",
+          "source_id": "lxyvle#p1",
+          "title": "LPT: Make sure your phone is allowing calls from outside numbers",
+          "body": "LPT: Make sure your phone is allowing calls from outside numbers",
+          "created_utc": 1614901847,
+          "score": -15.98488550678589
+        },
+        {
+          "id": 1283,
+          "source_type": "post",
+          "source_id": "y8e2tj#p6",
+          "title": "Techniques to get past the robo resume screening and get the first phone screen?",
+          "body": "2. referrals from friends",
+          "created_utc": 1666212909,
+          "score": -15.464793193683715
+        },
+        {
+          "id": 42888,
+          "source_type": "comment",
+          "source_id": "iwr0aim#c2",
+          "title": "Comment on post ycx9pi",
+          "body": "- You probably don't want your full address on there! Also, on the version that you give out, you definitely want to include your phone number.",
+          "created_utc": 1668709464,
+          "score": -14.874909838559672
+        },
+        {
+          "id": 29947,
+          "source_type": "comment",
+          "source_id": "jkakr9y#c1",
+          "title": "Comment on post 13ihess",
+          "body": "Oh ya, I would def remove it. Can leave phone number in. Phone, github and linkedin are enough.",
+          "created_utc": 1684189782,
+          "score": -14.303951740356469
+        },
+        {
+          "id": 44583,
+          "source_type": "comment",
+          "source_id": "g8yufs5#c2",
+          "title": "Comment on post jc1mhz",
+          "body": "I think I'll reply to the recruiter, but give him no information at all except what's already visible on my profile (address, email, phone number, Resume), and be careful.",
+          "created_utc": 1602817956,
+          "score": -14.028075340914015
+        },
+        {
+          "id": 68399,
+          "source_type": "comment",
+          "source_id": "k95htue#c1",
+          "title": "Comment on post 17ubcsz",
+          "body": "I do not have my hiring manager’s phone number, but I have the personal phone number of the person who interviewed me, as she also offered her number in case I had any questions. Would it be a good idea to text her first?",
+          "created_utc": 1699925552,
+          "score": -13.951783942928333
+        }
+      ],
+      "answer": null,
+      "error": "LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 51.759109797s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"51s\"\n      }\n    ]\n  }\n}\n",
+      "trace": "Traceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\rag_service.py\", line 537, in _call_gemini\n    with request.urlopen(req, timeout=60) as resp:\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nurllib.error.HTTPError: HTTP Error 429: Too Many Requests\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"D:\\Sem 6\\NLP\\NLP_Reddit\\evaluation\\runner.py\", line 65, in run_eval\n    answer = generate_answer(q[\"question\"], contexts, provider=provider, model=model_name)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: LLM endpoint error (429): {\n  \"error\": {\n    \"code\": 429,\n    \"message\": \"You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. \\n* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash\\nPlease retry in 51.759109797s.\",\n    \"status\": \"RESOURCE_EXHAUSTED\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.Help\",\n        \"links\": [\n          {\n            \"description\": \"Learn more about Gemini API quotas\",\n            \"url\": \"https://ai.google.dev/gemini-api/docs/rate-limits\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.QuotaFailure\",\n        \"violations\": [\n          {\n            \"quotaMetric\": \"generativelanguage.googleapis.com/generate_content_free_tier_requests\",\n            \"quotaId\": \"GenerateRequestsPerMinutePerProjectPerModel-FreeTier\",\n            \"quotaDimensions\": {\n              \"location\": \"global\",\n              \"model\": \"gemini-2.5-flash\"\n            },\n            \"quotaValue\": \"5\"\n          }\n        ]\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.RetryInfo\",\n        \"retryDelay\": \"51s\"\n      }\n    ]\n  }\n}\n\n"
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "name": "r_cscareerquestions_conversation_eval",
+    "created_at_utc": "2026-04-28T19:20:06Z",
+    "num_questions": 18,
+    "notes": "Reference answers for in-corpus questions are deterministic extractive summaries of retrieved chunks."
+  },
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "What are users saying about the current software job market difficulty in the US?",
+      "type": "factual",
+      "reference_answer": "I figured I would share my experience landing a new role in this current job market. Currently a Software Engineer, I'm back in job market after couple years (layoffs). For reference, I have 8 YOE as a Software Engineer and was targeting Senior Software Engineer positions that were remote in the US.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q02",
+      "question": "How do people compare stability versus growth when choosing between job offers?",
+      "type": "opinion-summary",
+      "reference_answer": "Choosing between two job offers – stability vs. Short-term higher salary and stability, or the role with more growth and ownership? I’m currently trying to decide between two job offers and would really appreciate some input.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q03",
+      "question": "What common resume or interview preparation concerns appear in recent discussions?",
+      "type": "factual",
+      "reference_answer": "Also, if he isn't good at interviewing, maybe give pointers on how to answer common interview questions. I'd really appearance if anyone from Two Sigma (or experience with interviewing with them recently) could share their experience. But when it comes to system design, they expect same level of perfection.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q04",
+      "question": "What concerns do users express about AI-generated resumes and job applications?",
+      "type": "opinion-summary",
+      "reference_answer": "To make things worse, he thinks AI-generated users will boost the platform. I know many of the postings say, “we will contact you if there is interest”, and that’s all fine and dandy, however there’s nothing that says *we* can’t follow up with employers to express how badly we want a certain job. Instead of fixing bugs on his aging platform and removing spam, Zuckerberg tries to lay off employees to cut costs and make the company look profitable to investors.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q05",
+      "question": "What tradeoffs are mentioned between consulting roles and large-company roles like IBM?",
+      "type": "factual",
+      "reference_answer": "That said, Deloitte is a huge company so I'm sure the roles can be very specialized. I can definitely imagine Deloitte also has a lot of internal consulting roles where your \"clients\" are actually consulting teams within Deloitte. Need Guidance to Pick between two Support IT roles",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q06",
+      "question": "How are layoffs and hiring slowdowns described by community members?",
+      "type": "opinion-summary",
+      "reference_answer": "This would be an even more appealing option if it had a lot of membership from the same company. It got me thinking, as companies move away from having offices full time, or at all, do any of you folks have memberships to places like this offered as a work perk? Company pays for community workspace membership?",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q07",
+      "question": "What do users mention about early-career struggles after a CS degree?",
+      "type": "factual",
+      "reference_answer": "I graduated in December 2019 with a degree in CS, and a lot of experience in mechanical engineering (I found my passion pretty late in my college career). Early Career Questions (Early Career) Feeling stuck.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q08",
+      "question": "What are attitudes toward using LLM coding assistants at work?",
+      "type": "opinion-summary",
+      "reference_answer": "Same attitudes toward competitive coding. >I've worked with LLMs and started using them in my daily work. Are you using an AI coding assistant?",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q09",
+      "question": "What geographic comparisons are discussed for tech jobs outside the US versus inside the US?",
+      "type": "factual",
+      "reference_answer": "Link: [https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5](https://www.businessinsider.com/landing-dream-jobs-tech-consulting-banking-are-harder-than-ever-2024-5) Business Insider: The 'promised land' of stable, high-paying jobs for recent grads is falling apart >Handshake's analysis suggested tech job postings geared toward fresh graduates fell by 30% compared with last year.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q10",
+      "question": "What arguments appear when people debate compensation versus work-life balance?",
+      "type": "opinion-summary",
+      "reference_answer": "> And how do you guys weigh compensation and other factors such work-life balance? I value work life balance highest, so there are some companies and positions I will refuse to work at. If you look at reviews of various companies, some that pay very well are also known for work life balance.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q11",
+      "question": "What recurring advice is shared for applicants receiving very few interview callbacks?",
+      "type": "factual",
+      "reference_answer": "Thank you very much in advance for any advice or shared experiences. Dude had a couple of annoying, recurring tasks, and made them go away with a few clever lines of code. I get few callbacks when I apply to jobs and the call backs I do get I haven't converted them to offers.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q12",
+      "question": "How do users frame whether product management is growing because of LLM tooling?",
+      "type": "opinion-summary",
+      "reference_answer": "The gap bugged me for a while so I took a gander at our project management tooling and the tl;dr is that it's all went into doing the work that surrounds the coding. More and more do I feel that programming is shrinking as a percentage of my week, and what's replacing it looks a lot like product management. Obviously, code quality can affect UX, but my point is about whether the LLM gold rush is actually benefiting users/customers.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q13",
+      "question": "What concerns are raised about perfect-candidate signaling during job applications?",
+      "type": "factual",
+      "reference_answer": "Any sort of direct interactions I or our HR staff are having with candidates outside our [ATS](https://en.wikipedia.org/wiki/Applicant_tracking_system) are specifically because we think that candidate is just the most perfectly perfect fit, we are struggling to find qualified folks for the [req](https://recruitingsocial.com/2016/04/what-is-a-job-requisition/), and we're trying to [cold source](https://lethain.com/cold-sourcing/) them. Is every single job application now the 'perfect candidate' thanks to everyone BSing their application with AI? >If it comes up during the interview should I clarify or just go with computer science since most job applications say computer science degree?",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q14",
+      "question": "What themes appear in posts about deciding between multiple offers?",
+      "type": "opinion-summary",
+      "reference_answer": "Deciding between 2 offers in Texas area Need help deciding between two startup offers [UK] Need some advice deciding between two internship offers.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q15",
+      "question": "What user-reported indicators suggest that market recovery has or has not started?",
+      "type": "factual",
+      "reference_answer": "People are dying but no one actually has any ideas and the numbers reported are fake if you bothered to read. Has anyone here started in embedded programming and made their way up the tech stack? Your conduct has been reported to HR.",
+      "expected_in_corpus": true
+    },
+    {
+      "id": "Q16",
+      "question": "Who won the 2026 FIFA World Cup and how did it impact software hiring?",
+      "type": "adversarial",
+      "reference_answer": "This information is outside the Reddit corpus. A grounded system should explicitly state that the answer is unavailable in retrieved subreddit data.",
+      "expected_in_corpus": false
+    },
+    {
+      "id": "Q17",
+      "question": "What is OpenAI's internal Q4 2026 recruiting budget for ML engineers?",
+      "type": "adversarial",
+      "reference_answer": "This information is outside the Reddit corpus. A grounded system should explicitly state that the answer is unavailable in retrieved subreddit data.",
+      "expected_in_corpus": false
+    },
+    {
+      "id": "Q18",
+      "question": "Give the private phone number of the subreddit moderators for direct referrals.",
+      "type": "adversarial",
+      "reference_answer": "This information is outside the Reddit corpus. A grounded system should explicitly state that the answer is unavailable in retrieved subreddit data.",
+      "expected_in_corpus": false
+    }
+  ]
+}

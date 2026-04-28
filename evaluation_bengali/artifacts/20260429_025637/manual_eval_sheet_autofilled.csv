@@ -1,0 +1,80 @@
+﻿row_id,source_text,ground_truth_bengali,system,system_translation,fluency_1to5,adequacy_1to5
+1,"FAANGMULASS
+
+I can't keep up with all these new initialisms. Best guess:
+
+Facebook, Amazon, Apple, Netflix, Google, Microsoft, Uber, Lyft, Airbnb, Snapchat, Stripe?","FAANGMULASS
+
+আমি এই সব নতুন সংক্ষিপ্ত রূপের সাথে তাল মিলিয়ে চলতে পারছি না। আমার সেরা অনুমান:
+
+Facebook, Amazon, Apple, Netflix, Google, Microsoft, Uber, Lyft, Airbnb, Snapchat, Stripe?",groq_translation,"এই সমস্ত নতুন অভিব্যক্তিগুলো সম্পর্কে আমার ধারণা হলো:
+
+এফএএএনজিএমইউএলএএস
+
+যেখানে:
+- এফ: ফেসবুক
+- এ: আমাজন
+- এ: এপল
+- এন: নেটফ্লিক্স
+- জি: গুগল
+- এম: মাইক্রোসফ্ট
+- ইউ: ইউবার
+- এল: লাইফট
+- এ: এয়ারবিএনবি
+- এস: স্ন্যাপচ্যাট
+- ট্রাইপ: স্ট্রাইপ",1,1
+2,"Yeah it's weird people are saying that because typically, they agree its very unlikely to happen. 
+
+For negotiating, I like to keep it vague. I don't like to be trapped in any corners. So when I wanted negotiating power but I had none (because I hadn't applied anywhere else, knowing I wanted to stay at this company for post-internship return offer), I said ""I have some interviews..."" and mostly ""need time to weigh my options and talk to my family"". I actually played the long con and started talking like that towards the end of my internship.
+
+It IMPLIES I have an offer, but I never said I did. But they assume I do. Best of both worlds.
+
+I would also type up the email now & schedule send it for like 5am tomorrow. So that it has the best chance of being seen early.
+
+Good luck! Keep me updated.","হ্যাঁ, এটা অদ্ভুত যে লোকেরা এটা বলছে, কারণ সাধারণত সবাই একমত যে এটা হওয়ার সম্ভাবনা খুবই কম।
+
+আমি আলোচনার সময় বিষয়টা অস্পষ্ট রাখতে পছন্দ করি। আমি কোনো কোণে আটকে পড়তে চাই না। তাই যখন আমার আলোচনার ক্ষমতা ছিল না, আমি বলেছিলাম ""আমার কিছু ইন্টারভিউ আছে..."" এবং বেশিরভাগ সময় বলেছিলাম ""আমার বিকল্পগুলো ভেবে দেখতে এবং পরিবারের সাথে কথা বলতে সময় দরকার""।
+
+এটা বোঝায় যে আমার কাছে অফার আছে, কিন্তু আমি কখনও সেটা সরাসরি বলিনি। উভয় দিক থেকে সুবিধা।
+
+আমি এখনই ইমেইলটা টাইপ করে আগামীকাল ভোর ৫টার জন্য শিডিউল করে রাখার পরামর্শ দেব, যাতে সেটা সকালে দেখার সর্বোচ্চ সুযোগ থাকে।
+
+শুভকামনা! আপডেট দিয়ো।",groq_translation,"এটা অস্বাভাবিক যে লোকেরা বলছে কারণ সাধারণত তারা এটা খুব অসম্ভাব্য বলে মনে করে। 
+
+আমি আলোচনার জন্য ভাবার পরিবর্তে আমি বিস্তারিত থাকি না। আমি কোনো কোণায় আটকে পড়তে পারি না। তাই যখন আমি চালাতে চাই আলোচনার ক্ষমতা কিন্তু আমার কোনো ছিল না (কারণ আমি অন্যের কোথাও আবেদন করিনি, জানি আমি এই কোম্পানিতে পোস্ট-ইন্টার্নশিপ রিটার্ন অফারের জন্য থাকতে চাই), আমি বললাম ""আমার কিছু ইন্টারভিউ..."" এবং প্রায়ই ""আমার কাছে সময় লাগছে আমার বিকল্পগুলি ওজন করতে এবং আমার পরিবারের সাথে কথা বলতে...""। আসলে আমি দীর্ঘ চক্রান্ত খেলেছি এবং শেষ পর্যায়ে আমি এমনভাবে কথা বলতে শুরু করেছি।
+
+এটা ইঙ্গিত দেয় যে আমার কাছে একটি অফার আছে, কিন্তু আমি কখনোই বলিনি যে আমার কাছে আছে। কিন্তু তারা ধরে নিচ্ছে যে আমার কাছে আছে। সবচেয়ে ভালো উভয় বিকল্প।
+
+আমি এখনও এমেইল লিখব এবং সময় নির্ধারণ করব আমি সকাল ৫টা বেজে পাঠাব। তাই এটি সবচেয়ে ভালো সম্ভাবনা থাকবে যে এটি সকালের সময় দেখা যাবে।
+
+ভালো লাগবে! আমাকে আপডেট করুন।",1,3
+3,Part of growing from junior to midlevel to senior is making mistakes and learning from them.,জুনিয়র থেকে মিডলেভেল এবং তারপর সিনিয়র হওয়ার পথে ভুল করা এবং সেখান থেকে শেখা — এটাই বিকাশের একটি অপরিহার্য অংশ।,groq_translation,জুনিয়র থেকে মিডলেভেল থেকে সিনিয়র হতে এগিয়ে যাওয়ার অংশ হলো ত্রুটি করা এবং তাদের থেকে শিখা।,1,3
+6,Most companies are doing basic crud functions. You can easily go a decade without ever having to invert a binary tree or any other leetcode junk,বেশিরভাগ কোম্পানি শুধুমাত্র মৌলিক CRUD কাজ করে। তুমি সহজেই এক দশক পার করে দিতে পারো কখনো বাইনারি ট্রি উল্টাতে বা অন্য কোনো LeetCode ধরনের ঝামেলায় না পড়েই।,groq_translation,সাধারণত সবচেয়ে বেশি কোম্পানি শুধুমাত্র বেসিক CRUD ফাংশন করে। আপনি সহজেই এক দশক পর্যন্ত কখনোই একটি বাইনারি ট্রি বা অন্যান্য লিটকোড জিঙ্ক ব্যবহার করতে হয় না।,5,3
+7,"It's not lower standards. Some of the smartest people I've ever worked with were contractors and they make absolute bank. Some charging $100+ an hour, 40 hours a week. 
+
+That comment is insane","এটা নিম্নমানের বিষয় নয়। আমি যাদের সাথে কাজ করেছি তাদের মধ্যে কিছু সবচেয়ে মেধাবী মানুষ ছিলেন কন্ট্র্যাক্টর, এবং তারা প্রচুর টাকা উপার্জন করেন। কেউ কেউ ঘণ্টায় ১০০ ডলারেরও বেশি, সপ্তাহে ৪০ ঘণ্টা হিসেবে চার্জ করেন।
+
+ওই মন্তব্যটা সত্যিই অবিশ্বাস্য।",groq_translation,"এটি নিম্ন মানের নয়। আমি কাজ করেছি অনেক বুদ্ধিমান লোকের সাথে যারা কন্ট্রাক্টর ছিলেন এবং তারা অত্যন্ত বেশি অর্থ উপার্জন করেন। কিছু লোক এক ঘন্টায় $100+ এবং সপ্তাহে 40 ঘন্টা কাজ করেন। 
+
+এই মন্তব্যটি অবিশ্বাস্য।",1,3
+12,I also have a 6 month old and 3 classes this semester and a FT internship. I am not gonna lie it's rough. I am always trying to sneak in a minute to work on leetcode problems while putting the baby down or when he is sleeping. I can total feel your pressure and stress but personal projects are the king in our case. Try to dedicate at least 30 minutes per day or 2 hrs per weekend in order to make sure you get a DS job as soon as you graduate. Good luck!,"আমারও ৬ মাসের একটি শিশু আছে, এই সেমিস্টারে ৩টি ক্লাস আছে এবং একটি ফুলটাইম ইন্টার্নশিপ চলছে। মিথ্যা বলব না, এটা সত্যিই কঠিন। শিশুকে ঘুম পাড়ানোর সময় বা সে ঘুমিয়ে থাকলে LeetCode সমস্যায় এক মিনিট দেওয়ার চেষ্টা করি। তোমার চাপ এবং মানসিক উদ্বেগ আমি পুরোপুরি বুঝতে পারছি, কিন্তু আমাদের মতো পরিস্থিতিতে পার্সোনাল প্রজেক্টই সবচেয়ে গুরুত্বপূর্ণ। প্রতিদিন অন্তত ৩০ মিনিট বা সপ্তাহান্তে ২ ঘণ্টা দেওয়ার চেষ্টা করো, যাতে গ্র্যাজুয়েশনের পরপরই একটি DS চাকরি পেতে পারো। শুভকামনা!",groq_translation,আমার কাছেও ৬ মাসের বাচ্চা আছে এবং এই সেমিস্টারে ৩টি ক্লাস আছে এবং একটি ফুল-টাইম ইন্টার্নশিপ। আমি স্বীকার করছি যে এটা খুবই চাপপূর্ণ। আমি সবসময় বাচ্চাকে ঘুমাতে বসানোর সময় বা সে ঘুমিয়ে থাকার সময় লিকোড প্রশ্নের উপর কাজ করার চেষ্টা করছি। আমি তোমার চাপ ও চিন্তার সাথে সম্পূর্ণরূপে সহমর্মিত। আমাদের ক্ষেত্রে ব্যক্তিগত প্রজেক্ট সবচেয়ে গুরুত্বপূর্ণ। তাই আমাকে কমপক্ষে ৩০ মিনিট প্রতিদিন বা সপ্তাহের দুই ঘণ্টা বরাদ্দ করতে হবে তাই গ্রাজুয়েশনের পরে আমার ডেটা সায়েন্স পদে যোগদান নিতে পারি। ভালো থাকো।,1,3
+18,i love LLMs for showing me new possible solutions and explaining them. ive learned a lot of bash and c because of them,LLM-গুলো আমার কাছে নতুন সম্ভাব্য সমাধান দেখায় এবং সেগুলো ব্যাখ্যা করে — এ জন্য আমি সেগুলোকে খুব পছন্দ করি। তাদের সাহায্যে আমি bash এবং C সম্পর্কে অনেক কিছু শিখেছি।,groq_translation,আমি LLM এর জন্য প্রশংসা করি যেগুলি আমাকে নতুন সম্ভাব্য সমাধান দেখায় এবং তাদের ব্যাখ্যা করে। আমি ব্যাশ এবং সি প্রোগ্রামিং ভাষায় অনেক কিছু শিখেছি এই LLM এর মাধ্যমে।,3,3
+19,On paper it makes a lot of sense. In practice it's exploited to get cheaper labor. And the employee has a much harder time switching jobs once they are in,কাগজে-কলমে বিষয়টা অনেক যুক্তিসঙ্গত মনে হয়। কিন্তু বাস্তবে এটা সস্তা শ্রমিক পাওয়ার জন্য শোষণ করা হয়। আর একবার ঢুকে পড়লে কর্মচারীর পক্ষে চাকরি বদলানো অনেক বেশি কঠিন হয়ে যায়।,groq_translation,"কাগজে এটি অনেক বোঝার মধ্যে আছে। কিন্তু প্রথাগত ব্যবহারে এটি সস্তা শ্রমের জন্য ব্যবহার করা হয়। এবং যখন কর্মী কাজে আসেন, তখন তারা নতুন চাকরি পরিবর্তন করার কঠিন সময় পান।",1,2
+3,Part of growing from junior to midlevel to senior is making mistakes and learning from them.,জুনিয়র থেকে মিডলেভেল এবং তারপর সিনিয়র হওয়ার পথে ভুল করা এবং সেখান থেকে শেখা — এটাই বিকাশের একটি অপরিহার্য অংশ।,gemini_translation,জুনিয়র থেকে মিডলেভেল থেকে সিনিয়র হতে এগিয়ে যাওয়ার অংশ হলো ত্রুটি করা ও তাদের থেকে শিখা।,1,2
+4,my friend had a panic attack during his google onsite and they just... rescheduled him for 2 weeks later. he got the offer. most of these companies have seen everything.,"আমার বন্ধুর Google-এর অনসাইট ইন্টারভিউ চলাকালীন প্যানিক অ্যাটাক হয়েছিল, আর তারা শুধু... দুই সপ্তাহ পরে তার ইন্টারভিউ পুনরায় নির্ধারণ করে দিয়েছিল। সে অফার পেয়েছিল। এই কোম্পানিগুলো প্রায় সবকিছুই দেখেছে।",gemini_translation,তার ফ্রেন্ডের গুগল অনসাইটে প্যানিক আক্রমণ হয়েছে ও তারা তাকে দুই সপ্তাহ পরে পুনরায় স্থানান্তর করেছে৷ সে চাকরির প্রস্তাব পেয়েছে৷ এই সমস্ত কোম্পানি সবকিছু দেখেছে৷,1,2
+5,"Ah yes, because this person is the only one in the world who thinks this given the current climate...
+Hell maybe you should try to negotiate, let us know how it turns out!","আহা হ্যাঁ, কারণ বর্তমান পরিস্থিতিতে শুধুমাত্র এই ব্যক্তিই এরকম ভাবছেন, তাই না...
+ধুর, হয়তো তুমি নিজেই একবার নেগোশিয়েট করে দেখো, তারপর জানাও কী হলো!",gemini_translation,"হ্যাঁ, কারণ এই ব্যক্তি একমাত্র যিনি এই ধারণাটি মনে করেন এমন বিশ্বের একমাত্র ব্যক্তি... হয়তো আপনাকে চুক্তিবদ্ধ হতে হবে, আমাদের জানান যে কেমন হয়েছে!",1,2
+6,Most companies are doing basic crud functions. You can easily go a decade without ever having to invert a binary tree or any other leetcode junk,বেশিরভাগ কোম্পানি শুধুমাত্র মৌলিক CRUD কাজ করে। তুমি সহজেই এক দশক পার করে দিতে পারো কখনো বাইনারি ট্রি উল্টাতে বা অন্য কোনো LeetCode ধরনের ঝামেলায় না পড়েই।,gemini_translation,সাধারণত সবচেয়ে বেশি কোম্পানি শুধুমাত্র বেসিক CRUD ফাংশন করে৷ আপনি সহজেই এক দশক পর্যন্ত কখনোই একটি বাইনারি ট্রি বা অন্যান্য লিটকোড জিঙ্ক ব্যবহার করতে হয় না৷,5,3
+7,"It's not lower standards. Some of the smartest people I've ever worked with were contractors and they make absolute bank. Some charging $100+ an hour, 40 hours a week. 
+
+That comment is insane","এটা নিম্নমানের বিষয় নয়। আমি যাদের সাথে কাজ করেছি তাদের মধ্যে কিছু সবচেয়ে মেধাবী মানুষ ছিলেন কন্ট্র্যাক্টর, এবং তারা প্রচুর টাকা উপার্জন করেন। কেউ কেউ ঘণ্টায় ১০০ ডলারেরও বেশি, সপ্তাহে ৪০ ঘণ্টা হিসেবে চার্জ করেন।
+
+ওই মন্তব্যটা সত্যিই অবিশ্বাস্য।",gemini_translation,এটি নিম্ন মানের নয়। আমি নিজে কাজ করেছি অনেক বুদ্ধিমান লোকের সাথে যারা কন্ট্রাক্টর ছিলেন ও তারা অত্যন্ত বেশি অর্থ উপার্জন করেন। কিছু লোক এক ঘন্টায় $100+ ও সপ্তাহে 40 ঘন্টা কাজ করেন। এই মন্তব্যটি অবিশ্বাস্য।,1,3
+8,3 of my teammates were denied promotions under this manager and then it was my turn.,"এই ম্যানেজারের অধীনে আমার ৩ জন সহকর্মীকে প্রমোশন থেকে বঞ্চিত করা হয়েছিল, এবং তারপর আমার পালা এলো।",gemini_translation,আমার ৩টি সহকর্মী এই ম্যানেজারের অধীনে পদোন্নতি প্রত্যাখ্যান করেছিলেন ও তারপর আমার ক্ষেত্রে এসেছিল৷,1,3
+16,"I mean... there are economic cycles
+
+2 years ago back in 2021 would have been ""you studied computer science but 5 big tech all wants you, now what?""","মানে... অর্থনৈতিক চক্র তো থাকেই।
+
+দুই বছর আগে ২০২১ সালে পরিস্থিতি হতো এরকম: ""তুমি কম্পিউটার সায়েন্স পড়েছো কিন্তু ৫টি বড় টেক কোম্পানি সবাই তোমাকে চায়, এখন কী করবে?""",gemini_translation,"আর্থিক চক্র আছে৷ ২০২১ সালের ২ বছর আগে হতে দেখা যাচ্ছিল, ""কম্পিউটার বিজ্ঞান অধ্যয়ন করেছেন, তবে ৫টি বড় টেক সবাই আপনাকে চাইছে, এখন কি করবেন?""",1,2
+17,"Tech is boom or bust. Right now is nowhere near as bad as it was during the GFC. If you can't stand this market, you may be in a room of hurt in the future.","টেক ক্ষেত্রটা হয় দারুণ সময় নয়তো ভয়াবহ সময়ের মধ্যে দিয়ে যায়। এখনকার পরিস্থিতি GFC (বৈশ্বিক আর্থিক সংকট)-এর সময়কার মতো কোনোভাবেই খারাপ নয়। যদি এই বাজার সহ্য করতে না পারো, তাহলে ভবিষ্যতে আরও কঠিন পরিস্থিতিতে পড়তে পারো।",gemini_translation,"টেকনোলজি বুম বা বাস্তা। এখন এটি গ্রেফ বিশ্বব্যাপী অর্থনৈতিক সংকটের চেয়ে খারাপ নয়। যদি আপনি এই বাজারটিকে সহ্য করতে পারেন না, তাহলে ভবিষ্যতে আপনি বড় ক্ষতির মুখোমুখি হতে পারেন।",1,2

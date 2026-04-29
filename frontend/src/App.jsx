@@ -9,7 +9,8 @@ import Users from './pages/Users';
 import Keywords from './pages/Keywords';
 import Sorting from './pages/Sorting';
 import Translation from './pages/Translation';
-import { LayoutDashboard, Moon, Sun, TrendingUp, MessageCircle, Users as UsersIcon, KeyRound, ArrowUpDown, Languages } from 'lucide-react';
+import Reports from './pages/Reports';
+import { LayoutDashboard, Moon, Sun, TrendingUp, MessageCircle, Users as UsersIcon, KeyRound, ArrowUpDown, Languages, FolderOpen } from 'lucide-react';
 import dashImage from './assets/dash1.jpg';
 import dashImageDark from './assets/dash2.jpg';
 
@@ -54,6 +55,7 @@ function App() {
               <Link to="/users" className="btn-secondary"><UsersIcon size={16} style={{marginRight: 4}}/> Users</Link>
               <Link to="/keywords" className="btn-secondary"><KeyRound size={16} style={{marginRight: 4}}/> Keywords</Link>
               <Link to="/sorting" className="btn-secondary"><ArrowUpDown size={16} style={{marginRight: 4}}/> Sorting</Link>
+              <Link to="/reports" className="btn-secondary"><FolderOpen size={16} style={{marginRight: 4}}/> Reports</Link>
               <button onClick={toggleTheme} className="btn-secondary" title="Toggle Theme" style={{ padding: '0.5rem' }}>
                 {theme === 'light' ? <Moon size={18} /> : <Sun size={18} />}
               </button>
@@ -72,6 +74,7 @@ function App() {
             <Route path="/keywords" element={<Keywords />} />
             <Route path="/sorting" element={<Sorting />} />
             <Route path="/translation" element={<Translation />} />
+            <Route path="/reports" element={<Reports />} />
           </Routes>
         </main>
       </div>

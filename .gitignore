@@ -4,4 +4,5 @@ __pycache__/
 
 # Generated evaluation artifacts/logs
 evaluation_bengali/artifacts/
+bias_eval/artifacts/
 *.log

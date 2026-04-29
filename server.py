@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, send_from_directory
 from flask_cors import CORS
 import sqlite3
 import re
@@ -17,6 +17,8 @@ from rag_service import (
 
 app = Flask(__name__)
 CORS(app)
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+REPORTS_DIR = os.path.join(BASE_DIR, 'reports')
 
 KEYWORD_STOPWORDS = {
     'make', 'makes', 'made', 'the', 'a', 'an', 'and', 'or', 'like', 'just', 'know', 'people',
@@ -761,6 +763,37 @@ def translation_translate():
         return jsonify({'ok': False, 'error': f'LLM endpoint error ({e.code}): {detail}'}), 500
     except Exception as e:
         return jsonify({'ok': False, 'error': str(e)}), 500
+
+
+@app.route('/api/reports/list')
+def reports_list():
+    items = [
+        {'id': 'part1', 'label': 'Part 1 Documentation'},
+        {'id': 'rag_eval', 'label': 'RAG Evaluation'},
+        {'id': 'translation_eval', 'label': 'Translation Evaluation'},
+        {'id': 'bias_detection', 'label': 'Bias Detection'},
+        {'id': 'ethics_note', 'label': 'Ethics Note'},
+        {'id': 'final_report', 'label': 'Final Report'},
+    ]
+    return jsonify({'reports': items})
+
+
+@app.route('/api/reports/file/<report_id>')
+def reports_file(report_id):
+    mapping = {
+        'part1': 'Part1_Documentation and Dashboard.pdf',
+        'rag_eval': 'rag_evaluation_report.pdf',
+        'translation_eval': 'bengali_translation_evaluation_report.pdf',
+        'bias_detection': 'bias_detection_report.pdf',
+        'ethics_note': 'ethics_note.pdf',
+        'final_report': 'FullFinalReport.pdf',
+    }
+    filename = mapping.get(report_id)
+    if not filename:
+        return jsonify({'ok': False, 'error': 'Unknown report id'}), 404
+    if not os.path.exists(os.path.join(REPORTS_DIR, filename)):
+        return jsonify({'ok': False, 'error': 'Report file not found'}), 404
+    return send_from_directory(REPORTS_DIR, filename)
 
 @app.route('/api/timeline_consolidated')
 def timeline_consolidated():
